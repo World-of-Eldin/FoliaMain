@@ -1,6 +1,7 @@
-// Register the schedule to run every 10 seconds (200 ticks)
+var Server = plugin.getServer();
+
 registerSchedule(0, 200, {
         handler: function() {
-            var world = plugin.getServer().getWorld("world");    
-            server.broadcastMessage("Gametime: " + world.getTime());
+            var world = Server.getWorld("world");    
+            Server.broadcastMessage("Gametime: " + world.getTime());
 }}, "handler");
