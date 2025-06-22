@@ -1,0 +1,372 @@
+general:
+  keep-level: false
+
+land:
+  enabled: true
+  levels:
+    1:
+      title: 'Initial'
+      commands:
+        down:
+          - 'lp user {owner} meta removeprefix 1'
+    2:
+      title: 'Homestead'
+      requirements:
+        chunks:
+          required: 1
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Claim {req} chunks for this land.'
+            - '&7Command: &e/claim'
+      commands:
+        # Add Gentry
+        reached:
+          - 'lp user {owner} meta addprefix 1 "㐐 "'
+        # Remove Yeoman
+        down:
+          - 'lp user {owner} meta addprefix 1 "㐐 "'
+          - 'lp user {owner} meta removeprefix 2'
+    3:
+      title: 'Settlement'
+      requirements:
+        chunks:
+          required: 4
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Claim {req} chunks for this land.'
+            - '&7Command: &e/claim'
+      commands:
+        # Add Yeoman
+        reached:
+          - 'lp user {owner} meta addprefix 2 "㐑 "'
+          - 'lp user {owner} meta removeprefix 1'
+        # Remove Nobleman
+        down:
+          - 'lp user {owner} meta addprefix 2 "㐑 "'
+          - 'lp user {owner} meta removeprefix 3'
+    4:
+      title: 'Estate'
+      requirements:
+        chunks:
+          required: 8
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Claim {req} chunks for this land.'
+            - '&7Command: &e/claim'
+      commands:
+        # Add Nobleman
+        reached:
+          - 'lp user {owner} meta addprefix 3 "㐒 "'
+          - 'lp user {owner} meta removeprefix 2'
+        # Remove Baron
+        down:
+          - 'lp user {owner} meta addprefix 3 "㐒 "'
+          - 'lp user {owner} meta removeprefix 4'
+    5:
+      title: 'Hamlet'
+      requirements:
+        chunks:
+          required: 16
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Claim {req} chunks for this land.'
+            - '&7Command: &e/claim'
+      commands:
+        # Add Baron
+        reached:
+          - 'lp user {owner} meta addprefix 4 "㐟 "'
+          - 'lp user {owner} meta removeprefix 3'
+        # Remove Earl
+        down:
+          - 'lp user {owner} meta addprefix 4 "㐟 "'
+          - 'lp user {owner} meta removeprefix 5'
+    6:
+      title: 'Village'
+      requirements:
+        chunks:
+          required: 32
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Claim {req} chunks for this land.'
+            - '&7Command: &e/claim'
+      commands:
+        # Add Earl
+        reached:
+          - 'lp user {owner} meta addprefix 5 "㐡 "'
+          - 'lp user {owner} meta removeprefix 4'
+        # Remove Duke
+        down:
+          - 'lp user {owner} meta addprefix 5 "㐡 "'
+          - 'lp user {owner} meta removeprefix 6'
+    7:
+      title: 'Town'
+      requirements:
+        chunks:
+          required: 64
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Claim {req} chunks for this land.'
+            - '&7Command: &e/claim'
+      commands:
+        # Add Duke
+        reached:
+          - 'lp user {owner} meta addprefix 6 "㐢 "'
+          - 'lp user {owner} meta removeprefix 5'
+        # Remove Prince
+        down:
+          - 'lp user {owner} meta addprefix 6 "㐢 "'
+          - 'lp user {owner} meta removeprefix 7'
+    8:
+      title: 'City'
+      requirements:
+        chunks:
+          required: 128
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Claim {req} chunks for this land.'
+            - '&7Command: &e/claim'
+      commands:
+        # Add Prince
+        reached:
+          - 'lp user {owner} meta addprefix 7 "㐤 "'
+          - 'lp user {owner} meta removeprefix 6'
+        # Remove King
+        down:
+          - 'lp user {owner} meta addprefix 7 "㐤 "'
+          - 'lp user {owner} meta removeprefix 8'
+    9:
+      title: 'Kingdom'
+      requirements:
+        chunks:
+          required: 256
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Claim {req} chunks for this land.'
+            - '&7Command: &e/claim'
+      commands:
+        # Add King
+        reached:
+          - 'lp user {owner} meta addprefix 8 "㐦 "'
+          - 'lp user {owner} meta removeprefix 7'
+        # Remove Emperor
+        down:
+          - 'lp user {owner} meta addprefix 8 "㐦 "'
+          - 'lp user {owner} meta removeprefix 9'
+    10:
+      title: 'Empire'
+      requirements:
+        chunks:
+          required: 512
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Claim {req} chunks for this land.'
+            - '&7Command: &e/claim'
+      commands:
+        # Add Emperor
+        reached:
+          - 'lp user {owner} meta addprefix 9 "㐨 "'
+          - 'lp user {owner} meta removeprefix 8'
+
+nation:
+  # Enable nation levels?
+  enabled: true
+  # Here you can edit existing or add new nation levels.
+  levels:
+    1:
+      # Set the name of the level.
+      title: 'Federation'
+      # For the entry level, there are not attributes set. But you could add them anyways, if you modify the value options.
+      # Attributes of a level will apply on top of whatever the current value for the land or nation is.
+      attributes:
+        chunks:
+          description: '&7{value} claims'
+          value: 0
+        upkeep:
+          description: '&7{value}% upkeep cost'
+          value: 0
+        effects:
+          description: '&a+ Unlock effects: {value}'
+          value: [ ]
+        effects_amount:
+          description: '&a+ Have {value} effects active at once'
+          value: 0
+    2:
+      title: 'Nation'
+      requirements:
+        # Required minimum amount of unique lands in the nation.
+        # This does not include the capital land.
+        lands:
+          required: 3
+          title: '{req} Lands'
+          description:
+            - '&7Invite {req} lands to join your nation'
+            - '&7and let them accept your invite.'
+            - '&7Command: &e/nation trust'
+        # Required members (total unique players) to get this level assigned.
+        members:
+          required: 32
+          title: '{req} unique Players'
+          description:
+            - '&7Have {req} players trusted in total.'
+            - '&7Command: &e/lands trust'
+        # Required total chunks to get this level assigned.
+        chunks:
+          required: 0
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Have {req} claims in total.'
+            - '&7Command: &e/claim'
+        # Required total balance (the balance of all lands) to get this level assigned.
+        balance:
+          required: 100000
+          title: 'Balance of ${req}'
+          description:
+            - '&7Have ${req} deposited across all lands.'
+            - '&7Command: &e/lands deposit'
+        # Plugin: https://www.spigotmc.org/resources/67627
+        betterfarming:
+          farms:
+            required: 9
+            title: '{req} Upgradeable Farms'
+            description:
+              - '&7Have {req} upgradeable farms in your land.'
+              - '&7Command: &e/farm get'
+        # Plugin: https://www.spigotmc.org/resources/69201
+        upgradeablehoppers:
+          hoppers:
+            required: 24
+            title: '{req} Upgradeable Hoppers'
+            description:
+              - '&7Have {req} upgradeable hoppers in your land.'
+              - '&7Command: &e/hopper get'
+        # Plugin: https://www.spigotmc.org/resources/77717
+        upgradeablespawners:
+          spawners:
+            required: 9
+            title: '{req} Upgradeable Spawners'
+            description:
+              - '&7Have {req} upgradeable spawners in your land.'
+              - '&7Command: &e/spawner get'
+      attributes:
+        # Give each land of the nation x amount of additional chunks.
+        chunks:
+          description: '&7{value} claims'
+          value: 20
+        # Modify upkeep by x percent. This also supports negative values.
+        # The nation pays the upkeep to the server.
+        upkeep:
+          description: '&7{value}% upkeep cost'
+          value: 20
+        # Allow nations to activate a specific amount of effects in their nation. Effects can be unlocked through level progression.
+        effects:
+          description: '&a+ Unlock effects: {value}'
+          # Configure a list of unlocked effects for this level. Valid effects: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
+          # Format: EFFECT:AMPLIFIER
+          # The amiplifier is the strength (level) of the effect. Example: JUMP:2 -> Jump II
+          value:
+            - JUMP
+            - SPEED
+            - FAST_DIGGING
+            - DOLPHINS_GRACE
+        # Modify how many effects can be active at the same time.
+        effects_amount:
+          description: '&a+ Have {value} effects active at once'
+          value: 1
+      # Execute console commands, if the nation reaches this level or gets downgraded from this level to the previous one.
+      # Available placeholders:
+      # {level}: Name of the level
+      # {nation}: Name of the nation
+      # {owner}: The player name of nation owner.
+      # {land}: Parameter name of the land that is part of the nation. Doesn't contain spaces.
+      # {land_name}: Name of the land that is part of the nation. May contain spaces.
+      # If the command contains the {land} placeholder, the command will be executed for each land, which is part of the nation.
+      commands:
+        # When a nation reaches this level.
+        reached: [ ]
+        # When a nation gets downgraded from the next level to this one.
+        down: [ ]
+    3:
+      title: 'Empire'
+      requirements:
+        lands:
+          required: 6
+          title: '{req} Lands'
+          description:
+            - '&7Invite {req} lands to join your nation'
+            - '&7and let them accept your invite.'
+            - '&7Command: &e/nations trust'
+        members:
+          required: 64
+          title: '{req} unique Players'
+          description:
+            - '&7Have {req} players trusted in total.'
+            - '&7Command: &e/lands trust'
+        chunks:
+          required: 0
+          title: 'Claim {req} Chunks'
+          description:
+            - '&7Have {req} claims in total.'
+            - '&7Command: &e/claim'
+        balance:
+          required: 250000
+          title: 'Balance of ${req}'
+          description:
+            - '&7Have ${req} deposited across all lands.'
+            - '&7Command: &e/lands deposit'
+        # Plugin: https://www.spigotmc.org/resources/67627
+        betterfarming:
+          farms:
+            required: 18
+            title: '{req} Upgradeable Farms'
+            description:
+              - '&7Have {req} upgradeable farms in your land.'
+              - '&7Command: &e/farm get'
+        # Plugin: https://www.spigotmc.org/resources/69201
+        upgradeablehoppers:
+          hoppers:
+            required: 30
+            title: '{req} Upgradeable Hoppers'
+            description:
+              - '&7Have {req} upgradeable hoppers in your land.'
+              - '&7Command: &e/hopper get'
+        # Plugin: https://www.spigotmc.org/resources/77717
+        upgradeablespawners:
+          spawners:
+            required: 18
+            title: '{req} Upgradeable Spawners'
+            description:
+              - '&7Have {req} upgradeable spawners in your land.'
+              - '&7Command: &e/spawner get'
+      attributes:
+        chunks:
+          description: '&7{value} claims'
+          value: 35
+        upkeep:
+          description: '&7{value}% upkeep cost'
+          value: 35
+        effects:
+          description: '&a+ Unlock effects: {value}'
+          value:
+            - JUMP:2
+            - SPEED:2
+            - FAST_DIGGING:2
+            - DOLPHINS_GRACE:2
+            - ABSORPTION
+            - NIGHT_VISION
+            - LUCK
+            - INCREASE_DAMAGE
+            - HEALTH_BOOST
+        effects_amount:
+          description: '&a+ Have {value} effects active at once'
+          value: 3
+      commands:
+        reached: [ ]
+        down: [ ]
+
+
+# You can disable sounds by setting them to ''
+sound:
+  # Played to each player of the land or nation on level up.
+  up: 'BLOCK_BELL_USE'
+  # Played to each player of the land or nation on level down.
+  down: 'BLOCK_ANVIL_DESTROY'

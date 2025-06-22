@@ -1,0 +1,240 @@
+debug: false
+config-files:
+  language: en_US
+  minecraft-locate-file:
+    enabled: true
+    generate-new-one: false
+    file: "zh_cn.json"
+
+paper-api:
+  save-item: true
+  skull: true
+  use-component:
+    menu-title: false
+    message: false
+    item: false
+
+cache:
+  load-delay: 7
+
+sell:
+  sell-method: Bukkit
+  item-format:
+    require-same-key: false
+    ignore-key:
+      - "lore"
+      - "damage"
+      - "enchants"
+      - "tool.damage-per-block"
+      - "nbt.string.CustomNBTKey"
+  sell-all:
+    ignore-items:
+      - "hideshop;;A"
+    hide-message: true
+  sell-stick:
+    cooldown: 5
+    hide-message: true
+    display-calculate-multiplier: true
+    click-type: RIGHT
+  max-amount: 128
+
+give-item:
+  give-method: BUKKIT
+  check-full: false
+
+menu:
+  cooldown:
+    click: -1
+    reopen: -1
+  ignore-click-outside: false
+  shop:
+    update: false
+    click-update: false
+  sell-all:
+    size: 54
+    title: "&fSell All &7- Esc to confirm sell!"
+    black-slots: []
+  bedrock:
+    enabled: true
+    check-method: FLOODGATE
+    not-auto-close: true
+    price-extra-line:
+      default: "&6Buy: {buy-price} &6| Sell: {sell-price}"
+      only-buy: "&6Buy: {buy-price}"
+      only-sell: "&6Sell: {sell-price}"
+    buy-or-sell:
+      title: "Select Amount: {item-name}"
+      buttons:
+        amount:
+          name: "Amount"
+          tip: "Type amount here!"
+    info:
+      title: "Product Info: {item-name} x{amount}"
+      buttons:
+        buy: "Buy"
+        sell: "Sell"
+        buy-more: "Select Amount"
+        sell-all: "Sell All"
+        back: "&cBack"
+  buy-more-menu:
+    default:
+      menu: buy-more
+      max-amount: 64
+    only-buy:
+      menu: buy-more-buy
+      max-amount: 64
+    only-sell:
+      menu: buy-more-sell
+      max-amount: 64
+  auto-open:
+    enabled: true
+    menu: main
+  click-event:
+    buy: "SHIFT_LEFT"
+    sell: "RIGHT"
+    buy-or-sell: "LEFT"
+    select-amount: "SHIFT_RIGHT;;SWAP_OFFHAND"
+    sell-all: "DROP"
+  click-event-actions:
+    buy-one-stack:
+      1:
+        type: buy
+        shop: "{shop}"
+        item: "{item}"
+        amount: 64
+
+use-times:
+  default-reset-mode: "NEVER"
+  default-reset-time: "00:00:00"
+  default-reset-time-format: "yyyy-MM-dd HH:mm:ss"
+  default-reset-value: 0
+
+math:
+  enabled: true
+  scale: 2
+
+log-transaction:
+  enabled: false
+  file: "log.txt"
+  format: "{player} | {shop} | {buy-or-sell} | {item-name}x{amount} | {price}"
+
+display-item:
+  calculate-amount: true
+  auto-set-first-product: true
+  add-lore:
+    - "@n "
+    - "@a&ePurchase: {buy-price}"
+    - "@b&eSell: {sell-price}"
+    - "@c&#FF7777Player Buy Stock: {buy-times-player}/{buy-limit-player}"
+    - "@d&#FF7777Server Buy Stock: {buy-times-server}/{buy-limit-server}"
+    - "@e&#FF7777Player Sell Limit: {sell-times-player}/{sell-limit-player}"
+    - "@f&#FF7777Server Sell Limit: {sell-times-server}/{sell-limit-server}"
+    - "@g "
+    - "@g&#ff3300cCan not buy more!"
+    - "@g&8Refresh Time: {buy-refresh-player}"
+    - "@i "
+    - "@i&#ff3300Sold Out!"
+    - "@i&8Refresh Time: {buy-refresh-server}"
+    - "@h "
+    - "@h&#ff3300Can not sell more!"
+    - "@h&8Refresh Time: {sell-refresh-player}"
+    - "@j"
+    - "@j&#ff3300Can not sell more for server!"
+    - "@j&8Refresh Time: {sell-refresh-server}"
+    - "@n "
+    - "@a{buy-click}-b"
+    - "@b{sell-click}-b"
+    - "@k&#FFFACDRight-Shift click to pick amount!-b"
+    - "@b&#FFFACDDrop (Q key) to sell all!-b"
+    - "@n&c&l:( Can not do this-i"
+    - "@a&cThis item can not be sold-i-m"
+    - "@b&cThis item can not be purchased-i-m"
+
+placeholder:
+  auto-settings:
+    add-conditional-in-all-price-amount:
+      enabled: false
+      buy-placeholder: buy
+      sell-placeholder: sell
+      black-dynamic-price: true
+      black-shops:
+        - "example"
+    add-status-in-dynamic-price-placeholder:
+      enabled: true
+    change-amount-in-all-price-placeholder:
+      enabled: false
+      replace-value: "%formatter_number_format_{amount}%"
+  compare:
+    up: "↑"
+    down: "↓"
+    same: "-"
+  status:
+    can-used-everywhere: false
+  math:
+    scale: 0
+  data:
+    can-used-in-amount: true
+  refresh:
+    format: "yyyy-MM-dd HH:mm:ss"
+    never: "Never"
+  next:
+    with-day-format: "{d}d {h}h {m}m {s}s"
+    without-day-format: "{h}h {m}m {s}s"
+    never: "Waiting for next refresh"
+  price:
+    split-symbol-any: ", "
+    split-symbol-all: ", "
+    replace-new-line-symbol: ", "
+    unknown: "Unknown"
+    unknown-price-type: "Unknown Price Type"
+    empty: "Price is empty!"
+  click:
+    enabled: false
+    buy: "&#FFFACDLeft-click to buy!"
+    sell: "&#FFFACDRight-click to sell!"
+    buy-with-no-sell: "&#FFFACDClick to buy!"
+    sell-with-no-buy: "&#FFFACDClick to sell!"
+    buy-max-limit-player: "&#ff3300You can not buy more!"
+    buy-max-limit-server: "&#ff3300SOLD OUT!"
+    sell-max-limit-player: "&#ff3300Can not sell more!"
+    sell-max-limit-server: "&#ff3300THIS ITEM CAN NOT BE SOLD!"
+    buy-price-not-enough: "&#ff3300Do not have enough money to buy!"
+    sell-price-not-enough: "&#ff3300Do not have enough item to sell!"
+    error: "&#ff3300Error!"
+    buy-condition-not-meet: "&#ff3300Not meet the buy condition!"
+    sell-condition-not-meet: "&#ff3300Not meet the sell condition!"
+  sell-stick:
+    infinite: "&cInfinite"
+
+database:
+  enabled: false
+  jdbc-url: "jdbc:mysql://localhost:3306/ultimateshop?useSSL=false&autoReconnect=true"
+  jdbc-class: "com.mysql.cj.jdbc.Driver"
+  properties:
+    user: root
+    password: 123456
+
+bungeecord-sync:
+  enabled: false
+
+prices:
+  example:
+    economy-plugin: Vault
+    amount: 200
+    placeholder: "{amount} Coins"
+  mmoitems-example:
+    hook-plugin: MMOItems
+    hook-item: AXE;;TEST_AXE
+    amount: 1
+    placeholder: "{amount} Mythic Axe"
+
+conditions:
+  products-key: "products-conditions"
+  buy-prices-key: "buy-prices-conditions"
+  sell-prices-key: "sell-prices-conditions"
+  display-item-key: "display-item-conditions"
+
+auto-save:
+  enabled: true
+  hide-message: false
+  period-tick: 6000

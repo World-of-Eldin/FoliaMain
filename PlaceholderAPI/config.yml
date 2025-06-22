@@ -1,0 +1,8 @@
+check_updates: true
+cloud_enabled: true
+cloud_sorting: "name"
+boolean:
+  "true": "yes"
+  "false": "no"
+date_format: MM/dd/yy HH:mm:ss
+debug: false
