@@ -1,6 +1,7 @@
 var Bukkit = org.bukkit.Bukkit;
 var Console = Bukkit.getConsoleSender();
 var ChatColor = org.bukkit.ChatColor;
+var Scheduler = Bukkit.getGlobalRegionScheduler();
 
 var serverMessageHeader = ChatColor.GOLD + "[" + ChatColor.GRAY + "Server" + ChatColor.GOLD + "] ";
 var swapMessageBase = serverMessageHeader + ChatColor.GRAY + "Rank swapped to " + ChatColor.RESET;
@@ -33,8 +34,7 @@ addCommand("rank", {
       switch (rank) {
         // Nobleman
         case "㐒 ":
-          var scheduler = Bukkit.getGlobalRegionScheduler();
-          scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+          Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "remove", 3));
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "add", 3, "㐓"));
           });
@@ -42,16 +42,14 @@ addCommand("rank", {
           break;
         // Noblewoman
         case "㐓 ":
-          var scheduler = Bukkit.getGlobalRegionScheduler();
-          scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+          Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "remove", 3));
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "add", 3, "㐒"));
           });
           sender.sendMessage(swapMessageBase + "㐒");
         // Baron
         case "㐟 ":
-          var scheduler = Bukkit.getGlobalRegionScheduler();
-          scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+          Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "remove", 4));
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "add", 4, "㐠"));
           });
@@ -59,8 +57,7 @@ addCommand("rank", {
           break;
         // Baroness
         case "㐠 ":
-          var scheduler = Bukkit.getGlobalRegionScheduler();
-          scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+          Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "remove", 4));
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "add", 4, "㐟"));
           });
@@ -68,8 +65,7 @@ addCommand("rank", {
           break;
         // Duke
         case "㐢 ":
-          var scheduler = Bukkit.getGlobalRegionScheduler();
-          scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+          Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "remove", 6));
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "add", 6, "㐣"));
           });
@@ -77,8 +73,7 @@ addCommand("rank", {
           break;
         // Duchess
         case "㐣 ":
-          var scheduler = Bukkit.getGlobalRegionScheduler();
-          scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+          Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "remove", 6));
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "add", 6, "㐢"));
           });
@@ -86,8 +81,7 @@ addCommand("rank", {
           break;
         // Prince
         case "㐤 ":
-          var scheduler = Bukkit.getGlobalRegionScheduler();
-          scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+          Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "remove", 7));
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "add", 7, "㐥"));
           });
@@ -95,8 +89,7 @@ addCommand("rank", {
           break;
         // Princess
         case "㐥 ":
-          var scheduler = Bukkit.getGlobalRegionScheduler();
-          scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+          Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "remove", 7));
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "add", 7, "㐤"));
           });
@@ -104,8 +97,7 @@ addCommand("rank", {
           break;
         // King
         case "㐦 ":
-          var scheduler = Bukkit.getGlobalRegionScheduler();
-          scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+          Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "remove", 8));
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "add", 8, "㐧"));
           });
@@ -113,8 +105,7 @@ addCommand("rank", {
           break;
         // Queen
         case "㐧 ":
-          var scheduler = Bukkit.getGlobalRegionScheduler();
-          scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+          Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "remove", 8));
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "add", 8, "㐦"));
           });
@@ -122,8 +113,7 @@ addCommand("rank", {
           break;
         // Emperor
         case "㐨 ":
-          var scheduler = Bukkit.getGlobalRegionScheduler();
-          scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+          Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "remove", 9));
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "add", 9, "㐩"));
           });
@@ -131,8 +121,7 @@ addCommand("rank", {
           break;
         // Empress
         case "㐩 ":
-          var scheduler = Bukkit.getGlobalRegionScheduler();
-          scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+          Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "remove", 9));
             Bukkit.dispatchCommand(Console, lpCmdBuilder(sender, "add", 9, "㐨"));
           });
