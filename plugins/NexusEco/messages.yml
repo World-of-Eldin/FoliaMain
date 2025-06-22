@@ -1,0 +1,188 @@
+# ───────────────────────────────────────────────
+# MESSAGE CONFIGURATION
+#
+# Here you can configure various messages for your plugin.
+# The messages support both legacy color codes (e.g. &a) and hex colors (e.g. <#FF5733>).
+#
+# For example, you can use the following formats:
+#   - Legacy Color: &aThis is green text.
+#   - Hex Color: <#FF5733>This is red text with a hex color.
+#
+# Action bar messages will not show the prefix.
+# You can leave the value empty to disable a message for either the action bar or the normal chat message.
+#
+# ───────────────────────────────────────────────
+
+# Prefix used for all messages. Leave it blank for no prefix
+prefix: "㔥 "
+
+general:
+  # Message shown when a player doesn't have required permissions
+  NO_PERMISSION: "&cYou don't have permission to do that."
+  # Action bar shown when a player doesn't have required permissions
+  NO_PERMISSION_ACTION_BAR: ""
+
+  # Message shown when a player uses an invalid amount
+  INVALID_AMOUNT: "&cInvalid amount. Please enter a valid number."
+  # Action bar shown when a player uses an invalid amount
+  INVALID_AMOUNT_ACTION_BAR: ""
+
+
+balance:
+  # Message shown when a player checks their balance
+  CHECK: "&8Your balance is &f㒖&7{balance} Tradebars"
+  # Message shown when a player checks another player's balance
+  CHECK_OTHER: "&7{player}'s&8 balance is &f㒖&7{balance} Tradebars"
+  # Action bar shown when a player checks their balance
+  CHECK_ACTION_BAR: ""
+  # Action bar shown when a player checks another player's balance
+  CHECK_OTHER_ACTION_BAR: ""
+
+player:
+  # Message shown when a player is not found
+  NOT_FOUND: "&cPlayer &7{player} &cnot found"
+  # Action bar shown when a player is not found
+  NOT_FOUND_ACTION_BAR: ""
+
+economy:
+  # Help message for the economy command
+  HELP: "&8/eco <help|set|add|remove|reset> <player> <amount>"
+  # Action bar shown when a player uses the help command
+  HELP_ACTION_BAR: ""
+  # Unknown command message for the economy command
+  UNKNOWN_COMMAND: "&cUnknown command. Use /eco help for more information."
+  # Action bar shown when a player uses an unknown command
+  UNKNOWN_COMMAND_ACTION_BAR: ""
+
+  # Message shown when a player doesn't use eco set correctly
+  SET_USAGE: "&8/eco set <player> <amount>"
+  # Action bar shown when a player doesn't use eco set correctly
+  SET_USAGE_ACTION_BAR: ""
+  # Message shown when a player successfully sets a player's balance
+  SET_SUCCESS: "&7{player}'s&8 balance has been set to &f㒖&7{amount} Tradebars"
+  # Action bar shown when a player successfully sets a player's balance
+  SET_SUCCESS_ACTION_BAR: ""
+
+  # Message shown when a player doeesn't use eco add correctly
+  ADD_USAGE: "&8/eco add <player> <amount>"
+  # Action bar shown when a player doesn't use eco add correctly
+  ADD_USAGE_ACTION_BAR: ""
+  # Message shown when a player successfully adds to a player's balance
+  ADD_SUCCESS: "&7{player}&8 has been given &f㒖&7{amount} Tradebars"
+  # Action bar shown when a player successfully adds to a player's balance
+  ADD_SUCCESS_ACTION_BAR: ""
+
+  # Message shown when a player doesn't use eco remove correctly
+  REMOVE_USAGE: "&8/eco remove <player> <amount>"
+  # Action bar shown when a player doesn't use eco remove correctly
+  REMOVE_USAGE_ACTION_BAR: ""
+  # Message shown when a player successfully removes from a player's balance
+  REMOVE_SUCCESS: "&7{player}&8 has had &f㒖&7{amount} Tradebars &8removed"
+  # Action bar shown when a player successfully removes from a player's balance
+  REMOVE_SUCCESS_ACTION_BAR: ""
+
+  # Message shown when a player doesn't use eco reset correctly
+  RESET_USAGE: "&8/eco reset <player>"
+  # Action bar shown when a player doesn't use eco reset correctly
+  RESET_USAGE_ACTION_BAR: ""
+  # Message shown when a player successfully resets a player's balance
+  RESET_SUCCESS: "&7{player}'s&8 balance has been reset"
+  # Action bar shown when a player successfully resets a player's balance
+  RESET_SUCCESS_ACTION_BAR: ""
+
+pay:
+  # Message shown when a player doesn't use eco pay correctly
+  HELP: "&8/pay <player> <amount>"
+  # Action bar shown when a player doesn't use eco pay correctly
+  HELP_ACTION_BAR: ""
+
+  # Message shown when a player doesn't have enough money to pay
+  NOT_ENOUGH: "&cYou don't have enough money to &7{player} &f㒖&7{amount} Tradebars"
+  # Action bar shown when a player doesn't have enough money to pay
+  NOT_ENOUGH_ACTION_BAR: ""
+
+  # Message shown when a player successfully pays another player
+  PAY_SUCCESS: "&8You have payed &7{player} &f㒖&7{amount} Tradebars"
+  # Action bar shown when a player successfully pays another player
+  PAY_SUCCESS_ACTION_BAR: ""
+  # Message shown when a player recieives a payment
+  RECEIVED: "&7{player}&8 has paid you &f㒖&7{amount} Tradebars"
+  # Action bar shown when a player recieives a payment
+  RECEIVED_ACTION_BAR: ""
+
+  # Message shown when a player tries to pay themselves
+  SELF_PAY: "&cYou cannot pay yourself"
+  # Action bar shown when a player tries to pay themselves
+  SELF_PAY_ACTION_BAR: ""
+  
+  # Message shown when a player tries to pay below the minimum amount
+  AMOUNT_TOO_SMALL: "&cThe amount is too small. Minimum: &f㒖&7{min} Tradebars"
+  # Action bar shown when a player tries to pay below the minimum amount
+  AMOUNT_TOO_SMALL_ACTION_BAR: ""
+  
+  # Message shown when a player tries to pay above the maximum amount
+  AMOUNT_TOO_LARGE: "&cThe amount is too large. Maximum: &f㒖&7{max} Tradebars"
+  # Action bar shown when a player tries to pay above the maximum amount
+  AMOUNT_TOO_LARGE_ACTION_BAR: ""
+  
+  # Message shown when a player tries to pay an offline player and offline payments are disabled
+  OFFLINE_PAYMENT_DISABLED: "&7{player}&c is offline, and offline payments are disabled"
+  # Action bar shown when a player tries to pay an offline player and offline payments are disabled
+  OFFLINE_PAYMENT_DISABLED_ACTION_BAR: ""
+
+  # Message shown when a player tries to pay a player, but they have disabled payments
+  PAYMENT_DISABLED: "&7{target} &8has their payments disabled"
+  # Action bar shown when a player tries to pay a player, but they have disabled payments
+  PAYMENT_DISABLED_ACTION_BAR: ""
+
+nexuseco:
+  # Message shown when a player doesn't use any parameters
+  HELP: "&8/nexuseco <reload|version>"
+  # Action bar shown when a player doesn't use any parameters
+  HELP_ACTION_BAR: ""
+
+  # Message shown when a player uses the version command
+  VERSION: "&8Version: &7{version}"
+  # Action bar shown when a player uses the version command
+  VERSION_ACTION_BAR: ""
+
+  # Message shown when a player uses the reload command
+  RELOAD: "&8Successfully reloaded the configuration in &7{time}ms"
+  # Action bar shown when a player uses the reload command
+  RELOAD_ACTION_BAR: ""
+  # Message shown when reloading fails
+  RELOAD_FAIL: "&cFailed to reload the configuration"
+  # Action bar shown when reloading fails
+  RELOAD_FAIL_ACTION_BAR: ""
+
+  # Message shown when a player uses the migrate command incorrectly
+  MIGRATE_USAGE: "&8/nexuseco migrate <sourcePlugin> [--dry-run] [--force]"
+  # Action bar shown when a player uses the migrate command incorrectly
+  MIGRATE_USAGE_ACTION_BAR: ""
+  # Message shown when a player enters an invalid source plugin
+  MIGRATE_INVALID: "&cInvalid migration source plugin: &7{source}"
+  # Action bar shown when a player enters an invalid source plugin
+  MIGRATE_INVALID_ACTION_BAR: ""
+  # Message shown when a player starts the migration process
+  MIGRATE_START: "&8Starting migration from &7{source} &8with dry run: &7{dryRun}, &8and force: &7{force}"
+  # Action bar shown when a player starts the migration process
+  MIGRATE_START_ACTION_BAR: ""
+  # Message shown when data is migrated successfully
+  MIGRATE_SUCCESS: "&8Successfully migrated &7{count} &8entries"
+  # Action bar shown when data is migrated successfully
+  MIGRATE_SUCCESS_ACTION_BAR: ""
+  # Message shown when the source plugin isn't found
+  MIGRATE_NOT_FOUND: "&8Plugin &7{source} &8is not found!"
+  # Action bar shown when the source plugin isn't found
+  MIGRATE_NOT_FOUND_ACTION_BAR: ""
+
+
+pay_toggle:
+  # Message shown when a player successfully uses the pay toggle command
+  SUCCESS_RECEIVING: "&8You will now receive payments"
+  # Action bar shown when a player successfully uses the pay toggle command
+  SUCCESS_RECEIVING_ACTION_BAR: ""
+  # Message shown when a player successfully uses the pay toggle command
+  SUCCESS_NOT_RECEIVING: "&8You will no longer receive payments"
+  # Action bar shown when a player successfully uses the pay toggle command
+  SUCCESS_NOT_RECEIVING_ACTION_BAR: ""

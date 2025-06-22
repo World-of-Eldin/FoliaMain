@@ -1,0 +1,64 @@
+# ───────────────────────────────────────────────
+# BALTOP UI CONFIGURATION
+#
+# Here you can configure various aspects of the baltop UI for your plugin.
+# The configuration allows customization of the layout, buttons, and pagination.
+#
+# For example, you can change:
+#   - The title of the inventory.
+#   - The items per page.
+#   - The design of the navigation buttons.
+#   - Custom placeholders for player balance information.
+#
+# ───────────────────────────────────────────────
+
+# The title of the baltop inventory
+title: "&8Balance Top {page}/{max-page}"
+
+# The size of the inventory (must be a multiple of 9)
+gui-size: 54
+
+items:
+  # The item used for the Previous Page button
+  previous-page:
+    material: ARROW
+    name: "&aPrevious Page"
+    lore:
+      - "&7Click to go to the previous page"
+    slot: 45
+    action: "previous"
+
+  # The item used for the Next Page button
+  next-page:
+    material: SPECTRAL_ARROW
+    name: "&aNext Page"
+    lore:
+      - "&7Click to go to the next page"
+    slot: 53
+    action: "next"
+
+  # The item used for the Close button
+  close:
+    material: BARRIER
+    name: "&cClose"
+    lore:
+      - "&7Click to close the inventory"
+    slot: 49
+    action: "close"
+
+  # The item used for the Leaderboard Entry (Baltop player)
+  leaderboard-entry:
+    material: PLAYER_HEAD
+    name: "&a{player}"
+    lore:
+      - "&7Rank: &f{rank}"             # Player's rank
+      - "&7Balance: &f${balance}"      # Player's balance
+      - "&7Click to view profile"     # Action when clicked
+    slot-range: "0-44" # The range of slots for the leaderboard entries
+
+# The item used for the "Filler" slots, the items will override these.
+filler:
+  material: GRAY_STAINED_GLASS_PANE
+  name: " "
+  slot-range: "45-53"
+  action: "none"
