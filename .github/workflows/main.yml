@@ -1,1 +1,41 @@
-
+name: Deploy Minecraft Plugins
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'plugins/**'
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+      - name: 🔄 Substitute secrets in all config files
+        env:
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASS: ${{ secrets.DB_PASS }}
+          DB_JDBC: ${{ secrets.DB_JDBC }}
+        run: |
+          # Find all config files and substitute variables
+          find ./plugins -type f \( -name "*.yml" -o -name "*.yaml" -o -name "*.properties" -o -name "*.txt" -o -name "*.conf" -o -name "*.cfg" \) | while read file; do
+            echo "Processing: $file"
+            # Create a temporary file with substitutions
+            envsubst < "$file" > "$file.tmp"
+            # Only replace if the temp file was created successfully
+            if [ -f "$file.tmp" ]; then
+              mv "$file.tmp" "$file"
+            fi
+          done
+      - name: 📂 FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          port: ${{ secrets.FTP_PORT }}
+          protocol: ftp
+          local-dir: ./plugins/
+          server-dir: ./plugins/
