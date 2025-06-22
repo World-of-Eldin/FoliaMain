@@ -1,5 +1,0 @@
-+ Changed: Set combat tag also during war
-
---> GUI file (en-US.yml): 
-+ Item: gui.main.items.default
-+ Item: gui.main.items.default.map
