@@ -3,7 +3,7 @@ registerEvent("org.bukkit.event.player.PlayerInteractEvent", {
         var ItemStack = org.bukkit.inventory.ItemStack; //The Bukkit ItemStack class
         var Material = org.bukkit.Material; //The Bukkit Material class
         var player = event.getPlayer();
-        if(event.getClickedBlock() != null) {
+        if(event.getClickedBlock() != null && player.hasPermission("eldin.xp.bottle")) {
             if(event.getClickedBlock().type.toString() === "ENCHANTING_TABLE" && event.getAction().toString() === "RIGHT_CLICK_BLOCK") { //Check that block is enchanting table and right click is used
                 if(player.isSneaking() && player.getInventory().getItemInMainHand().type.toString() === "GLASS_BOTTLE") { //Check that player is crouching and holding a glass bottle
                     if(event.getHand().toString() === "HAND" && player.getLevel() > 0) { //Ensure that the logic does not run twice because of the off hand and ensure that the player is at least level 1
