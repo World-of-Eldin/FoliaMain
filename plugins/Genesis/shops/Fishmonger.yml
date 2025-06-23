@@ -1,0 +1,102 @@
+ShopName: Fishmonger
+signs:
+  text: '[Fishmonger]'
+  NeedsPermissionToCreateSign: true
+DisplayName: '&8Spawn Fishmonger'
+shop:
+  Cooked_Cod:
+    MenuItem:
+      - 'type:cooked_cod'
+      - 'amount:1'
+      - 'lore1:&6Buy Price:&7 8 Trade Bars'
+      - 'lore2:&6Sell Price:&7 4 Trade Bars'
+      - 'lore4:&6Left Click: &7buy 1'
+      - 'lore5:&6Shift Left Click: &7buy 16'
+      - 'lore7:&6Right Click: &7sell 1'
+      - 'lore8:&6Shift Right Click: &7sell 16'
+      - 'lore9:&6Middle Click: &7sell all'
+    RewardType: item
+    PriceType: money
+    Price: 8
+    Reward:
+      - 'type:cooked_cod'
+      - 'amount:1'
+    Message: '&6[&7BossShop&6] You''ve purchased &7%reward% &6for &7%price%'
+    RewardType_shift_left: item
+    PriceType_shift_left: money
+    Price_shift_left: 128
+    Reward_shift_left:
+      - 'type:cooked_cod'
+      - 'amount:16'
+    Message_shift_left: '&6[&7BossShop&6] You''ve purchased &7%reward_shift_left% &6for &7%price_shift_left%'
+    RewardType_right: command
+    PriceType_right: item
+    Price_right:
+      - 'type:cooked_cod'
+      - 'amount:1'
+    Reward_right:
+    - eco give %player% 4
+    Message_right: '&6[&7BossShop&6] You''ve sold &7%price_right% &6for &74 Trade Bars'
+    RewardType_shift_right: command
+    PriceType_shift_right: item
+    Price_shift_right:
+      - 'type:cooked_cod'
+      - 'amount:16'
+    Reward_shift_right:
+    - eco give %player% 64
+    Message_shift_right: '&6[&7BossShop&6] You''ve sold &7%price_shift_right% &6for &764 Trade Bars'
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - 'type:cooked_cod'
+    Reward_middle: 4
+    Message_middle: '&6[&7BossShop&6] You''ve sold &7%price_middle% &6for &7%reward_middle%'
+    InventoryLocation: 22
+  Cooked_Salmon:
+    MenuItem:
+      - 'type:cooked_salmon'
+      - 'amount:1'
+      - 'lore1:&6Buy Price:&7 11 Trade Bars'
+      - 'lore2:&6Sell Price:&7 5.5 Trade Bars'
+      - 'lore4:&6Left Click: &7buy 1'
+      - 'lore5:&6Shift Left Click: &7buy 16'
+      - 'lore7:&6Right Click: &7sell 1'
+      - 'lore8:&6Shift Right Click: &7sell 16'
+      - 'lore9:&6Middle Click: &7sell all'
+    RewardType: item
+    PriceType: money
+    Price: 11
+    Reward:
+      - 'type:cooked_salmon'
+      - 'amount:1'
+    Message: '&6[&7BossShop&6] You''ve purchased &7%reward% &6for &7%price%'
+    RewardType_shift_left: item
+    PriceType_shift_left: money
+    Price_shift_left: 176
+    Reward_shift_left:
+      - 'type:cooked_salmon'
+      - 'amount:16'
+    Message_shift_left: '&6[&7BossShop&6] You''ve purchased &7%reward_shift_left% &6for &7%price_shift_left%'
+    RewardType_right: command
+    PriceType_right: item
+    Price_right:
+      - 'type:cooked_salmon'
+      - 'amount:1'
+    Reward_right:
+    - eco give %player% 5.5
+    Message_right: '&6[&7BossShop&6] You''ve sold &7%price_right% &6for &75.5 Trade Bars'
+    RewardType_shift_right: command
+    PriceType_shift_right: item
+    Price_shift_right:
+      - 'type:cooked_salmon'
+      - 'amount:16'
+    Reward_shift_right:
+    - eco give %player% 88
+    Message_shift_right: '&6[&7BossShop&6] You''ve sold &7%price_shift_right% &6for &788 Trade Bars'
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - 'type:cooked_salmon'
+    Reward_middle: 5.5
+    Message_middle: '&6[&7BossShop&6] You''ve sold &7%price_middle% &6for &7%reward_middle%'
+    InventoryLocation: 24

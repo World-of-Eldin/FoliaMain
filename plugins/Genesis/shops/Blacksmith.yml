@@ -1,0 +1,191 @@
+ShopName: Blacksmith
+DisplayName: '&8Spawn Blacksmith'
+shop:
+  Iron_Ingot:
+    MenuItem:
+      - 'type:Iron_Ingot'
+      - 'amount:1'
+      - 'lore1:&6Buy Price:&7 8 Trade Bars'
+      - 'lore2:&6Sell Price:&7 4 Trade Bars'
+      - 'lore4:&6Left Click: &7buy 1'
+      - 'lore5:&6Shift Left Click: &7buy 16'
+      - 'lore7:&6Right Click: &7sell 1'
+      - 'lore8:&6Shift Right Click: &7sell 16'
+      - 'lore9:&6Middle Click: &7sell all'
+    RewardType: item
+    PriceType: money
+    Price: 8
+    Reward:
+      - 'type:Iron_Ingot'
+      - 'amount:1'
+    Message: '&6[&7BossShop&6] You''ve purchased &7%reward% &6for &7%price%'
+    RewardType_shift_left: item
+    PriceType_shift_left: money
+    Price_shift_left: 128
+    Reward_shift_left:
+      - 'type:Iron_Ingot'
+      - 'amount:16'
+    Message_shift_left: '&6[&7BossShop&6] You''ve purchased &7%reward_shift_left% &6for &7%price_shift_left%'
+    RewardType_right: command
+    PriceType_right: item
+    Price_right:
+      - 'type:Iron_ingot'
+      - 'amount:1'
+    Reward_right:
+    - eco give %player% 4
+    Message_right: '&6[&7BossShop&6] You''ve sold &7%price_right% &6for &74 Trade Bars'
+    RewardType_shift_right: command
+    PriceType_shift_right: item
+    Price_shift_right:
+      - 'type:Iron_Ingot'
+      - 'amount:16'
+    Reward_shift_right:
+    - eco give %player% 64
+    Message_shift_right: '&6[&7BossShop&6] You''ve sold &7%price_shift_right% &6for &764 Trade Bars'
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - 'type:Iron_Ingot'
+    Reward_middle: 4
+    Message_middle: '&6[&7BossShop&6] You''ve sold &7%price_middle% &6for &7%reward_middle%'
+    InventoryLocation: 23
+  Iron_Block:
+    MenuItem:
+      - 'type:Iron_Block'
+      - 'amount:1'
+      - 'lore1:&6Buy Price:&7 72 Trade Bars'
+      - 'lore2:&6Sell Price:&7 36 Trade Bars'
+      - 'lore4:&6Left Click: &7buy 1'
+      - 'lore5:&6Shift Left Click: &7buy 16'
+      - 'lore7:&6Right Click: &7sell 1'
+      - 'lore8:&6Shift Right Click: &7sell 16'
+      - 'lore9:&6Middle Click: &7sell all'
+    RewardType: item
+    PriceType: money
+    Price: 72
+    Reward:
+      - 'type:Iron_block'
+      - 'amount:1'
+    Message: '&6[&7BossShop&6] You''ve purchased &7%reward% &6for &7%price%'
+    RewardType_shift_left: item
+    PriceType_shift_left: money
+    Price_shift_left: 648
+    Reward_shift_left:
+      - 'type:Iron_block'
+      - 'amount:16'
+    Message_shift_left: '&6[&7BossShop&6] You''ve purchased &7%reward_shift_left% &6for &7%price_shift_left%'
+    RewardType_right: command
+    PriceType_right: item
+    Price_right:
+      - 'type:Iron_block'
+      - 'amount:1'
+    Reward_right:
+    - eco give %player% 36
+    Message_right: '&6[&7BossShop&6] You''ve sold &7%price_right% &6for &772 Trade Bars'
+    RewardType_shift_right: command
+    PriceType_shift_right: item
+    Price_shift_right:
+      - 'type:Iron_block'
+      - 'amount:16'
+    Reward_shift_right:
+    - eco give %player% 576
+    Message_shift_right: '&6[&7BossShop&6] You''ve sold &7%price_shift_right% &6for &71,152 Trade Bars'
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - 'type:Iron_block'
+    Reward_middle: 36
+    Message_middle: '&6[&7BossShop&6] You''ve sold &7%price_middle% &6for &7%reward_middle%'
+    InventoryLocation: 32
+  Coal:
+    MenuItem:
+      - 'type:Coal'
+      - 'amount:1'
+      - 'lore1:&6Buy Price:&7 1 Trade Bars'
+      - 'lore2:&6Sell Price:&7 0.5 Trade Bars'
+      - 'lore4:&6Left Click: &7buy 1'
+      - 'lore5:&6Shift Left Click: &7buy 16'
+      - 'lore7:&6Right Click: &7sell 1'
+      - 'lore8:&6Shift Right Click: &7sell 16'
+      - 'lore9:&6Middle Click: &7sell all'
+    RewardType: item
+    PriceType: money
+    Price: 1
+    Reward:
+      - 'type:Coal'
+      - 'amount:1'
+    Message: '&6[&7BossShop&6] You''ve purchased &7%reward% &6for &7%price%'
+    RewardType_shift_left: item
+    PriceType_shift_left: money
+    Price_shift_left: 16
+    Reward_shift_left:
+      - 'type:Coal'
+      - 'amount:16'
+    Message_shift_left: '&6[&7BossShop&6] You''ve purchased &7%reward_shift_left% &6for &7%price_shift_left%'
+    RewardType_right: money
+    PriceType_right: item
+    Price_right:
+      - 'type:Coal'
+      - 'amount:1'
+    Reward_right: 0.5
+    Message_right: '&6[&7BossShop&6] You''ve sold &7%price_right% &6for &7%reward_right%'
+    RewardType_shift_right: money
+    PriceType_shift_right: item
+    Price_shift_right:
+      - 'type:Coal'
+      - 'amount:16'
+    Reward_shift_right: 8
+    Message_shift_right: '&6[&7BossShop&6] You''ve sold &7%price_shift_right% &6for &7%reward_shift_right%'
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - 'type:Coal'
+    Reward_middle: 0.5
+    Message_middle: '&6[&7BossShop&6] You''ve sold &7%price_middle% &6for &7%reward_middle%'
+    InventoryLocation: 22
+  Coal_Block:
+    MenuItem:
+      - 'type:Coal_Block'
+      - 'amount:1'
+      - 'lore1:&6Buy Price:&7 9 Trade Bars'
+      - 'lore2:&6Sell Price:&7 4.5 Trade Bars'
+      - 'lore4:&6Left Click: &7buy 1'
+      - 'lore5:&6Shift Left Click: &7buy 16'
+      - 'lore7:&6Right Click: &7sell 1'
+      - 'lore8:&6Shift Right Click: &7sell 16'
+      - 'lore9:&6Middle Click: &7sell all'
+    RewardType: item
+    PriceType: money
+    Price: 9
+    Reward:
+      - 'type:Coal_Block'
+      - 'amount:1'
+    Message: '&6[&7BossShop&6] You''ve purchased &7%reward% &6for &7%price%'
+    RewardType_shift_left: item
+    PriceType_shift_left: money
+    Price_shift_left: 144
+    Reward_shift_left:
+      - 'type:Coal_Block'
+      - 'amount:16'
+    Message_shift_left: '&6[&7BossShop&6] You''ve purchased &7%reward_shift_left% &6for &7%price_shift_left%'
+    RewardType_right: money
+    PriceType_right: item
+    Price_right:
+      - 'type:Coal_Block'
+      - 'amount:1'
+    Reward_right: 4.5
+    Message_right: '&6[&7BossShop&6] You''ve sold &7%price_right% &6for &7%reward_right%'
+    RewardType_shift_right: money
+    PriceType_shift_right: item
+    Price_shift_right:
+      - 'type:Coal_Block'
+      - 'amount:16'
+    Reward_shift_right: 72
+    Message_shift_right: '&6[&7BossShop&6] You''ve sold &7%price_shift_right% &6for &7%reward_shift_right%'
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - 'type:Coal_Block'
+    Reward_middle: 4.5
+    Message_middle: '&6[&7BossShop&6] You''ve sold &7%price_middle% &6for &7%reward_middle%'
+    InventoryLocation: 31
