@@ -21,9 +21,12 @@ addCommand(
         DiskApi.setVar("CalendarData", "AgeName", args[1], true);
         DiskApi.saveFile("CalendarData", true, true);
         sender.sendMessage(
-          serverMessageHeader + "Age name has been updated to " + args[1]
+          serverMessageHeader +
+            "Age name has been updated to " +
+            ChatColor.GRAY +
+            args[1]
         );
-      } else if (args.length > 0 && args[0] === "reset") {
+      } else if (args.length > 0 && args[0] === "setFullTime") {
         if (!args[1] && isNaN(args[1])) {
           sender.sendMessage(
             serverMessageHeader + "A valid integer must be specified."
@@ -33,18 +36,22 @@ addCommand(
 
         Server.getWorld("world").setFullTime(args[1]);
         sender.sendMessage(
-          serverMessageHeader + "World time has been set to " + args[1]
+          serverMessageHeader +
+            "World time has been set to " +
+            ChatColor.GRAY +
+            args[1]
         );
       } else {
         sender.sendMessage(
           serverMessageHeader +
-            "Current fulltime is" +
+            "Current fulltime is " +
+            ChatColor.GRAY +
             Server.getWorld("world").getFullTime()
         );
       }
     },
     onTabComplete: function () {
-      return toJavaList(["setAge, setFullTime"]);
+      return toJavaList(["setAge", "setFullTime"]);
     },
   },
   "eldin.staff"
