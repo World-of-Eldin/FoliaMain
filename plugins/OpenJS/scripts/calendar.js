@@ -21,7 +21,10 @@ addCommand(
         DiskApi.setVar("CalendarData", "AgeName", args[1], true);
         DiskApi.saveFile("CalendarData", true, true);
         sender.sendMessage(
-          serverMessageHeader + "Age name has been updated to " + args[1]
+          serverMessageHeader +
+            "Age name has been updated to " +
+            ChatColor.GRAY +
+            args[1]
         );
       } else if (args.length > 0 && args[0] === "setFullTime") {
         if (!args[1] && isNaN(args[1])) {
