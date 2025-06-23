@@ -81,13 +81,21 @@ registerEvent("org.bukkit.event.player.PlayerInteractEvent", {
         }
       }
 
-      playerInventory.setItemInMainHand(
-        playerInventory
-          .getItemInMainHand()
-          .setAmount(
-            playerInventory.getItemInMainHand().getAmount() - transactionAmount
-          )
-      );
+      //Check if item in hand is correct, and then remove the transaction amount
+      if (
+        itemInHand === "COBBLESTONE" ||
+        itemInHand === "GRAVEL" ||
+        itemInHand.endsWith("CONCRETE")
+      ) {
+        playerInventory.setItemInMainHand(
+          playerInventory
+            .getItemInMainHand()
+            .setAmount(
+              playerInventory.getItemInMainHand().getAmount() -
+                transactionAmount
+            )
+        );
+      }
     }
   },
 });
