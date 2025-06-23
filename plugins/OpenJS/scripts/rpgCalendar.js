@@ -42,7 +42,8 @@ registerSchedule(
         var dayOfMonth = (currentDay % 30) + 1;
         var monthIndex = Math.floor(currentDay / 30) % 12;
         var years = Math.floor(currentDay / 360);
-        var yearsMessage = " years of the age of Ruins have passed";
+        var age = DiskApi.getVar("CalendarData", "AgeName", "Ruins", true);
+        var yearsMessage = " years of the age of " + age + " have passed";
 
         if (years === 1) {
           yearsMessage = " year of the age of Ruins has passed";
