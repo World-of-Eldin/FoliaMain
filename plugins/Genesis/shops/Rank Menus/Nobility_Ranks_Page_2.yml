@@ -1,0 +1,232 @@
+ShopName: Nobility_Ranks_Page_2
+DisplayName: '&f㒘㒘㒤'
+shop:
+  UI_Prince_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Prince Rank
+      - 'lore2:&750,000 Tile Sized City'
+    InventoryLocation: 1
+  UI_Prince_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Prince Rank
+      - 'lore2:&750,000 Tile Sized City'
+    InventoryLocation: 2
+  UI_Prince_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6
+      - 'CustomModelData:10183'
+    InventoryLocation: 3
+  UI_Prince_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Prince Rank
+    Condition:
+    - type:permission
+    - match:rank.Prince
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐤 "
+    PriceType: nothing
+    InventoryLocation: 9
+  UI_Prince_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 9
+  UI_Princess_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Princess Rank
+      - 'lore2:&750,000 Tile Sized City'
+    InventoryLocation: 10
+  UI_Princess_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Princess Rank
+      - 'lore2:&750,000 Tile Sized City'
+    InventoryLocation: 11
+  UI_Princess_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6
+      - 'CustomModelData:10184'
+    InventoryLocation: 12
+  UI_Princess_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Princess Rank
+    Condition:
+    - type:permission
+    - match:rank.Princess
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐥 "
+    PriceType: nothing
+    InventoryLocation: 18
+  UI_Princess_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 18
+  UI_King_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6King Rank
+      - 'lore2:&780,000 Tile Sized City'
+    InventoryLocation: 19
+  UI_King_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6King Rank
+      - 'lore2:&780,000 Tile Sized City'
+    InventoryLocation: 20
+  UI_King_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6
+      - 'CustomModelData:10185'
+    InventoryLocation: 21
+  UI_King_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select King Rank
+    Condition:
+    - type:permission
+    - match:rank.King
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐦 "
+    PriceType: nothing
+    InventoryLocation: 27
+  UI_King_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 27
+  UI_Queen_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Queen Rank
+      - 'lore2:&780,000 Tile Sized City'
+    InventoryLocation: 28
+  UI_Queen_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Queen Rank
+      - 'lore2:&780,000 Tile Sized City'
+    InventoryLocation: 29
+  UI_Queen_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6
+      - 'CustomModelData:10186'
+    InventoryLocation: 30
+  UI_Queen_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Queen Rank
+    Condition:
+    - type:permission
+    - match:rank.Queen
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐧 "
+    PriceType: nothing
+    InventoryLocation: 36
+  UI_Queen_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 36
+  UI_Emperor_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Emperor Rank
+      - 'lore2:&7125,000 Tile Sized City'
+    InventoryLocation: 37
+  UI_Emperor_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Emperor Rank
+      - 'lore2:&7125,000 Tile Sized City'
+    InventoryLocation: 38
+  UI_Emperor_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6
+      - 'CustomModelData:10187'
+    InventoryLocation: 39
+  UI_Emperor_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Emperor Rank
+    Condition:
+    - type:permission
+    - match:rank.Emperor
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐨 "
+    PriceType: nothing
+    InventoryLocation: 45
+  UI_Emperor_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 45
+  UI_Navigation_1:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10236
+      - name:&6Previous Page
+    RewardType: shop
+    Reward: Nobility_Ranks_Page_1
+    InventoryLocation: 49
+  UI_Navigation_5:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10383
+      - name:&6Return to Rank Selection menu
+    RewardType: shop
+    Reward: Ranks
+    InventoryLocation: 50
+  UI_Navigation_9:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10237
+      - name:&6Next Page
+    RewardType: shop
+    Reward: Nobility_Ranks_Page_3
+    InventoryLocation: 51

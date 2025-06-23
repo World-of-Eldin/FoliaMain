@@ -1,0 +1,227 @@
+ShopName: End_Ranks_Page_1
+DisplayName: '&f㒘㒘㒢'
+shop:
+  UI_Acolyte_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Acolyte Rank
+      - 'lore2:&7100 End Tiles'
+    InventoryLocation: 1
+  UI_Acolyte_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Acolyte Rank
+      - 'lore2:&7100 End Tiles'
+    InventoryLocation: 2
+  UI_Acolyte_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6
+      - 'CustomModelData:10170'
+    InventoryLocation: 3
+  UI_Acolyte_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Acolyte Rank
+    Condition:
+    - type:permission
+    - match:rank.Acolyte
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐳 "
+    PriceType: nothing
+    InventoryLocation: 9
+  UI_Acolyte_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 9
+  UI_Shade_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Shade Rank
+      - 'lore2:&7400 End Tiles'
+    InventoryLocation: 10
+  UI_Shade_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Shade Rank
+      - 'lore2:&7400 End Tiles'
+    InventoryLocation: 11
+  UI_Shade_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6
+      - 'CustomModelData:10171'
+    InventoryLocation: 12
+  UI_Shade_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Shade Rank
+    Condition:
+    - type:permission
+    - match:rank.Shade
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐴 "
+    PriceType: nothing
+    InventoryLocation: 18
+  UI_Shade_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 18
+  UI_Cultist_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Cultist Rank
+      - 'lore2:&7800 End Tiles'
+    InventoryLocation: 19
+  UI_Cultist_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Cultist Rank
+      - 'lore2:&7800 End Tiles'
+    InventoryLocation: 20
+  UI_Cultist_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6
+      - 'CustomModelData:10172'
+    InventoryLocation: 21
+  UI_Cultist_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Cultist Rank
+    Condition:
+    - type:permission
+    - match:rank.Cultist
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐵 "
+    PriceType: nothing
+    InventoryLocation: 27
+  UI_Cultist_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 27
+  UI_Zealot_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Zealot Rank
+      - 'lore2:&71,600 End Tiles'
+    InventoryLocation: 28
+  UI_Zealot_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Zealot Rank
+      - 'lore2:&71,600 End Tiles'
+    InventoryLocation: 29
+  UI_Zealot_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6
+      - 'CustomModelData:10173'
+    InventoryLocation: 30
+  UI_Zealot_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Zealot Rank
+    Condition:
+    - type:permission
+    - match:rank.Zealot
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐶 "
+    PriceType: nothing
+    InventoryLocation: 36
+  UI_Zealot_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 36
+  UI_Dragon_Priest_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Dragon Priest Rank
+      - 'lore2:&73,600 End Tiles'
+    InventoryLocation: 37
+  UI_Dragon_Priest_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Dragon Priest Rank
+      - 'lore2:&73,600 End Tiles'
+    InventoryLocation: 38
+  UI_Dragon_Priest_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Dragon Priest Rank
+      - 'lore2:&73,600 End Tiles'
+      - 'CustomModelData:10174'
+    InventoryLocation: 39
+  UI_Dragon_Priest_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Dragon Priest Rank
+    Condition:
+    - type:permission
+    - match:rank.Dragon-Priest
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐷 "
+    PriceType: nothing
+    InventoryLocation: 45
+  UI_Dragon_Priest_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 45
+  UI_Navigation_5:
+    MenuItem:
+      - type:PAPER
+      - amount:1
+      - name:&6Return to Rank Selection menu
+      - CustomModelData:10383
+    RewardType: shop
+    Reward: Ranks
+    InventoryLocation: 50
+  UI_Navigation_9:
+    MenuItem:
+      - type:PAPER
+      - amount:1
+      - name:&6Next Page
+      - 'CustomModelData:10237'
+    RewardType: shop
+    Reward: End_Ranks_Page_2
+    InventoryLocation: 51

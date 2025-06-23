@@ -1,0 +1,60 @@
+ShopName: Nobility_Ranks_Page_3
+DisplayName: '&f㒘㒘㒤'
+shop:
+  UI_Empress_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Empress Rank
+      - 'lore2:&7125,000 Tile Sized City'
+    InventoryLocation: 1
+  UI_Empress_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Empress Rank
+      - 'lore2:&7125,000 Tile Sized City'
+    InventoryLocation: 2
+  UI_Empress_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6
+      - 'CustomModelData:10188'
+    InventoryLocation: 3
+  UI_Empress_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Empress Rank
+    Condition:
+    - type:permission
+    - match:rank.Empress
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐩 "
+    PriceType: nothing
+    InventoryLocation: 9
+  UI_Empress_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 9
+  UI_Navigation_1:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10236
+      - name:&6Previous Page
+    RewardType: shop
+    Reward: Nobility_Ranks_Page_2
+    InventoryLocation: 49
+  UI_Navigation_5:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10383
+      - name:&6Return to Rank Selection menu
+    RewardType: shop
+    Reward: Ranks
+    InventoryLocation: 50

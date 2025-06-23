@@ -1,0 +1,196 @@
+ShopName: Nether_Ranks_Page_2
+DisplayName: '&f㒘㒘㒣'
+shop:
+  UI_Scarlet_Prince_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Scarlet Prince Rank
+      - 'lore2:&73,600 Nether Tiles'
+    InventoryLocation: 1
+  UI_Scarlet_Prince_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Scarlet Prince Rank
+      - 'lore2:&73,600 Nether Tiles'
+    InventoryLocation: 2
+  UI_Scarlet_Prince_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Scarlet Prince Rank
+      - 'lore2:&73,600 Nether Tiles'
+      - 'CustomModelData:10164'
+    InventoryLocation: 3
+  UI_Scarlet_Prince_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Scarlet Prince Rank
+    Condition:
+    - type:permission
+    - match:rank.Scarlet-Prince
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐯 "
+    PriceType: nothing
+    InventoryLocation: 9
+  UI_Scarlet_Prince_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 9
+  UI_Scarlet_Mistress_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Scarlet Mistress Rank
+      - 'lore2:&73,600 Nether Tiles'
+    InventoryLocation: 10
+  UI_Scarlet_Mistress_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Scarlet Mistress Rank
+      - 'lore2:&73,600 Nether Tiles'
+    InventoryLocation: 11
+  UI_Scarlet_Mistress_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Scarlet Mistress Rank
+      - 'lore2:&73,600 Nether Tiles'
+    InventoryLocation: 12
+  UI_Scarlet_Mistress_4:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Scarlet Mistress Rank
+      - 'lore2:&73,600 Nether Tiles'
+      - 'CustomModelData:10165'
+    InventoryLocation: 13
+  UI_Scarlet_Mistress_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Scarlet Mistress Rank
+    Condition:
+    - type:permission
+    - match:rank.Scarlet-Mistress
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐰 "
+    PriceType: nothing
+    InventoryLocation: 18
+  UI_Scarlet_Mistress_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 18
+  UI_Shadow_King_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Shadow King Rank
+      - 'lore2:&77,200 Nether Tiles'
+    InventoryLocation: 19
+  UI_Shadow_King_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Shadow King Rank
+      - 'lore2:&77,200 Nether Tiles'
+    InventoryLocation: 20
+  UI_Shadow_King_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Shadow King Rank
+      - 'lore2:&77,200 Nether Tiles'
+      - 'CustomModelData:10166'
+    InventoryLocation: 21
+  UI_Shadow_King_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Shadow King Rank
+    Condition:
+    - type:permission
+    - match:rank.Shadow-King
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐱 "
+    PriceType: nothing
+    InventoryLocation: 27
+  UI_Shadow_King_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 27
+  UI_Shadow_Queen_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Shadow Queen Rank
+      - 'lore2:&77,200 Nether Tiles'
+    InventoryLocation: 28
+  UI_Shadow_Queen_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Shadow Queen Rank
+      - 'lore2:&77,200 Nether Tiles'
+    InventoryLocation: 29
+  UI_Shadow_Queen_4:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Shadow Queen Rank
+      - 'lore2:&77,200 Nether Tiles'
+      - 'CustomModelData:10167'
+    InventoryLocation: 31
+  UI_Shadow_Queen_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Shadow Queen Rank
+    Condition:
+    - type:permission
+    - match:rank.Shadow-Queen
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐲 "
+    PriceType: nothing
+    InventoryLocation: 36
+  UI_Shadow_Queen_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 36
+  UI_Navigation_1:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10236
+      - amount:1
+      - name:&6Previous Page
+    RewardType: shop
+    Reward: Nether_Ranks_Page_1
+    InventoryLocation: 49
+  UI_Navigation_5:
+    MenuItem:
+      - type:PAPER
+      - amount:1
+      - name:&6Return to Rank Selection menu
+      - 'CustomModelData:10383'
+    RewardType: shop
+    Reward: Ranks
+    InventoryLocation: 50
