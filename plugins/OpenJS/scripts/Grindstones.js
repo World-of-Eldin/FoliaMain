@@ -1,86 +1,108 @@
-var colors = ["WHITE", "GRAY", "BLACK", "BROWN", "RED", "ORANGE", "YELLOW", "LIME", "GREEN", "CYAN", "BLUE", "PURPLE", "MAGENTA", "PINK", "LIGHT_GRAY", "LIGHT_BLUE"] //An array of concrete colors
-var blocks = ["COBBLESTONE", "GRAVEL"] //An array of blocks
-var grindStoneUsed = false;
+var ItemStack = org.bukkit.inventory.ItemStack;
+var Material = org.bukkit.Material;
+
 registerEvent("org.bukkit.event.player.PlayerInteractEvent", {
-    handleEvent: function(event) {
-        var ItemStack = org.bukkit.inventory.ItemStack; //The Bukkit ItemStack class
-        var Material = org.bukkit.Material; //The Bukkit Material class
-        var player = event.getPlayer();
-        if(event.getClickedBlock() != null) { //Prevent air from triggering logic since block is null
-            if(event.getClickedBlock().type.toString() === "GRINDSTONE" && event.getAction().toString() === "RIGHT_CLICK_BLOCK") { //Check that block is enchanting table and right click is used
-                if(player.isSneaking() && event.getHand().toString() === "HAND") { //Check that player is crouching and holding a glass bottle
-                    var itemInHand = player.getInventory().getItemInMainHand().type.toString();
-                    var rightBlock = false;
-                    var inventory = player.getInventory();
-                    for(i = 0; i < blocks.length; i++) { //Ensure that passed block is valid and not concrete powder
-                        if(itemInHand === blocks[i] || (itemInHand.indexOf("CONCRETE") >= 0 && itemInHand.indexOf("POWDER") === -1)) {
-                            rightBlock = true;
-                        }
-                    }
-                    if(rightBlock) {
-                        grindStoneUsed = true;
-                        var materialtoAdd; //The material to give the player
-                        var materialtoRemove; //The material to take away from the player
-                        if(itemInHand === "COBBLESTONE") {
-                            material = Material.getMaterial("COBBLESTONE")
-                            materialtoRemove = new ItemStack(material, 1)
-                            var material = Material.getMaterial("GRAVEL");
-                            materialtoAdd = new ItemStack(material, 1); //Add the material to player inventory
-                        }
-
-                        if(itemInHand === "GRAVEL") {
-                            material = Material.getMaterial("GRAVEL")
-                            materialtoRemove = new ItemStack(material, 1)
-                            var material = Material.getMaterial("SAND");
-                            materialtoAdd = new ItemStack(material, 1); //Add the material to player inventory
-                        }
-
-                        if(itemInHand.indexOf("CONCRETE") >= 0) {
-                            var color;
-                            for(i = 0; i < colors.length; i++) { //Iterate through colors array, determining which concrete color player is holding
-                                if(itemInHand.indexOf(colors[i]) >= 0) {
-                                    color = colors[i];
-                                }
-                            }
-                            material = Material.getMaterial(color + "_CONCRETE")
-                            materialtoRemove = new ItemStack(material, 1)
-                            var material = Material.getMaterial(color + "_CONCRETE_POWDER");
-                            materialtoAdd = new ItemStack(material, 1); //Add the material to player inventory
-                        }
-
-                        var partialStack = false;
-                        for(var i = 0; i < inventory.getSize(); i++) {
-                            var item = inventory.getItem(i);
-                            if(item != null && item.getType() == material && item.getAmount() < 64) {
-                                partialStack = true;
-                                break;
-                            }
-                        }
-
-                        if(inventory.firstEmpty() >= 0 || partialStack) {
-                            player.getInventory().addItem(materialtoAdd); //Add the item to player inventory
-                        }
-                        else {
-                            player.getWorld().dropItem(player.getLocation(), materialtoAdd)
-                        }
-                        player.getInventory().removeItem(materialtoRemove); //Remove the item from player inventory
-
-                    }
-                }
-            }
-        }
+  handleEvent: function (event) {
+    var player = event.getPlayer();
+    var playerInventory = player.getInventory();
+    var transactionAmount = 1;
+    if (player.isSneaking()) {
+      transactionAmount = 16;
     }
-})
 
-registerEvent("org.bukkit.event.block.BlockPlaceEvent", {
-    handleEvent: function(event) {
-        if(grindStoneUsed) { //Block the player from placing blocks if they used the grindstone
-            event.setCancelled(true);
+    if (
+      event.getAction().toString() === "RIGHT_CLICK_BLOCK" &&
+      event.getClickedBlock().getType().toString() === "GRINDSTONE"
+    ) {
+      var itemInHand = playerInventory.getItemInMainHand().getType().toString();
+      var amountInHand = playerInventory.getItemInMainHand().getAmount();
+
+      if (transactionAmount > amountInHand) {
+        transactionAmount = amountInHand;
+      }
+
+      //Handle cobblestone
+      if (itemInHand === "COBBLESTONE") {
+        event.setCancelled(true);
+        var item = new ItemStack(
+          Material.getMaterial("GRAVEL"),
+          transactionAmount
+        );
+        if (
+          hasInventorySpace(
+            playerInventory,
+            Material.getMaterial("GRAVEL"),
+            transactionAmount - 1
+          )
+        ) {
+          playerInventory.addItem(item);
+        } else {
+          player.getWorld().dropItem(player.getLocation(), item);
         }
-    }
-})
+      }
 
-function freePlayer() {
-    grindStoneUsed = false; //Allow player to place blocks again
+      //Handle gravel
+      if (itemInHand === "GRAVEL") {
+        event.setCancelled(true);
+        var item = new ItemStack(
+          Material.getMaterial("SAND"),
+          transactionAmount
+        );
+        if (
+          hasInventorySpace(
+            playerInventory,
+            Material.getMaterial("SAND"),
+            transactionAmount - 1
+          )
+        ) {
+          playerInventory.addItem(item);
+        } else {
+          player.getWorld().dropItem(player.getLocation(), item);
+        }
+      }
+
+      //Handle all concrete
+      if (itemInHand.endsWith("CONCRETE")) {
+        event.setCancelled(true);
+        var item = new ItemStack(
+          Material.getMaterial(itemInHand + "_POWDER"),
+          transactionAmount
+        );
+        if (
+          hasInventorySpace(
+            playerInventory,
+            Material.getMaterial(itemInHand + "_POWDER"),
+            transactionAmount - 1
+          )
+        ) {
+          playerInventory.addItem(item);
+        } else {
+          player.getWorld().dropItem(player.getLocation(), item);
+        }
+      }
+
+      playerInventory.setItemInMainHand(
+        playerInventory
+          .getItemInMainHand()
+          .setAmount(
+            playerInventory.getItemInMainHand().getAmount() - transactionAmount
+          )
+      );
+    }
+  },
+});
+
+function hasInventorySpace(playerInventory, material, amount) {
+  var allMaterial = playerInventory.all(material);
+  var adjustedAmount = 64 - amount;
+  if (playerInventory.firstEmpty() >= 0) {
+    return true;
+  }
+  for (i = 0; i < allMaterial.length; i++) {
+    if (allMaterial.values().toArray()[i].getAmount() < adjustedAmount) {
+      return true;
+    }
+  }
+
+  return false;
 }
-registerSchedule(0, 20, this, "freePlayer"); //Run this every 20 ticks
