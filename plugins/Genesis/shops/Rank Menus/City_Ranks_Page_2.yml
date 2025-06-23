@@ -1,0 +1,231 @@
+ShopName: City_Ranks_Page_2
+DisplayName: '&f㒘㒘㒡'
+shop:
+  UI_Magistrate_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Magistrate Rank
+      - 'lore2:&77,200 City Tiles'
+    InventoryLocation: 1
+  UI_Magistrate_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Magistrate Rank
+      - 'lore2:&77,200 City Tiles'
+    InventoryLocation: 2
+  UI_Magistrate_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - CustomModelData:10152
+      - name:&6Magistrate Rank
+      - 'lore2:&77,200 City Tiles'
+    InventoryLocation: 3
+  UI_Magistrate_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Magistrate Rank
+    Condition:
+    - type:permission
+    - match:rank.Magistrate
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐋 "
+    PriceType: nothing
+    InventoryLocation: 9
+  UI_Magistrate_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 9
+  UI_Lord_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Lord Rank
+      - 'lore2:&710,000 City Tiles'
+    InventoryLocation: 10
+  UI_Lord_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Lord Rank
+      - 'lore2:&710,000 City Tiles'
+    InventoryLocation: 11
+  UI_Lord_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - CustomModelData:10153
+      - amount:1
+      - name:&6Lord Rank
+      - 'lore2:&710,000 City Tiles'
+    InventoryLocation: 12
+  UI_Lord_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Lord Rank
+    Condition:
+    - type:permission
+    - match:rank.Lord
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐌 "
+    PriceType: nothing
+    InventoryLocation: 18
+  UI_Lord_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - amount:1
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 18
+  UI_Lady_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Lady Rank
+      - 'lore2:&710,000 City Tiles'
+    InventoryLocation: 19
+  UI_Lady_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Lady Rank
+      - 'lore2:&710,000 City Tiles'
+    InventoryLocation: 20
+  UI_Lady_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - CustomModelData:10154
+      - amount:1
+      - name:&6Lady Rank
+      - 'lore2:&710,000 City Tiles'
+    InventoryLocation: 21
+  UI_Lady_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Lady Rank
+    Condition:
+    - type:permission
+    - match:rank.Lady
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐍 "
+    PriceType: nothing
+    InventoryLocation: 27
+  UI_Lady_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 27
+  UI_Lord_Regent_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Lord Regent Rank
+      - 'lore2:&714,400 City Tiles'
+    InventoryLocation: 28
+  UI_Lord_Regent_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Lord Regent Rank
+      - 'lore2:&714,400 City Tiles'
+    InventoryLocation: 29
+  UI_Lord_Regent_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Lord Regent Rank
+      - 'lore2:&714,400 City Tiles'
+      - 'CustomModelData:10155'
+    InventoryLocation: 30
+  UI_Lord_Regent_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Lord Regent Rank
+    Condition:
+    - type:permission
+    - match:rank.Lord-Regent
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐎 "
+    PriceType: nothing
+    InventoryLocation: 36
+  UI_Lord_Regent_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 36
+  UI_Lady_Regent_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Lady Regent Rank
+      - 'lore2:&714,400 City Tiles'
+    InventoryLocation: 37
+  UI_Lady_Regent_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Lady Regent Rank
+      - 'lore2:&714,400 City Tiles'
+    InventoryLocation: 38
+  UI_Lady_Regent_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Lady Regent Rank
+      - 'lore2:&714,400 City Tiles'
+      - 'CustomModelData:10156'
+    InventoryLocation: 39
+  UI_Lady_Regent_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Lady Regent Rank
+    Condition:
+    - type:permission
+    - match:rank.Lady-Regent
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐏 "
+    PriceType: nothing
+    InventoryLocation: 45
+  UI_Lady_Regent_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 45
+  UI_Navigation_1:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10236
+      - amount:1
+      - name:&6Previous Page
+    RewardType: shop
+    Reward: City_Ranks_Page_1
+    InventoryLocation: 49
+  UI_Navigation_5:
+    MenuItem:
+      - type:PAPER
+      - amount:1
+      - name:&6Return to Rank Selection menu
+      - 'CustomModelData:10383'
+    RewardType: shop
+    Reward: Ranks
+    InventoryLocation: 50

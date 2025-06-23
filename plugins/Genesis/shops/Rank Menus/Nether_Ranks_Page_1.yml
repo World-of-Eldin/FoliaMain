@@ -1,0 +1,228 @@
+ShopName: Nether_Ranks_Page_1
+DisplayName: '&f㒘㒘㒣'
+shop:
+  UI_Grue_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Grue Rank
+      - 'lore2:&7100 Nether Tiles'
+    InventoryLocation: 1
+  UI_Grue_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Grue Rank
+      - 'lore2:&7100 Nether Tiles'
+    InventoryLocation: 2
+  UI_Grue_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6
+      - 'CustomModelData:10159'
+    InventoryLocation: 3
+  UI_Grue_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Grue Rank
+    Condition:
+    - type:permission
+    - match:rank.Grue
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐪 "
+    PriceType: nothing
+    InventoryLocation: 9
+  UI_Grue_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 9
+  UI_Deviant_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Deviant Rank
+      - 'lore2:&7400 Nether Tiles'
+    InventoryLocation: 10
+  UI_Deviant_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Deviant Rank
+      - 'lore2:&7400 Nether Tiles'
+    InventoryLocation: 11
+  UI_Deviant_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6
+      - 'CustomModelData:10160'
+    InventoryLocation: 12
+  UI_Deviant_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Deviant Rank
+    Condition:
+    - type:permission
+    - match:rank.Deviant
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐫 "
+    PriceType: nothing
+    InventoryLocation: 18
+  UI_Deviant_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 18
+  UI_Hellion_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Hellion Rank
+      - 'lore2:&7800 Nether Tiles'
+    InventoryLocation: 19
+  UI_Hellion_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Hellion Rank
+      - 'lore2:&7800 Nether Tiles'
+    InventoryLocation: 20
+  UI_Hellion_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6
+      - 'CustomModelData:10161'
+    InventoryLocation: 21
+  UI_Hellion_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Hellion Rank
+    Condition:
+    - type:permission
+    - match:rank.Hellion
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐬 "
+    PriceType: nothing
+    InventoryLocation: 27
+  UI_Hellion_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 27
+  UI_Dark_Lord_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Dark Lord Rank
+      - 'lore2:&71,600 Nether Tiles'
+    InventoryLocation: 28
+  UI_Dark_Lord_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Dark Lord Rank
+      - 'lore2:&71,600 Nether Tiles'
+    InventoryLocation: 29
+  UI_Dark_Lord_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Dark Lord Rank
+      - 'lore2:&71,600 Nether Tiles'
+      - 'CustomModelData:10162'
+    InventoryLocation: 30
+  UI_Dark_Lord_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Dark Lord Rank
+    Condition:
+    - type:permission
+    - match:rank.Dark-Lord
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐭 "
+    PriceType: nothing
+    InventoryLocation: 36
+  UI_Dark_Lord_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 36
+  UI_Dark_Lady_1:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Dark Lady Rank
+      - 'lore2:&71,600 Nether Tiles'
+    InventoryLocation: 37
+  UI_Dark_Lady_2:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Dark Lady Rank
+      - 'lore2:&71,600 Nether Tiles'
+    InventoryLocation: 38
+  UI_Dark_Lady_3:
+    MenuItem:
+      - type:Black_Stained_Glass_Pane
+      - amount:1
+      - name:&6Dark Lady Rank
+      - 'lore2:&71,600 Nether Tiles'
+      - 'CustomModelData:10163'
+    InventoryLocation: 39
+  UI_Dark_Lady_9_Has_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10392
+      - name:&6Select Dark Lady Rank
+    Condition:
+    - type:permission
+    - match:rank.Dark-Lady
+    RewardType: command
+    Reward:
+    - lp user %player% meta removeprefix 1
+    - lp user %player% meta addprefix 1 "㐮 "
+    PriceType: nothing
+    InventoryLocation: 45
+  UI_Dark_Lady_9_No_Permission:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10397
+      - name:&cYou do not have this rank unlocked
+    InventoryLocation: 45
+  UI_Navigation_5:
+    MenuItem:
+      - type:PAPER
+      - amount:1
+      - name:&6Return to Rank Selection menu
+      - CustomModelData:10383
+    RewardType: shop
+    Reward: Ranks
+    InventoryLocation: 50
+  UI_Navigation_9:
+    MenuItem:
+      - type:PAPER
+      - CustomModelData:10237
+      - amount:1
+      - name:&6Next Page
+    RewardType: shop
+    Reward: Nether_Ranks_Page_2
+    InventoryLocation: 51
