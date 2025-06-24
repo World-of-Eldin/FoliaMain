@@ -1,40 +1,39 @@
 Server = plugin.getServer();
 registerEvent("org.bukkit.event.vehicle.VehicleMoveEvent", {
   handleEvent: function (event) {
-    var vehicle = event.getVehicle();
+    const vehicle = event.getVehicle();
     if (vehicle.getName().toString().indexOf("BOAT")) {
-      var passengers = vehicle.getPassengers();
-      for (i = 0; i < passengers.length; i++) {
+      vehicle.getPassengers().forEach((passenger) => {
         if (
-          passengers[i]
+          passenger
             .getLocation()
             .getBlock()
             .getRelative(0, -0.5, 0)
             .getType()
             .toString()
             .indexOf("ICE") >= 0 ||
-          passengers[i]
+          passenger
             .getLocation()
             .getBlock()
             .getRelative(1, -0.5, 0)
             .getType()
             .toString()
             .indexOf("ICE") >= 0 ||
-          passengers[i]
+          passenger
             .getLocation()
             .getBlock()
             .getRelative(-1, -0.5, 0)
             .getType()
             .toString()
             .indexOf("ICE") >= 0 ||
-          passengers[i]
+          passenger
             .getLocation()
             .getBlock()
             .getRelative(0, -0.5, 1)
             .getType()
             .toString()
             .indexOf("ICE") >= 0 ||
-          passengers[i]
+          passenger
             .getLocation()
             .getBlock()
             .getRelative(0, -0.5, 1)
@@ -42,9 +41,9 @@ registerEvent("org.bukkit.event.vehicle.VehicleMoveEvent", {
             .toString()
             .indexOf("ICE") >= 0
         ) {
-          vehicle.removePassenger(passengers[i]);
+          vehicle.removePassenger(passenger);
         }
-      }
+      });
     }
   },
 });
