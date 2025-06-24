@@ -1,57 +1,42 @@
-// Define shop mappings - use the exact names shown on the villagers
+const Bukkit = org.bukkit.Bukkit;
+var Console = Bukkit.getConsoleSender();
+var Scheduler = Bukkit.getServer().getScheduler();
+var Runnable = java.lang.Runnable;
+var Consumer = java.util.function.Consumer;
+
 var shopNames = {
-    "balls": "blocks",
-    "Blocks Merchant": "blocks",
-    "Food Merchant": "food"
-    // Add more mappings as needed
+  balls: "Blacksmith",
 };
 
 registerEvent("org.bukkit.event.player.PlayerInteractEntityEvent", {
-    handleEvent: function(event) {
-        var logger = org.bukkit.Bukkit.getLogger();
-        if (event.getRightClicked().getType().name() === "VILLAGER") {
-            var player = event.getPlayer();
-            var playerName = player.getName();
+  handleEvent: function (event) {
+    if (event.getRightClicked().getType().name() === "VILLAGER") {
+      event.setCancelled(true);
 
-            // Get entity name in the correct thread context
-            var villager = event.getRightClicked();
-            var npcName = villager.getCustomName() || "unnamed";
+      const player = event.getPlayer();
+      const villagerName = event.getRightClicked().getCustomName();
 
-            // Debug message to see what the actual name is
-            player.sendMessage("§7Debug - Villager name: §f" + npcName);
-            logger.info("Villager name detected: " + npcName);
+      task.main(function () {
+        Bukkit.dispatchCommand(
+          Console,
+          "lp user " +
+            player.getName() +
+            " permission settemp genesis.open.command." +
+            shopNames[villagerName] +
+            " true 2s"
+        );
+      });
 
-            // Important: Use bracket notation for object lookup
-            var shopType = shopNames[npcName];
-
-            // If no mapping exists, use a default or the name itself
-            if (!shopType) {
-                player.sendMessage("§cNo shop mapping found for: §f" + npcName);
-                // Fallback to using the name directly or a default
-                shopType = "blocks"; // Default fallback
-            }
-
-            event.setCancelled(true);
-
-            try {
-                var plugin = org.bukkit.Bukkit.getPluginManager().getPlugin("OpenJS");
-                var globalScheduler = org.bukkit.Bukkit.getGlobalRegionScheduler();
-
-                globalScheduler.runDelayed(plugin, function() {
-                    // Give temporary permission
-                    var permCmd = "lp user " + playerName + " permission settemp ultimateshops.menu true 5s";
-                    org.bukkit.Bukkit.dispatchCommand(org.bukkit.Bukkit.getConsoleSender(), permCmd);
-
-                    // Log what we're going to use
-                    logger.info("Using shop type: " + shopType + " for villager: " + npcName);
-
-                    // Execute the shop command
-                    player.chat("/shop menu " + shopType);
-                }, 1);  
-            } catch (e) {
-                logger.severe("Error in villager shop script: " + e.toString());
-                player.sendMessage("§cError: " + e.toString());
-            }
-        }
+      player.getScheduler().runDelayed(
+        plugin,
+        new Consumer({
+          accept: function () {
+            player.performCommand("shop open Blacksmith");
+          },
+        }),
+        null,
+        5
+      );
     }
+  },
 });
