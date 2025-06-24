@@ -1,30 +1,28 @@
-var ItemStack = org.bukkit.inventory.ItemStack;
-var Material = org.bukkit.Material;
+const ItemStack = org.bukkit.inventory.ItemStack;
+const Material = org.bukkit.Material;
 
 registerEvent("org.bukkit.event.player.PlayerInteractEvent", {
   handleEvent: function (event) {
-    var player = event.getPlayer();
-    var playerInventory = player.getInventory();
-    var transactionAmount = 1;
-    if (player.isSneaking()) {
-      transactionAmount = 16;
-    }
+    const player = event.getPlayer();
+    const playerInventory = player.getInventory();
+    let transactionAmount = player.isSneaking() ? 16 : 1;
 
     if (
       event.getAction().toString() === "RIGHT_CLICK_BLOCK" &&
       event.getClickedBlock().getType().toString() === "GRINDSTONE"
     ) {
-      var itemInHand = playerInventory.getItemInMainHand().getType().toString();
-      var amountInHand = playerInventory.getItemInMainHand().getAmount();
-
-      if (transactionAmount > amountInHand) {
-        transactionAmount = amountInHand;
-      }
+      const itemInHand = playerInventory
+        .getItemInMainHand()
+        .getType()
+        .toString();
+      const amountInHand = playerInventory.getItemInMainHand().getAmount();
+      transactionAmount =
+        transactionAmount > amountInHand ? amountInHand : transactionAmount;
 
       //Handle cobblestone
       if (itemInHand === "COBBLESTONE") {
         event.setCancelled(true);
-        var item = new ItemStack(
+        const item = new ItemStack(
           Material.getMaterial("GRAVEL"),
           transactionAmount
         );
@@ -44,7 +42,7 @@ registerEvent("org.bukkit.event.player.PlayerInteractEvent", {
       //Handle gravel
       if (itemInHand === "GRAVEL") {
         event.setCancelled(true);
-        var item = new ItemStack(
+        const item = new ItemStack(
           Material.getMaterial("SAND"),
           transactionAmount
         );
@@ -64,7 +62,7 @@ registerEvent("org.bukkit.event.player.PlayerInteractEvent", {
       //Handle all concrete
       if (itemInHand.endsWith("CONCRETE")) {
         event.setCancelled(true);
-        var item = new ItemStack(
+        const item = new ItemStack(
           Material.getMaterial(itemInHand + "_POWDER"),
           transactionAmount
         );
@@ -101,16 +99,16 @@ registerEvent("org.bukkit.event.player.PlayerInteractEvent", {
 });
 
 function hasInventorySpace(playerInventory, material, amount) {
-  var allMaterial = playerInventory.all(material);
-  var adjustedAmount = 64 - amount;
+  const itemStacks = playerInventory.all(material).values();
+  const adjustedAmount = 64 - amount;
   if (playerInventory.firstEmpty() >= 0) {
     return true;
   }
-  for (i = 0; i < allMaterial.length; i++) {
-    if (allMaterial.values().toArray()[i].getAmount() < adjustedAmount) {
+  itemStacks.forEach((itemStack) => {
+    if (itemStack.getAmount() < adjustedAmount) {
       return true;
     }
-  }
+  });
 
   return false;
 }
