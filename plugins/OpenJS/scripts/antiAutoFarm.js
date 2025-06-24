@@ -68,3 +68,17 @@ registerEvent("org.bukkit.event.block.BlockPistonExtendEvent", {
         }
     }
 })
+
+registerEvent("org.bukkit.event.block.BlockFromToEvent", {
+    handleEvent: function(event) {
+        let face = event.getToBlock().getType().toString();
+        let block = event.getBlock().getType().toString();
+        if(block === "WATER") {
+            crops.forEach(crop => {
+                if(crop === face) {
+                    event.setCancelled(true);
+                }
+            })
+        }
+    }
+})
