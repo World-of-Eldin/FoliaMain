@@ -85,7 +85,7 @@ function gambling() {
     }
 }
 
-registerSchedule(0, announcementRate * 3600 * 20, { //Broadcast lotto information
+registerSchedule(announcementRate * 3600 * 20, announcementRate * 3600 * 20, { //Broadcast lotto information
     handler: function() {
         DiskApi.loadFile("LottoTimePassage", false, true)
         DiskApi.loadFile("LottoData", false, true)
