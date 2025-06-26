@@ -12,7 +12,7 @@ header-footer:
     - "&7------------------------------"
   footer:
     - "&7------------------------------"
-    - "&7Balance: &f㒖&a&n%nexuseco_balance_formatted%"
+    - "&7Balance: &f㒖&a&n%kyvereco_balance_formatted%"
     - ""
   disable-condition: "%world%=disabledworld"
   per-world:
