@@ -33,7 +33,7 @@ addCommand("lottery", {
                                             Bukkit.dispatchCommand(Console, "economy remove " + sender.getName() + " " + valueOfTicket); //Remove the money from the player
                                             DiskApi.setVar("LottoData", sender.getName(), numberOfTickets, true)
                                             saveTotal(args[1], "LottoData")
-                                            savePlayer(sender, "LottoData");
+                                            savePlayer(sender.getName(), "LottoData");
                                             DiskApi.saveFile("LottoData", false, true)
                                         }
 
@@ -145,19 +145,19 @@ function savePlayer(player, file) {
         let playerDataList = playerData.split(","); //Create a list by splitting playerData based on commas
         
         playerDataList.forEach(playerInData => {
-            if(playerInData === player.getName()) {
+            if(playerInData === player) {
                 playerAlreadyInList = true;
             }
         });
 
         if(!playerAlreadyInList) //If player is in the list, do not add them again
         {
-            DiskApi.setVar(file, "players", player.getName() + "," + playerData, true)
+            DiskApi.setVar(file, "players", player + "," + playerData, true)
         }
     }
 
     else {
-        DiskApi.setVar(file, "players", player.getName(), true)    
+        DiskApi.setVar(file, "players", player, true)    
     }
 }
 
