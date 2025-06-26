@@ -57,7 +57,7 @@ function gambling() {
 
                     if (winningTicket >= startingTicket && winningTicket <= endingTicket) {
                     const winningMoney = (totalTickets * ticketValue + extraMoney) * (1 - tax/100);
-                    Server.broadcastMessage(ChatColor.GOLD +"Lottery: " + ChatColor.GREEN + playerInData + " won " + winningMoney + " 㒖 Tradebars");
+                    Server.broadcastMessage(ChatColor.GOLD +"Lottery: " + ChatColor.GREEN + playerInData + " won " + winningMoney + ChatColor.RESET + " 㒖 Tradebars");
                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
                         Bukkit.dispatchCommand(Console, "economy add " + playerInData + " " + winningMoney); //Give the player the money
                     });
