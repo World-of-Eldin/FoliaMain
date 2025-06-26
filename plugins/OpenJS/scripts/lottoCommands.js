@@ -32,7 +32,7 @@ addCommand("lottery", {
                                             sender.sendMessage(ChatColor.GOLD +"You have purchased " + args[1] + " tickets");
                                             Bukkit.dispatchCommand(Console, "economy remove " + sender.getName() + " " + valueOfTicket); //Remove the money from the player
                                             DiskApi.setVar("LottoData", sender.getName(), numberOfTickets, true)
-                                            saveTotal(args[1])
+                                            saveTotal(args[1], "LottoData")
                                             savePlayer(sender, "LottoData");
                                             DiskApi.saveFile("LottoData", false, true)
                                         }
