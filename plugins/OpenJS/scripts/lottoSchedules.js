@@ -7,14 +7,14 @@ const maxTickets = 5; //The maximum tickets a player can purchase
 const extraMoney = 1000; //Extra money added to the pot
 const tax = 10; //The tax in percent
 const Server = plugin.getServer();
-let Bukkit = org.bukkit.Bukkit;
-let Console = Bukkit.getConsoleSender();
-let Scheduler = Bukkit.getGlobalRegionScheduler();
-let ChatColor = org.bukkit.ChatColor;
+const Bukkit = org.bukkit.Bukkit;
+const Console = Bukkit.getConsoleSender();
+const Scheduler = Bukkit.getGlobalRegionScheduler();
+const ChatColor = org.bukkit.ChatColor;
 registerSchedule(200, 200, { //Run every 10 seconds
         handler: function() {
             DiskApi.loadFile("LottoTimePassage", false, true)
-            let timePassed = DiskApi.getVar("LottoTimePassage", "time", 0, true);
+            const timePassed = DiskApi.getVar("LottoTimePassage", "time", 0, true);
             
             if(timePassed < hours * 3600) { //Increment time if not passed hours * 3600
                 DiskApi.setVar("LottoTimePassage", "time", timePassed + 10, true)
@@ -32,12 +32,12 @@ registerSchedule(200, 200, { //Run every 10 seconds
     }}, "handler");
 
 function iterations() { //Add an iteration to deplete rollOverChance
-    let iterations = DiskApi.getVar("LottoTimePassage", "iterations", 0, true);
+    const iterations = DiskApi.getVar("LottoTimePassage", "iterations", 0, true);
     DiskApi.setVar("LottoTimePassage", "iterations", iterations + 1, true);
 }   
     
 function gambling() {
-    let iterations = DiskApi.getVar("LottoTimePassage", "iterations", 0, true);
+    const iterations = DiskApi.getVar("LottoTimePassage", "iterations", 0, true);
     if((Math.random() * 100) > (rollOverChance - iterations * rollOverChanceDropRate)) { //Compare a random number between 1 and 100 to the rollOverChance subtracted by the number of iterations * the drop rate
         DiskApi.setVar("LottoTimePassage", "iterations", 0, true);
         DiskApi.saveFile("LottoTimePassage", false, true); //Reset iterations
@@ -47,11 +47,11 @@ function gambling() {
         
         if(totalTickets > 0) { //Check that tickets have been purchased
             const playerData = DiskApi.getVar("LottoData", "players", 0, true);
-            let winningTicket = Math.floor(Math.random() * totalTickets) + 1; //Set the winningTicket to a random whole number between 1 and the number of total tickets
-            let playerDataList = playerData.split(",");
+            const winningTicket = Math.floor(Math.random() * totalTickets) + 1; //Set the winningTicket to a random whole number between 1 and the number of total tickets
+            const playerDataList = playerData.split(",");
             let totalTicketsCalculated = 0;
             playerDataList.forEach(playerInData => { //For every player, get their ticket count, calculating whether they are in the range for victory
-                let ticketCount = DiskApi.getVar("LottoData", playerInData, 0, true)
+                const ticketCount = DiskApi.getVar("LottoData", playerInData, 0, true)
                     let startingTicket = totalTicketsCalculated + 1;
                     let endingTicket = startingTicket + ticketCount - 1;
 
@@ -88,8 +88,8 @@ registerSchedule(announcementRate * 3600 * 20, announcementRate * 3600 * 20, { /
     handler: function() {
         DiskApi.loadFile("LottoTimePassage", false, true)
         DiskApi.loadFile("LottoData", false, true)
-        let timer = DiskApi.getVar("LottoTimePassage", "time", 0, true);
-        let timerValue = hours * 3600 - Number(timer);
+        const timer = DiskApi.getVar("LottoTimePassage", "time", 0, true);
+        const timerValue = hours * 3600 - Number(timer);
         const totalTickets = DiskApi.getVar("LottoData", "total", 0, true);
         Server.broadcastMessage(ChatColor.GOLD + "Lottery:")
         Server.broadcastMessage(ChatColor.GOLD + "Pot: " + ChatColor.GREEN + (totalTickets * ticketValue + extraMoney) + ChatColor.RESET + " 㒖" + ChatColor.GOLD + "Tradebars")
