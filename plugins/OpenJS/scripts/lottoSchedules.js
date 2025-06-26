@@ -5,6 +5,7 @@ const rollOverChanceDropRate = 1; //The drop rate of this chance on each subsequ
 const ticketValue = 1000; //The value of an individual lottery ticket
 const maxTickets = 5; //The maximum tickets a player can purchase
 const extraMoney = 1000; //Extra money added to the pot
+const tax = 10; //The tax in percent
 const Server = plugin.getServer();
 let Bukkit = org.bukkit.Bukkit;
 let Console = Bukkit.getConsoleSender();
@@ -47,7 +48,6 @@ function gambling() {
         if(totalTickets > 0) { //Check that tickets have been purchased
             const playerData = DiskApi.getVar("LottoData", "players", 0, true);
             let winningTicket = Math.floor(Math.random() * totalTickets) + 1; //Set the winningTicket to a random whole number between 1 and the number of total tickets
-            log.info("winner: " + winningTicket);
             let playerDataList = playerData.split(",");
             let totalTicketsCalculated = 0;
             playerDataList.forEach(playerInData => { //For every player, get their ticket count, calculating whether they are in the range for victory
@@ -56,9 +56,8 @@ function gambling() {
                     let endingTicket = startingTicket + ticketCount - 1;
 
                     if (winningTicket >= startingTicket && winningTicket <= endingTicket) {
-                    const winningMoney = (totalTickets * ticketValue + extraMoney);
-                    log.info(winningMoney);
-                    Server.broadcastMessage(ChatColor.GOLD +"Lottery: " + ChatColor.GREEN + playerInData + " won " + winningMoney + " trade bars");
+                    const winningMoney = (totalTickets * ticketValue + extraMoney) * (1 - tax/100);
+                    Server.broadcastMessage(ChatColor.GOLD +"Lottery: " + ChatColor.GREEN + playerInData + " won " + winningMoney + " 㒖 Tradebars");
                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
                         Bukkit.dispatchCommand(Console, "economy add " + playerInData + " " + winningMoney); //Give the player the money
                     });
@@ -144,3 +143,4 @@ setShared("hours", hours)
 setShared("maxTickets", maxTickets)
 setShared("extraMoney", extraMoney)
 setShared("remainingTime", remainingTime)
+setShared("tax", tax);
