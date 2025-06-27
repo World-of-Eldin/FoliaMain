@@ -9,10 +9,10 @@ registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
     handleEvent: function(event) {
         DiskApi.loadFile("BountyData", false, true);
         const entityResponsible = event.getDamageSource().getCausingEntity();
+        const victim = event.getEntity().getName();
         if (entityResponsible) { //Ensure that null entities are not passed through
-            if (entityResponsible.getType().toString() === "PLAYER") {
+            if (entityResponsible.getType().toString() === "PLAYER" && victim === 'PLAYER') {
                 const responsiblePlayer = entityResponsible.getName().toString();
-                const victim = event.getEntity().getName();
                 const playerData = DiskApi.getVar("BountyData", "players", 0, true);
 
                 if (playerData != 0) {
