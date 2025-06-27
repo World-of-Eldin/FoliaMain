@@ -11,21 +11,22 @@ registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
         const entityResponsible = event.getDamageSource().getCausingEntity();
         const victim = event.getEntity();
         if (entityResponsible) { //Ensure that null entities are not passed through
-            if (entityResponsible.getType().toString() === "PLAYER" && victim.getType().toString() === 'PLAYER') {
-                const responsiblePlayer = entityResponsible.getName().toString();
-                const playerData = DiskApi.getVar("BountyData", "players", 0, true);
+            if(entityResponsible != victim) {
+                if (entityResponsible.getType().toString() === "PLAYER" && victim.getType().toString() === 'PLAYER') {
+                    const responsiblePlayer = entityResponsible.getName().toString();
+                    const playerData = DiskApi.getVar("BountyData", "players", 0, true);
 
-                const victimName = event.getEntity().getName();
-                if (playerData != 0) {
-                    const playerDataList = playerData.split(",");
-                    let victimInList = false;
-                    playerDataList.forEach(playerInData => { //If the victim is in the data, continue
-                        if (playerInData === victimName) {
-                            victimInList = true;
-                        }
-                    });
+                    const victimName = event.getEntity().getName();
+                    if (playerData != 0) {
+                        const playerDataList = playerData.split(",");
+                        let victimInList = false;
+                        playerDataList.forEach(playerInData => { //If the victim is in the data, continue
+                            if (playerInData === victimName) {
+                                victimInList = true;
+                            }
+                        });
 
-                    if (victimInList) {
+                        if (victimInList) {
                             const bountyValue = DiskApi.getVar("BountyData", victimName, 0, true);
                             Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
                                 Bukkit.dispatchCommand(Console, "economy add " + responsiblePlayer + " " + bountyValue); //Give the killer money
@@ -57,6 +58,7 @@ registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
                                     });
                                 }
                             }
+                        }
                     }
                 }
             }
