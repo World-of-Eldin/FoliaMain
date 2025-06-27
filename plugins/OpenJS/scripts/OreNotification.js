@@ -47,7 +47,6 @@ function oreVeinSize(block, ore) {
     for(let xCoord = -3; xCoord < 3; xCoord++) { //x coordinate
         for(let yCoord = -3; yCoord < 3; yCoord++) { //y coordinate
             for(let zCoord = -3; zCoord < 3; zCoord++) { //z coordinate
-                log.info(block.getRelative(xCoord, yCoord, zCoord).getType().toString());
                 if(block.getRelative(xCoord, yCoord, zCoord).getType().toString() === ore) { //ensure block is of the right type
                     oreMined++;
                     let orePresent = true;
