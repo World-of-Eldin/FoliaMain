@@ -149,7 +149,7 @@ addCommand("bounty", {
             return toJavaList(["set", "info", "top"]);
         }
 
-        if(args[0] === "set" || args[0] === "info" && args.length === 2) { //Provide tab completion with player names
+        if((args[0] === "set" || args[0] === "info") && args.length === 2) { //Provide tab completion with player names
             const onlinePlayers = Bukkit.getOnlinePlayers();
             let playerNames = [];
             onlinePlayers.forEach(player => {
