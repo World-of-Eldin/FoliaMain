@@ -3,6 +3,7 @@ const Console = Bukkit.getConsoleSender();
 const Scheduler = Bukkit.getGlobalRegionScheduler();
 const Server = plugin.getServer();
 const ChatColor = org.bukkit.ChatColor;
+const discordSRV = Server.getPluginManager().getPlugin("DiscordSRV");
 
 registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
     handleEvent: function(event) {
@@ -24,10 +25,6 @@ registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
                     });
 
                     if (victimInList) {
-                        const responsiblePlayerAddress = entityResponsible.getAddress().getAddress().getHostAddress(); //The IP address of the killer
-                        const victimAddress = event.getEntity().getAddress().getAddress().getHostAddress(); //The IP address of the victim
-
-                        if(responsiblePlayerAddress != victimAddress) { //Check that the killer and victim do not have the same IP address
                             const bountyValue = DiskApi.getVar("BountyData", victim, 0, true);
                             Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
                                 Bukkit.dispatchCommand(Console, "economy add " + responsiblePlayer + " " + bountyValue); //Give the killer money
@@ -39,11 +36,28 @@ registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
                             DiskApi.setVar("BountyData", "players", updatedPlayerData, true)
                             DiskApi.saveFile("BountyData", false, true);
                             Server.broadcastMessage("§e§l" + victim + "'s bounty was claimed by " + responsiblePlayer + ", giving them " + bountyValue + ChatColor.RESET + " 㒖" + "§e§l" + "Tradebars")
-                        }
+                            const responsiblePlayerAddress = entityResponsible.getAddress().getAddress().getHostAddress(); //The IP address of the killer
+                            const victimAddress = event.getEntity().getAddress().getAddress().getHostAddress(); //The IP address of the victim
+                            const responsiblePlayerHostName = event.getEntity().getAddress().getHostName(); //The host name of the victim
+                            const victimHostName = event.getEntity().getAddress().getHostName(); //The host name of the victim
+                            log.info(responsiblePlayerHostName);
+                            log.info(victimHostName);
 
-                        else {
-                            Server.broadcastMessage("§e§l" + "Bounty is unclaimed as " + responsiblePlayer + " and " + victim + " share an IP address")
-                        }
+                            if(responsiblePlayerAddress === victimAddress) {
+                                if(responsiblePlayerHostName === victimHostName) {
+                                    Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+                                        const message = "Bounty: " + responsiblePlayer + " and " + victim + " share an IP address and host name" + ", with " + responsiblePlayer + " claiming a bounty of " + bountyValue;
+                                        Bukkit.dispatchCommand(Console, "discordsrv bcast " + message); //Give the killer money
+                                    });
+                                }
+
+                                else {
+                                    Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+                                        const message = responsiblePlayer + " and " + victim + " share an IP address" + ", with " + responsiblePlayer + " claiming a bounty of " + bountyValue;
+                                        Bukkit.dispatchCommand(Console, "Bounty: " + "discordsrv bcast " + message); //Give the killer money
+                                    });
+                                }
+                            }
                     }
                 }
             }
