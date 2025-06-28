@@ -3,7 +3,7 @@ registerEvent("org.bukkit.event.block.BlockBreakEvent", {
     handleEvent: function(event) {
         const blockMined = event.getBlock(); //The block mined by the player
         const bukkit = org.bukkit.Bukkit;
-        const blocks = ["IRON_ORE", "GOLD_ORE", "EMERALD_ORE", "DIAMOND_ORE", "ANCIENT_DEBRIS", "DEEPSLATE_IRON_ORE", "DEEPSLATE_GOLD_ORE", "DEEPSLATE_EMERALD_ORE", "DEEPSLATE_DIAMOND_ORE", "RAW_IRON_BLOCK", "RAW_GOLD_BLOCK", "COPPER_ORE", "DEEPSLATE_COPPER_ORE", "COAL_ORE", "DEEPSLATE_COAL_ORE", "REDSTONE_ORE", "DEEPSLATE_REDSTONE_ORE"]; //Ores to record
+        const blocks = ["IRON_ORE", "GOLD_ORE", "EMERALD_ORE", "DIAMOND_ORE", "ANCIENT_DEBRIS", "DEEPSLATE_IRON_ORE", "DEEPSLATE_GOLD_ORE", "DEEPSLATE_EMERALD_ORE", "DEEPSLATE_DIAMOND_ORE", "RAW_IRON_BLOCK", "RAW_GOLD_BLOCK", "COPPER_ORE", "DEEPSLATE_COPPER_ORE", "COAL_ORE", "DEEPSLATE_COAL_ORE", "REDSTONE_ORE", "DEEPSLATE_REDSTONE_ORE", "LAPIS_ORE", "DEEPSLATE_LAPIS_ORE"]; //Ores to record
         blocks.forEach(block => {
             if(blockMined.getType().toString() === block) { //Check that the block mined is an ore
                 let oreNotAlreadyDisplayed = true;
@@ -38,6 +38,9 @@ registerEvent("org.bukkit.event.block.BlockBreakEvent", {
                     }
                     if(blockMined.getType().toString().indexOf("REDSTONE") > -1) {
                         block = "redstone";
+                    }
+                    if(blockMined.getType().toString().indexOf("LAPIS") > -1) {
+                        block = "lapis"
                     }
                     const onlinePlayer = bukkit.getOnlinePlayers();
                     onlinePlayer.forEach(player => {
