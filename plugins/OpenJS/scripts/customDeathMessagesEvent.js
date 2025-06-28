@@ -12,7 +12,6 @@ registerEvent("org.bukkit.event.entity.PlayerDeathEvent", {
             if (victim.getType().toString() === "PLAYER") { //Ensure that the victim is a player cause this event is broken
                 if(event.getDamageSource().getCausingEntity()) {
                     let entityResponsible = event.getDamageSource().getCausingEntity().getName().toString();
-                    log.info(event.getDamageSource().getCausingEntity().getType().toString());
                     if(event.getDamageSource().getCausingEntity().getType().toString() != "PLAYER") {
                         entityResponsible = entityResponsible.replace(/\s+/g, ''); //Remove any spaces
                         let deathTypeInList = false;

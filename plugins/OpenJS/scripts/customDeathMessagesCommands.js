@@ -146,11 +146,8 @@ addCommand("customdeath", {
                     let newList = [];
                     deathTypeList.forEach(death => { //For each item in the list, if their start matches the argument, display them
                         const caseChanged = args[1] .charAt(0).toUpperCase() + args[1].slice(1);
-                        log.info("death substring:" + death.substring(0, length));
-                        log.info("args 1:" + caseChanged);
                         if(death.substring(0, length) === caseChanged) {
                             newList.push(death);
-                            log.info(newList);
                         }
                     })
                     return toJavaList(newList);
