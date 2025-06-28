@@ -27,7 +27,7 @@ BotToken: "${DISCORD_BOT_KEY}"
 #
 # The first part of channel pairs is not the Discord channel name!
 # Run "/discord reload" after changing this option to apply
-Channels: { "global": "" }
+Channels: { "global": "1388388677612474469" }
 
 # Console channel numerical ID (NOT NAME), leave blank to disable the console channel all together
 DiscordConsoleChannelId: "000000000000000000"
