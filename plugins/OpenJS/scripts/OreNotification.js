@@ -3,7 +3,7 @@ registerEvent("org.bukkit.event.block.BlockBreakEvent", {
     handleEvent: function(event) {
         const blockMined = event.getBlock(); //The block mined by the player
         const bukkit = org.bukkit.Bukkit;
-        const blocks = ["IRON_ORE", "GOLD_ORE", "EMERALD_ORE", "DIAMOND_ORE", "ANCIENT_DEBRIS", "DEEPSLATE_IRON_ORE", "DEEPSLATE_GOLD_ORE", "DEEPSLATE_EMERALD_ORE", "DEEPSLATE_DIAMOND_ORE", "RAW_IRON_BLOCK", "RAW_GOLD_BLOCK"]; //Ores to record
+        const blocks = ["IRON_ORE", "GOLD_ORE", "EMERALD_ORE", "DIAMOND_ORE", "ANCIENT_DEBRIS", "DEEPSLATE_IRON_ORE", "DEEPSLATE_GOLD_ORE", "DEEPSLATE_EMERALD_ORE", "DEEPSLATE_DIAMOND_ORE", "RAW_IRON_BLOCK", "RAW_GOLD_BLOCK", "COPPER_ORE", "DEEPSLATE_COPPER_ORE", "COAL_ORE", "DEEPSLATE_COAL_ORE", "REDSTONE_ORE", "DEEPSLATE_REDSTONE_ORE"]; //Ores to record
         blocks.forEach(block => {
             if(blockMined.getType().toString() === block) { //Check that the block mined is an ore
                 let oreNotAlreadyDisplayed = true;
@@ -13,8 +13,8 @@ registerEvent("org.bukkit.event.block.BlockBreakEvent", {
                     }
                 })
                 const oreCount = oreVeinSize(blockMined, block);
-                    if(oreNotAlreadyDisplayed) { //If the ore is not already displayed, display it
-                        let block = "";
+                if(oreNotAlreadyDisplayed)  {//If the ore is not already displayed, display it
+                    let block = "";
                     if(blockMined.getType().toString().indexOf("IRON") > -1) { //Several if statements to convert the event block type into a short, easily readable type.
                         block="iron"
                     }
@@ -29,6 +29,15 @@ registerEvent("org.bukkit.event.block.BlockBreakEvent", {
                     }
                     if(blockMined.getType().toString().indexOf("DEBRIS") > -1) {
                         block="debris"
+                    }
+                    if(blockMined.getType().toString().indexOf("COPPER") > -1) {
+                        block = "copper"
+                    }
+                    if(blockMined.getType().toString().indexOf("COAL") > -1) {
+                        block = "coal"
+                    }
+                    if(blockMined.getType().toString().indexOf("REDSTONE") > -1) {
+                        block = "redstone";
                     }
                     const onlinePlayer = bukkit.getOnlinePlayers();
                     onlinePlayer.forEach(player => {
@@ -47,7 +56,6 @@ function oreVeinSize(block, ore) {
     for(let xCoord = -3; xCoord < 3; xCoord++) { //x coordinate
         for(let yCoord = -3; yCoord < 3; yCoord++) { //y coordinate
             for(let zCoord = -3; zCoord < 3; zCoord++) { //z coordinate
-                log.info(block.getRelative(xCoord, yCoord, zCoord).getType().toString());
                 if(block.getRelative(xCoord, yCoord, zCoord).getType().toString() === ore) { //ensure block is of the right type
                     oreMined++;
                     let orePresent = true;
@@ -65,3 +73,8 @@ function oreVeinSize(block, ore) {
     }
     return oreMined;
 }
+
+registerSchedule(0, 200, {
+    handler: function() {    
+        checkedCoords = [];
+    }}, "handler");
