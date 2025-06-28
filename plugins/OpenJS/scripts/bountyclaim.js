@@ -46,15 +46,15 @@ registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
                             if(responsiblePlayerAddress === victimAddress) {
                                 if(responsiblePlayerHostName === victimHostName) {
                                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
-                                        const message = "Bounty: " + responsiblePlayer + " and " + victimName + " share an IP address and host name" + ", with " + responsiblePlayer + " claiming a bounty of " + bountyValue;
-                                        Bukkit.dispatchCommand(Console, "discordsrv bcast " + message); //Give the killer money
+                                        const message = " Bounty: " + responsiblePlayer + " and " + victimName + " share an IP address and host name" + ", with " + responsiblePlayer + " claiming a bounty of " + bountyValue;
+                                        Bukkit.dispatchCommand(Console, "discordsrv bcast #1388395111133479004" + message); //Give the killer money
                                     });
                                 }
 
                                 else {
                                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
                                         const message = responsiblePlayer + " and " + victimName + " share an IP address" + ", with " + responsiblePlayer + " claiming a bounty of " + bountyValue;
-                                        Bukkit.dispatchCommand(Console, "discordsrv bcast #1388395111133479004 " + message); //Give the killer money
+                                        Bukkit.dispatchCommand(Console, "discordsrv bcast #1388395111133479004" + message); //Give the killer money
                                     });
                                 }
                             }
