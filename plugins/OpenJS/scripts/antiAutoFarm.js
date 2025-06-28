@@ -5,8 +5,8 @@ registerEvent("org.bukkit.event.block.BlockPistonExtendEvent", {
         const direction = event.getDirection().toString();
         switch(direction) {
             case "SOUTH":
-                for(z = 1; z <= 14; z++) {
-                    for(y = -1; y <= 2; y++) {
+                for(let z = 1; z <= 14; z++) {
+                    for(let y = -1; y <= 2; y++) {
                         crops.forEach(crop => {
                             if(block.getRelative(0, y, z).getType().toString() === crop) {
                                 event.setCancelled(true);
@@ -16,8 +16,8 @@ registerEvent("org.bukkit.event.block.BlockPistonExtendEvent", {
                 }
             
             case "NORTH":
-            for(z = 1; z >= -14; z--) {
-                for(y = -1; y <= 2; y++) {
+            for(let z = 1; z >= -14; z--) {
+                for(let y = -1; y <= 2; y++) {
                     crops.forEach(crop => {
                         if(block.getRelative(0, y, z).getType().toString() === crop) {
                             event.setCancelled(true);
@@ -27,8 +27,8 @@ registerEvent("org.bukkit.event.block.BlockPistonExtendEvent", {
             }
         
             case "EAST":
-            for(x = 1; x <= 14; x++) {
-                for(y = -1; y <= 2; y++) {
+            for(let x = 1; x <= 14; x++) {
+                for(let y = -1; y <= 2; y++) {
                     crops.forEach(crop => {
                         if(block.getRelative(x, y, 0).getType().toString() === crop) {
                             event.setCancelled(true);
@@ -38,8 +38,8 @@ registerEvent("org.bukkit.event.block.BlockPistonExtendEvent", {
             }
         
             case "WEST":
-            for(x = 1; x >= -14; x--) {
-                for(y = -1; y <= 2; y++) {
+            for(let x = 1; x >= -14; x--) {
+                for(let y = -1; y <= 2; y++) {
                     crops.forEach(crop => {
                         if(block.getRelative(x, y, 0).getType().toString() === crop) {
                             event.setCancelled(true);
@@ -49,18 +49,18 @@ registerEvent("org.bukkit.event.block.BlockPistonExtendEvent", {
             }
         
             case "UP":
-                for(y = 1; y <= 14; y++) {
+                for(let y = 1; y <= 14; y++) {
                     crops.forEach(crop => {
-                        if(block.getRelative(0, y, z).getType().toString() === crop) {
+                        if(block.getRelative(0, y, 0).getType().toString() === crop) {
                             event.setCancelled(true);
                         }
                     })
                 }
             
             case "DOWN":
-                for(y = -14; y <= 0; y++) {
+                for(let y = -14; y <= 0; y++) {
                     crops.forEach(crop => {
-                        if(block.getRelative(0, y, z).getType().toString() === crop) {
+                        if(block.getRelative(0, y, 0).getType().toString() === crop) {
                             event.setCancelled(true);
                         }
                     })

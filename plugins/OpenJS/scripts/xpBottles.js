@@ -26,7 +26,7 @@ registerEvent("org.bukkit.event.player.PlayerInteractEvent", {
                             player.getWorld().dropItem(player.getLocation(), XPBottle)
                         }
                         inventory.removeItem(glassBottle); //Remove the glass bottle from player inventory
-                        player.giveExp(-7); //Subtract 7 exp from the player
+                        player.giveExp(-8); //Subtract 7 exp from the player
                     }
                 }
             }
