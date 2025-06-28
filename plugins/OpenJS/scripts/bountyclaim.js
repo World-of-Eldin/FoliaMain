@@ -53,7 +53,7 @@ registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
 
                                 else {
                                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
-                                        const message = responsiblePlayer + " and " + victimName + " share an IP address" + ", with " + responsiblePlayer + " claiming a bounty of " + bountyValue;
+                                        const message = " " + responsiblePlayer + " and " + victimName + " share an IP address" + ", with " + responsiblePlayer + " claiming a bounty of " + bountyValue;
                                         Bukkit.dispatchCommand(Console, "discordsrv bcast #1388395111133479004" + message); //Give the killer money
                                     });
                                 }
