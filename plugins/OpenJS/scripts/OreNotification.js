@@ -77,7 +77,7 @@ function oreVeinSize(block, ore) {
     return oreMined;
 }
 
-registerSchedule(0, 200, {
+registerSchedule(72000, 72000, { //Clear the array every hour
     handler: function() {    
         checkedCoords = [];
     }}, "handler");
