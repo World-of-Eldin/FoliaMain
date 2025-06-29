@@ -12,7 +12,13 @@ registerEvent("org.bukkit.event.player.AsyncPlayerChatEvent", {
                 prefix + formattedName + " " + suffix + ChatColor.RESET + ": " + event.getMessage());
 
             event.setCancelled(true);
-            org.bukkit.Bukkit.broadcastMessage(formattedMessage);
+            const player = event.getPlayer();
+            if(!player.hasMetadata("vanished")) {
+                org.bukkit.Bukkit.broadcastMessage(formattedMessage);
+            }
+            else {
+                player.sendMessage(ChatColor.RED + "You are currently vanished")
+            }
         } catch (e) {
             logger.warning("Chat error: " + e.toString());
             event.setCancelled(false);
