@@ -118,17 +118,33 @@ registerEvent("org.bukkit.event.server.TabCompleteEvent", {
         else {
             event.setCompletions(completions) //Use the existng completions
         }
-        log.info(playerCompletionExists);
 
     }
 }, "HIGHEST")
 
-registerSchedule(20, 20, { //Refresh an action bar every 20 ticks to notify vanished players
-    handler: function() {
-        const onlinePlayers = Bukkit.getOnlinePlayers();
-            onlinePlayers.forEach(player => {
-                if(player.hasMetadata("vanished")) {
-                    player.sendActionBar(ChatColor.GOLD + "You are vanished");
+registerEvent("org.bukkit.event.server.ServerListPingEvent", {
+    handleEvent: function(event) {
+        const listedPlayers = event.getListedPlayers();
+
+        if (listedPlayers != null) {
+            const iterator = listedPlayers.iterator();
+            while (iterator.hasNext()) {
+                const player = Bukkit.getPlayer(iterator.next().id); //Get the next player
+                if (player && player.hasMetadata("vanished")) {
+                    iterator.remove(); //Remove the player from the list
                 }
-            }) 
-}}, "handler");
+            }
+            event.setNumPlayers(listedPlayers.size()); //Change the number of players displayed
+
+        } 
+    }
+})
+
+task.repeat(0, 2, () => { //Refresh an action bar every 20 ticks to notify vanished players
+    const onlinePlayers = Bukkit.getOnlinePlayers();
+        onlinePlayers.forEach(player => {
+            if(player.hasMetadata("vanished")) {
+                player.sendActionBar(ChatColor.GOLD + "You are vanished");
+            }
+        }) 
+});

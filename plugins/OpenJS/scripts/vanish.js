@@ -4,7 +4,6 @@ const PotionEffectType = org.bukkit.potion.PotionEffectType;
 addCommand("vanish", { 
     onCommand: function(sender, args) {
         if (!sender.hasMetadata("vanished")) { //Check that the sender is not already vanished
-            log.info(!sender.hasMetadata("vanished"));
             const onlinePlayers = Bukkit.getOnlinePlayers();
 
             onlinePlayers.forEach(player => {
