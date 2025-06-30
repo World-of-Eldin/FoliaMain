@@ -19,7 +19,13 @@ registerEvent("org.bukkit.event.player.AsyncPlayerChatEvent", {
     );
 
     event.setCancelled(true);
-    org.bukkit.Bukkit.broadcastMessage(formattedMessage);
+    const player = event.getPlayer();
+    if(!player.hasMetadata("vanished")) {
+        org.bukkit.Bukkit.broadcastMessage(formattedMessage);
+    }
+    else {
+        player.sendMessage(ChatColor.RED + "You are currently vanished")
+    }
   },
 });
 
@@ -45,14 +51,6 @@ function getPlayerPrefix(player) {
             highestWeight = weight;
             prefix = prefixText;
           }
-            event.setCancelled(true);
-            const player = event.getPlayer();
-            if(!player.hasMetadata("vanished")) {
-                org.bukkit.Bukkit.broadcastMessage(formattedMessage);
-            }
-            else {
-                player.sendMessage(ChatColor.RED + "You are currently vanished")
-            }
           if (weight === 1000 || weight === 1001) {
             staffPrefix = prefixText;
           }
