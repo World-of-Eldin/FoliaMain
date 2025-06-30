@@ -123,6 +123,24 @@ registerEvent("org.bukkit.event.server.TabCompleteEvent", {
     }
 }, "HIGHEST")
 
+registerEvent("org.bukkit.event.server.ServerListPingEvent", {
+    handleEvent: function(event) {
+        const listedPlayers = event.getListedPlayers();
+
+        if (listedPlayers != null) {
+            const iterator = listedPlayers.iterator();
+            while (iterator.hasNext()) {
+                const player = Bukkit.getPlayer(iterator.next().id); //Get the next player
+                if (player && player.hasMetadata("vanished")) {
+                    iterator.remove(); //Remove the player from the list
+                }
+            }
+            event.setNumPlayers(listedPlayers.size()); //Change the number of players displayed
+
+        } 
+    }
+})
+
 registerSchedule(20, 20, { //Refresh an action bar every 20 ticks to notify vanished players
     handler: function() {
         const onlinePlayers = Bukkit.getOnlinePlayers();
