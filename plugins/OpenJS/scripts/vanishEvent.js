@@ -140,12 +140,11 @@ registerEvent("org.bukkit.event.server.ServerListPingEvent", {
     }
 })
 
-registerSchedule(20, 20, { //Refresh an action bar every 20 ticks to notify vanished players
-    handler: function() {
-        const onlinePlayers = Bukkit.getOnlinePlayers();
-            onlinePlayers.forEach(player => {
-                if(player.hasMetadata("vanished")) {
-                    player.sendActionBar(ChatColor.GOLD + "You are vanished");
-                }
-            }) 
-}}, "handler");
+task.repeat(0, 2, () => { //Refresh an action bar every 20 ticks to notify vanished players
+    const onlinePlayers = Bukkit.getOnlinePlayers();
+        onlinePlayers.forEach(player => {
+            if(player.hasMetadata("vanished")) {
+                player.sendActionBar(ChatColor.GOLD + "You are vanished");
+            }
+        }) 
+});
