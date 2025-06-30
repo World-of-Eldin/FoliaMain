@@ -58,5 +58,6 @@ addCommand("god", {
             sender.removeMetadata("god", plugin);
             sender.sendMessage("You are no longer in god mode"); //Remove the god metadata
         }
-    }
-})
+    }},
+    "eldin.staff"
+);
