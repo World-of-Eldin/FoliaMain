@@ -118,7 +118,6 @@ registerEvent("org.bukkit.event.server.TabCompleteEvent", {
         else {
             event.setCompletions(completions) //Use the existng completions
         }
-        log.info(playerCompletionExists);
 
     }
 }, "HIGHEST")
