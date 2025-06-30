@@ -73,7 +73,7 @@ addCommand("lottery", {
                         sender.sendMessage(ChatColor.GOLD + "Ticket Count:" + ChatColor.GREEN + " You have a total of " + ticketCount + " tickets, worth " + ticketCount * ticketValue * (1 - tax/100) + ChatColor.RESET + " 㒖" + ChatColor.GREEN + "Tradebars");
 
                         if(total != 0) { //Ensure that no division by 0 occurs
-                            sender.sendMessage(ChatColor.GOLD + "Chances:" + ChatColor.GREEN + " This gives you a " + Math.floor(ticketCount/total * 100) + "% chance of winning")
+                            sender.sendMessage(ChatColor.GOLD + "Chances:" + ChatColor.GREEN + " This gives you a " + (ticketCount/total * 100).toFixed(2) + "% chance of winning")
                         }
 
                         else {
