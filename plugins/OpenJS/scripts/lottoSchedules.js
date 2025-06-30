@@ -11,25 +11,23 @@ const Bukkit = org.bukkit.Bukkit;
 const Console = Bukkit.getConsoleSender();
 const Scheduler = Bukkit.getGlobalRegionScheduler();
 const ChatColor = org.bukkit.ChatColor;
-registerSchedule(200, 200, { //Run every 10 seconds
-        handler: function() {
-            DiskApi.loadFile("LottoTimePassage", false, true)
-            const timePassed = DiskApi.getVar("LottoTimePassage", "time", 0, true);
-            
-            if(timePassed < hours * 3600) { //Increment time if not passed hours * 3600
-                DiskApi.setVar("LottoTimePassage", "time", timePassed + 10, true)
-                DiskApi.saveFile("LottoTimePassage", false, true)
-            }
+task.repeat(0, 10, () => { //Run every 10 seconds
+    DiskApi.loadFile("LottoTimePassage", false, true)
+    const timePassed = DiskApi.getVar("LottoTimePassage", "time", 0, true);
+    
+    if(timePassed < hours * 3600) { //Increment time if not passed hours * 3600
+        DiskApi.setVar("LottoTimePassage", "time", timePassed + 10, true)
+        DiskApi.saveFile("LottoTimePassage", false, true)
+    }
 
-            else {
-                DiskApi.setVar("LottoTimePassage", "time", 0, true)
-                iterations();
-                DiskApi.saveFile("LottoTimePassage", true, true);
-                DiskApi.loadFile("LottoTimePassage", true, true);
-                gambling();
-            }
-            
-    }}, "handler");
+    else {
+        DiskApi.setVar("LottoTimePassage", "time", 0, true)
+        iterations();
+        DiskApi.saveFile("LottoTimePassage", true, true);
+        DiskApi.loadFile("LottoTimePassage", true, true);
+        gambling();
+    }
+});
 
 function iterations() { //Add an iteration to deplete rollOverChance
     const iterations = DiskApi.getVar("LottoTimePassage", "iterations", 0, true);
@@ -84,17 +82,16 @@ function gambling() {
     }
 }
 
-registerSchedule(announcementRate * 3600 * 20, announcementRate * 3600 * 20, { //Broadcast lotto information
-    handler: function() {
-        DiskApi.loadFile("LottoTimePassage", false, true)
-        DiskApi.loadFile("LottoData", false, true)
-        const timer = DiskApi.getVar("LottoTimePassage", "time", 0, true);
-        const timerValue = hours * 3600 - Number(timer);
-        const totalTickets = DiskApi.getVar("LottoData", "total", 0, true);
-        Server.broadcastMessage(ChatColor.GOLD + "Lottery:")
-        Server.broadcastMessage(ChatColor.GOLD + "Pot: " + ChatColor.GREEN + (totalTickets * ticketValue + extraMoney) + ChatColor.RESET + " 㒖" + ChatColor.GREEN + "Tradebars")
-        Server.broadcastMessage(ChatColor.GOLD + "Remaining Time: " + ChatColor.GREEN + remainingTime(timerValue))
-    }}, "handler");
+task.repeat(announcementRate * 1800, announcementRate * 3600, () => { //Broadcast lotto information
+    DiskApi.loadFile("LottoTimePassage", false, true)
+    DiskApi.loadFile("LottoData", false, true)
+    const timer = DiskApi.getVar("LottoTimePassage", "time", 0, true);
+    const timerValue = hours * 3600 - Number(timer);
+    const totalTickets = DiskApi.getVar("LottoData", "total", 0, true);
+    Server.broadcastMessage(ChatColor.GOLD + "Lottery:")
+    Server.broadcastMessage(ChatColor.GOLD + "Pot: " + ChatColor.GREEN + (totalTickets * ticketValue + extraMoney) + ChatColor.RESET + " 㒖" + ChatColor.GREEN + "Tradebars")
+    Server.broadcastMessage(ChatColor.GOLD + "Remaining Time: " + ChatColor.GREEN + remainingTime(timerValue))
+});
 
 function remainingTime(totalSeconds) {
     let drawTimeMessage = "";
