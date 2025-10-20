@@ -3,7 +3,6 @@ registerEvent("org.bukkit.event.world.PortalCreateEvent", {
         const entity = event.getEntity();
         if(entity) {
             if(entity.getType().toString() === "PLAYER" && !entity.hasPermission("eldin.create.netherportal")) {
-                log.info("cancelled")
                 event.setCancelled(true);
             }
         }
