@@ -1,0 +1,27 @@
+database:
+  host: localhost
+  user: economy
+  password: password
+  databaseName: economy
+  port: 3306
+
+currencyName: " Tradebars" #The currency name used
+USTime: true #Whether to use US time format
+messages:
+  defaultColor: "§b" #A default colour for plugin output, such as /baltop
+  prefix: "㔥 " #A prefix to use at the beginning of some messages
+  balance:
+    selfBalance: "&8Your balance is &f㒖&7{value} Tradebars" #The message displayed when a player checks their own balance
+    otherBalance: "&7{player}'s&8 balance is &f㒖&7{value} Tradebars" #The message displayed when a player checks the balance of another player
+    setBalance: "&7{player}'s&8 balance is set to &f㒖&7{value} Tradebars" #The message displayed when a player's balance is set
+  payment:
+    paymentSent: "&8You have payed &7{player} &f㒖&7{value} Tradebars" #The message displayed when the sender sends money to another player
+    paymentReceived: "&7{player}&8 has paid you &f㒖&7{value} Tradebars" #The message displayed when the sender receives money from another player
+    paymentNoMoney: "&cYou don't have enough money to transfer &7{player} &f㒖&7{value} Tradebars" #The message displayed when the sender does not have the money to send to another player
+  history:
+    standardHistory:
+      moneyFromPlayer: "&2{time}&8 &f㒖&7You sent {value} Tradebars to {player}" #The message displayed when the sender sent money to another player
+      moneyToPlayer: "&2{time}&8 &f㒖&7{player} sent you {value} Tradebars" #The message displayed when the sender received money from another player
+    adminHistory:
+      moneyFromPlayer: "&2{time}&8 &f㒖&7{selectedPlayer} sent {value} Tradebars to {player}" #The message displayed when the selected player sent money to another player
+      moneyToPlayer: "&2{time}&8 &f㒖&7{player} sent {selectedPlayer} {value} Tradebars" #The message displayed when the selected player received money from another player
