@@ -20,7 +20,7 @@ addCommand("lottery", {
                         if(args.length === 2) { //Check that 2 arguments were used
                             if(args[1] >= 1 && args[1] <= maxTickets) { //Check that the number is within the set range
                                 if(args[1] % 1 === 0) { //Check that the number is whole
-                                    const balancePlaceholder = "%kyvereco_balance%"
+                                    const balancePlaceholder = "%foliaeconomy_balance%"
                                     const balance = PlaceholderAPI.parseString(sender, balancePlaceholder) //Get the player's balance
                                     const valueOfTicket = ticketValue * args[1];
 
@@ -30,7 +30,7 @@ addCommand("lottery", {
 
                                         if(!(numberOfTickets > maxTickets)) { //Check that the player has not gone over the ticket purchase limit
                                             sender.sendMessage(ChatColor.GOLD +"You have purchased " + args[1] + " tickets");
-                                            Bukkit.dispatchCommand(Console, "economy remove " + sender.getName() + " " + valueOfTicket); //Remove the money from the player
+                                            Bukkit.dispatchCommand(Console, "setbal " + sender.getName() + " " + (balance - valueOfTicket)); //Remove the money from the player
                                             DiskApi.setVar("LottoData", sender.getName(), numberOfTickets, true)
                                             saveTotal(args[1], "LottoData")
                                             savePlayer(sender.getName(), "LottoData");

@@ -1,3 +1,4 @@
+//!PlaceholderAPI
 const Bukkit = org.bukkit.Bukkit;
 const Console = Bukkit.getConsoleSender();
 const Scheduler = Bukkit.getGlobalRegionScheduler();
@@ -29,7 +30,12 @@ registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
                         if (victimInList) {
                             const bountyValue = DiskApi.getVar("BountyData", victimName, 0, true);
                             Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
-                                Bukkit.dispatchCommand(Console, "economy add " + responsiblePlayer + " " + bountyValue); //Give the killer money
+                                const player = entityResponsible;
+                                const balanceStr = PlaceholderAPI.parseString(player, "%foliaeconomy_balance%");
+                                const balance = Number(balanceStr);
+                                log.info("Balance of " + player.getName() + ": " + balance);
+                                log.info("Correct balance: " + balance);
+                                Bukkit.dispatchCommand(Console, "setbal " + responsiblePlayer + " " + (balance + bountyValue)); //Give the killer money
                             });
                             DiskApi.setVar("BountyData", victimName, 0, true);
                             const indexToRemove = playerDataList.indexOf(victimName);
@@ -47,14 +53,14 @@ registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
                                 if(responsiblePlayerHostName === victimHostName) {
                                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
                                         const message = " Bounty: " + responsiblePlayer + " and " + victimName + " share an IP address and host name" + ", with " + responsiblePlayer + " claiming a bounty of " + bountyValue;
-                                        Bukkit.dispatchCommand(Console, "discordsrv bcast #1388395111133479004" + message); //Give the killer money
+                                        Bukkit.dispatchCommand(Console, "discordsrv bcast #1388395036642643968" + message);
                                     });
                                 }
 
                                 else {
                                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
                                         const message = " " + responsiblePlayer + " and " + victimName + " share an IP address" + ", with " + responsiblePlayer + " claiming a bounty of " + bountyValue;
-                                        Bukkit.dispatchCommand(Console, "discordsrv bcast #1388395111133479004" + message); //Give the killer money
+                                        Bukkit.dispatchCommand(Console, "discordsrv bcast #1388395036642643968" + message);
                                     });
                                 }
                             }

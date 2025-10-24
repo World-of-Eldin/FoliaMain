@@ -30,8 +30,9 @@ addCommand("bounty", {
                                     })
 
                                     if(playerOnline && playerWithBounty != sendingPlayer) {
-                                        const balancePlaceholder = "%kyvereco_balance%"
+                                        const balancePlaceholder = "%foliaeconomy_balance%"
                                         const balance = PlaceholderAPI.parseString(sender, balancePlaceholder) //Get the player's balance
+                                        log.info(balance);
 
                                         if(balance >= bountyValue) { //Check that the player can afford the ticket
                                             const currentBounty = DiskApi.getVar("BountyData", playerWithBounty, 0, true);
@@ -39,7 +40,7 @@ addCommand("bounty", {
                                             DiskApi.setVar("BountyData", playerWithBounty, totalBounty, true);
                                             savePLayer(playerWithBounty, "BountyData")
                                             DiskApi.saveFile("BountyData", false, true);
-                                            Bukkit.dispatchCommand(Console, "economy remove " + sender.getName() + " " + bountyValue); //Remove the money from the player
+                                            Bukkit.dispatchCommand(Console, "setbal " + sender.getName() + " " + (balance - bountyValue)); //Remove the money from the player
                                             if(bountyValue != totalBounty) {
                                                 Server.broadcastMessage("§e§l" + "A bounty has been placed on " + playerWithBounty + "'s head by " + sendingPlayer + ", worth " + bountyValue + ChatColor.RESET + " 㒖" + "§e§l" + "Tradebars" + ", taking their total bounty to " + totalBounty + ChatColor.RESET + " 㒖" + "§e§l" + " Tradebars");
                                             }
