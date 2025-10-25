@@ -1,0 +1,124 @@
+ShopName: Cartographer
+DisplayName: "&f㒘㒘㒠"
+shop:
+  Amethyst_Shard:
+    MenuItem:
+      - "type:Amethyst_Shard"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&75 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Amethyst_Shard"
+      - "amount:1"
+    Reward_left: 5
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Amethyst_Shard"
+      - "amount:16"
+    Reward_shift_left: 80
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Amethyst_Shard"
+    Reward_middle: 5
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 21
+  Quartz:
+    MenuItem:
+      - "type:Quartz"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&73 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Quartz"
+      - "amount:1"
+    Reward_left: 3
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Quartz"
+      - "amount:16"
+    Reward_shift_left: 48
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Quartz"
+    Reward_middle: 3
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 22
+  Chorus_Fruit:
+    MenuItem:
+      - "type:Chorus_Fruit"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&70.5 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Chorus_Fruit"
+      - "amount:1"
+    Reward_left: 0.5
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Chorus_Fruit"
+      - "amount:16"
+    Reward_shift_left: 8
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Chorus_Fruit"
+    Reward_middle: 0.5
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 24
+  Heart_of_the_Sea:
+    MenuItem:
+      - "type:Heart_of_the_Sea"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&760 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Heart_of_the_Sea"
+      - "amount:1"
+    Reward_left: 60
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Heart_of_the_Sea"
+      - "amount:16"
+    Reward_shift_left: 960
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Heart_of_the_Sea"
+    Reward_middle: 60
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 25
+  UI_Navigation_9:
+    MenuItem:
+      - type:AIR
+      - amount:1
+    InventoryLocation: 54

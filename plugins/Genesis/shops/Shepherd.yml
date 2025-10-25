@@ -1,0 +1,153 @@
+ShopName: Shepherd
+DisplayName: "&f㒘㒘㒠"
+shop:
+  Beetroot:
+    MenuItem:
+      - "type:Beetroot"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&70.3 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Beetroot"
+      - "amount:1"
+    Reward_left: 0.3
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Beetroot"
+      - "amount:16"
+    Reward_shift_left: 4.8
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Beetroot"
+    Reward_middle: 0.3
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 20
+  Sweet_Berries:
+    MenuItem:
+      - "type:Sweet_Berries"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&71 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Sweet_Berries"
+      - "amount:1"
+    Reward_left: 1
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Sweet_Berries"
+      - "amount:16"
+    Reward_shift_left: 16
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Sweet_Berries"
+    Reward_middle: 1
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 21
+  Cooked_Rabbit:
+    MenuItem:
+      - "type:Cooked_Rabbit"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&72 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Cooked_Rabbit"
+      - "amount:1"
+    Reward_left: 2
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Cooked_Rabbit"
+      - "amount:16"
+    Reward_shift_left: 32
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Cooked_Rabbit"
+    Reward_middle: 2
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 22
+  Honey_Bottle:
+    MenuItem:
+      - "type:Honey_Bottle"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&77 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Honey_Bottle"
+      - "amount:1"
+    Reward_left: 7
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Honey_Bottle"
+      - "amount:16"
+    Reward_shift_left: 112
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Honey_Bottle"
+    Reward_middle: 7
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 23
+  Apple:
+    MenuItem:
+      - "type:Apple"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&710 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Apple"
+      - "amount:1"
+    Reward_left: 10
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Apple"
+      - "amount:16"
+    Reward_shift_left: 160
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Apple"
+    Reward_middle: 10
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 24
+  UI_Navigation_9:
+    MenuItem:
+      - type:AIR
+      - amount:1
+    InventoryLocation: 54
