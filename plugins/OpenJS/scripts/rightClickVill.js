@@ -4,9 +4,8 @@ var Scheduler = Bukkit.getServer().getScheduler();
 var Runnable = java.lang.Runnable;
 var Consumer = java.util.function.Consumer;
 
-var shopNames = {
-  balls: "Blacksmith",
-};
+// Valid shop names that villagers can open
+var validShops = ["Blacksmith", "Fishmonger", "FlowerShop", "Grocer", "SecretShop"];
 
 registerEvent("org.bukkit.event.player.PlayerInteractEntityEvent", {
   handleEvent: function (event) {
@@ -14,29 +13,35 @@ registerEvent("org.bukkit.event.player.PlayerInteractEntityEvent", {
       event.setCancelled(true);
 
       const player = event.getPlayer();
-      const villagerName = event.getRightClicked().getCustomName();
+      const villager = event.getRightClicked();
+      const villagerName = villager.getCustomName();
 
-      task.main(function () {
-        Bukkit.dispatchCommand(
-          Console,
-          "lp user " +
-            player.getName() +
-            " permission settemp genesis.open.command." +
-            shopNames[villagerName] +
-            " true 2s"
+      // Check if this villager has the official shop tag AND a valid shop name
+      const isOfficialShopVillager = villager.getScoreboardTags().contains("OfficialShopVillager");
+
+      if (isOfficialShopVillager && validShops.includes(villagerName)) {
+        task.main(function () {
+          Bukkit.dispatchCommand(
+            Console,
+            "lp user " +
+              player.getName() +
+              " permission settemp genesis.open.command." +
+              villagerName +
+              " true 2s"
+          );
+        });
+
+        player.getScheduler().runDelayed(
+          plugin,
+          new Consumer({
+            accept: function () {
+              player.performCommand("shop open " + villagerName);
+            },
+          }),
+          null,
+          5
         );
-      });
-
-      player.getScheduler().runDelayed(
-        plugin,
-        new Consumer({
-          accept: function () {
-            player.performCommand("shop open Blacksmith");
-          },
-        }),
-        null,
-        5
-      );
+      }
     }
   },
 });
