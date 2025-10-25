@@ -18,7 +18,8 @@ var validShops = [
   "Nitwit",
   "Shepherd",
   "Toolsmith",
-  "Weaponsmith"
+  "Weaponsmith",
+  "VillagerShops"
 ];
 
 registerEvent("org.bukkit.event.player.PlayerInteractEntityEvent", {

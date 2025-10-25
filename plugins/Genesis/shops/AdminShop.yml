@@ -1,0 +1,23 @@
+ShopName: AdminShop
+DisplayName: "&f㒘㒘㒠"
+shop:
+  VillagerShops_Plains:
+    MenuItem:
+      - "type:villager_spawn_egg"
+      - "amount:1"
+      - "name:&6Tomas's Egg (Plains)"
+      - "lore1:&7Spawns &6Tomas&7, an Admin Shop"
+      - "lore2:&7who sell villager eggs"
+      - "lore3:"
+      - "lore10:&6Price: &f㒖&70 Trade Bars"
+    RewardType: command
+    PriceType: money
+    Price: 0
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Tomas''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Tomas"},Tags:["shop_villager","shop_VillagerShops"],VillagerData:{level:99,profession:"minecraft:librarian",type:"minecraft:savanna"}}] 1'
+    Message: "&6[&7BossShop&6] You've purchased &Tomas's Egg &6for &f㒖&7%price%"
+    InventoryLocation: 20
+  UI_Navigation_9:
+    MenuItem:
+      - type:AIR
+      - amount:1
+    InventoryLocation: 54
