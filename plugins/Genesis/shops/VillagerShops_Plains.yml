@@ -16,15 +16,10 @@ shop:
       - "lore8:&7  Diamond: &f㒖&720 TB"
       - "lore9:"
       - "lore10:&6Price: &f㒖&720,000 Trade Bars"
-    RewardType: item
+    RewardType: command
     PriceType: money
     Price: 20000
-    Reward:
-      - "type:villager_spawn_egg"
-      - "amount:1"
-      - "name:&6Gareth"
-      - "lore1:&7Right click to spawn"
-      - 'nbt:{"entity_data":{"id":"minecraft:villager","Invulnerable":1b,"PersistenceRequired":1b,"Willing":0b,"data":{"server_shop":1b,"shop_name":"Armorer"},"VillagerData":{"level":99,"profession":"minecraft:armorer","type":"minecraft:plains"}}}'
+    Reward: 'give %player% villager_spawn_egg[entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,data:{server_shop:1b,shop_name:"Armorer"},VillagerData:{level:99,profession:"minecraft:armorer",type:"minecraft:plains"}},custom_name=''{"text":"Gareth","color":"gold"}'',lore=[''{"text":"Right click to spawn","color":"gray"}'']] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Gareth's Egg &6for &f㒖&7%price%"
     InventoryLocation: 10
   Butcher_Villager:
@@ -42,15 +37,10 @@ shop:
       - "lore8:&7  Cooked Porkchop: &f㒖&72 TB"
       - "lore9:"
       - "lore10:&6Price: &f㒖&720,000 Trade Bars"
-    RewardType: item
+    RewardType: command
     PriceType: money
     Price: 20000
-    Reward:
-      - "type:villager_spawn_egg"
-      - "amount:1"
-      - "name:&6Roland"
-      - "lore1:&7Right click to spawn"
-      - 'nbt:{"entity_data":{"id":"minecraft:villager","Invulnerable":1b,"PersistenceRequired":1b,"Willing":0b,"data":{"server_shop":1b,"shop_name":"Butcher"},"VillagerData":{"level":99,"profession":"minecraft:butcher","type":"minecraft:plains"}}}'
+    Reward: 'give %player% villager_spawn_egg[entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,data:{server_shop:1b,shop_name:"Butcher"},VillagerData:{level:99,profession:"minecraft:butcher",type:"minecraft:plains"}},custom_name=''{"text":"Roland","color":"gold"}'',lore=[''{"text":"Right click to spawn","color":"gray"}'']] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Roland's Egg &6for &f㒖&7%price%"
     InventoryLocation: 11
   Cartographer_Villager:
@@ -68,15 +58,10 @@ shop:
       - "lore8:&7  Heart of the Sea: &f㒖&760 TB"
       - "lore9:"
       - "lore10:&6Price: &f㒖&720,000 Trade Bars"
-    RewardType: item
+    RewardType: command
     PriceType: money
     Price: 20000
-    Reward:
-      - "type:villager_spawn_egg"
-      - "amount:1"
-      - "name:&6Elara"
-      - "lore1:&7Right click to spawn"
-      - 'nbt:{"entity_data":{"id":"minecraft:villager","Invulnerable":1b,"PersistenceRequired":1b,"Willing":0b,"data":{"server_shop":1b,"shop_name":"Cartographer"},"VillagerData":{"level":99,"profession":"minecraft:cartographer","type":"minecraft:plains"}}}'
+    Reward: 'give %player% villager_spawn_egg[entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,data:{server_shop:1b,shop_name:"Cartographer"},VillagerData:{level:99,profession:"minecraft:cartographer",type:"minecraft:plains"}},custom_name=''{"text":"Elara","color":"gold"}'',lore=[''{"text":"Right click to spawn","color":"gray"}'']] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Elara's Egg &6for &f㒖&7%price%"
     InventoryLocation: 12
   Cleric_Villager:
@@ -94,15 +79,10 @@ shop:
       - "lore8:&7  Glowstone Dust: &f㒖&72 TB"
       - "lore9:"
       - "lore10:&6Price: &f㒖&720,000 Trade Bars"
-    RewardType: item
+    RewardType: command
     PriceType: money
     Price: 20000
-    Reward:
-      - "type:villager_spawn_egg"
-      - "amount:1"
-      - "name:&6Matthias"
-      - "lore1:&7Right click to spawn"
-      - 'nbt:{"entity_data":{"id":"minecraft:villager","Invulnerable":1b,"PersistenceRequired":1b,"Willing":0b,"data":{"server_shop":1b,"shop_name":"Cleric"},"VillagerData":{"level":99,"profession":"minecraft:cleric","type":"minecraft:plains"}}}'
+    Reward: 'give %player% villager_spawn_egg[entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,data:{server_shop:1b,shop_name:"Cleric"},VillagerData:{level:99,profession:"minecraft:cleric",type:"minecraft:plains"}},custom_name=''{"text":"Matthias","color":"gold"}'',lore=[''{"text":"Right click to spawn","color":"gray"}'']] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Matthias's Egg &6for &f㒖&7%price%"
     InventoryLocation: 13
   Farmer_Villager:
@@ -121,15 +101,10 @@ shop:
       - "lore9:&7  Pumpkin Pie: &f㒖&72.5 TB"
       - "lore10:"
       - "lore11:&6Price: &f㒖&720,000 Trade Bars"
-    RewardType: item
+    RewardType: command
     PriceType: money
     Price: 20000
-    Reward:
-      - "type:villager_spawn_egg"
-      - "amount:1"
-      - "name:&6Bren"
-      - "lore1:&7Right click to spawn"
-      - 'nbt:{"entity_data":{"id":"minecraft:villager","Invulnerable":1b,"PersistenceRequired":1b,"Willing":0b,"data":{"server_shop":1b,"shop_name":"Farmer"},"VillagerData":{"level":99,"profession":"minecraft:farmer","type":"minecraft:plains"}}}'
+    Reward: 'give %player% villager_spawn_egg[entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,data:{server_shop:1b,shop_name:"Farmer"},VillagerData:{level:99,profession:"minecraft:farmer",type:"minecraft:plains"}},custom_name=''{"text":"Bren","color":"gold"}'',lore=[''{"text":"Right click to spawn","color":"gray"}'']] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Bren's Egg &6for &f㒖&7%price%"
     InventoryLocation: 14
   Fisherman_Villager:
@@ -147,15 +122,10 @@ shop:
       - "lore8:&7  Cooked Salmon: &f㒖&75 TB"
       - "lore9:"
       - "lore10:&6Price: &f㒖&720,000 Trade Bars"
-    RewardType: item
+    RewardType: command
     PriceType: money
     Price: 20000
-    Reward:
-      - "type:villager_spawn_egg"
-      - "amount:1"
-      - "name:&6Caspian"
-      - "lore1:&7Right click to spawn"
-      - 'nbt:{"entity_data":{"id":"minecraft:villager","Invulnerable":1b,"PersistenceRequired":1b,"Willing":0b,"data":{"server_shop":1b,"shop_name":"Fisherman"},"VillagerData":{"level":99,"profession":"minecraft:fisherman","type":"minecraft:plains"}}}'
+    Reward: 'give %player% villager_spawn_egg[entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,data:{server_shop:1b,shop_name:"Fisherman"},VillagerData:{level:99,profession:"minecraft:fisherman",type:"minecraft:plains"}},custom_name=''{"text":"Caspian","color":"gold"}'',lore=[''{"text":"Right click to spawn","color":"gray"}'']] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Caspian's Egg &6for &f㒖&7%price%"
     InventoryLocation: 15
   Fletcher_Villager:
@@ -171,15 +141,10 @@ shop:
       - "lore6:&7  Dried Kelp Block: &f㒖&71 TB"
       - "lore7:"
       - "lore8:&6Price: &f㒖&720,000 Trade Bars"
-    RewardType: item
+    RewardType: command
     PriceType: money
     Price: 20000
-    Reward:
-      - "type:villager_spawn_egg"
-      - "amount:1"
-      - "name:&6Rowan"
-      - "lore1:&7Right click to spawn"
-      - 'nbt:{"entity_data":{"id":"minecraft:villager","Invulnerable":1b,"PersistenceRequired":1b,"Willing":0b,"data":{"server_shop":1b,"shop_name":"Fletcher"},"VillagerData":{"level":99,"profession":"minecraft:fletcher","type":"minecraft:plains"}}}'
+    Reward: 'give %player% villager_spawn_egg[entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,data:{server_shop:1b,shop_name:"Fletcher"},VillagerData:{level:99,profession:"minecraft:fletcher",type:"minecraft:plains"}},custom_name=''{"text":"Rowan","color":"gold"}'',lore=[''{"text":"Right click to spawn","color":"gray"}'']] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Rowan's Egg &6for &f㒖&7%price%"
     InventoryLocation: 16
   Leatherworker_Villager:
@@ -196,15 +161,10 @@ shop:
       - "lore7:&7  Rabbit's Foot: &f㒖&78 TB"
       - "lore8:"
       - "lore9:&6Price: &f㒖&720,000 Trade Bars"
-    RewardType: item
+    RewardType: command
     PriceType: money
     Price: 20000
-    Reward:
-      - "type:villager_spawn_egg"
-      - "amount:1"
-      - "name:&6Silas"
-      - "lore1:&7Right click to spawn"
-      - 'nbt:{"entity_data":{"id":"minecraft:villager","Invulnerable":1b,"PersistenceRequired":1b,"Willing":0b,"data":{"server_shop":1b,"shop_name":"Leatherworker"},"VillagerData":{"level":99,"profession":"minecraft:leatherworker","type":"minecraft:plains"}}}'
+    Reward: 'give %player% villager_spawn_egg[entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,data:{server_shop:1b,shop_name:"Leatherworker"},VillagerData:{level:99,profession:"minecraft:leatherworker",type:"minecraft:plains"}},custom_name=''{"text":"Silas","color":"gold"}'',lore=[''{"text":"Right click to spawn","color":"gray"}'']] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Silas's Egg &6for &f㒖&7%price%"
     InventoryLocation: 19
   Librarian_Villager:
@@ -221,15 +181,10 @@ shop:
       - "lore7:&7  Nether Star: &f㒖&7400 TB"
       - "lore8:"
       - "lore9:&6Price: &f㒖&720,000 Trade Bars"
-    RewardType: item
+    RewardType: command
     PriceType: money
     Price: 20000
-    Reward:
-      - "type:villager_spawn_egg"
-      - "amount:1"
-      - "name:&6Aldric"
-      - "lore1:&7Right click to spawn"
-      - 'nbt:{"entity_data":{"id":"minecraft:villager","Invulnerable":1b,"PersistenceRequired":1b,"Willing":0b,"data":{"server_shop":1b,"shop_name":"Librarian"},"VillagerData":{"level":99,"profession":"minecraft:librarian","type":"minecraft:plains"}}}'
+    Reward: 'give %player% villager_spawn_egg[entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,data:{server_shop:1b,shop_name:"Librarian"},VillagerData:{level:99,profession:"minecraft:librarian",type:"minecraft:plains"}},custom_name=''{"text":"Aldric","color":"gold"}'',lore=[''{"text":"Right click to spawn","color":"gray"}'']] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Aldric's Egg &6for &f㒖&7%price%"
     InventoryLocation: 20
   Mason_Villager:
@@ -246,15 +201,10 @@ shop:
       - "lore7:&7  Nether Bricks: &f㒖&70.75 TB"
       - "lore8:"
       - "lore9:&6Price: &f㒖&720,000 Trade Bars"
-    RewardType: item
+    RewardType: command
     PriceType: money
     Price: 20000
-    Reward:
-      - "type:villager_spawn_egg"
-      - "amount:1"
-      - "name:&6Thorne"
-      - "lore1:&7Right click to spawn"
-      - 'nbt:{"entity_data":{"id":"minecraft:villager","Invulnerable":1b,"PersistenceRequired":1b,"Willing":0b,"data":{"server_shop":1b,"shop_name":"Mason"},"VillagerData":{"level":99,"profession":"minecraft:mason","type":"minecraft:plains"}}}'
+    Reward: 'give %player% villager_spawn_egg[entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,data:{server_shop:1b,shop_name:"Mason"},VillagerData:{level:99,profession:"minecraft:mason",type:"minecraft:plains"}},custom_name=''{"text":"Thorne","color":"gold"}'',lore=[''{"text":"Right click to spawn","color":"gray"}'']] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Thorne's Egg &6for &f㒖&7%price%"
     InventoryLocation: 21
   Nitwit_Villager:
@@ -270,15 +220,10 @@ shop:
       - "lore6:&7  Echo Shard: &f㒖&7100 TB"
       - "lore7:"
       - "lore8:&6Price: &f㒖&720,000 Trade Bars"
-    RewardType: item
+    RewardType: command
     PriceType: money
     Price: 20000
-    Reward:
-      - "type:villager_spawn_egg"
-      - "amount:1"
-      - "name:&6Pip"
-      - "lore1:&7Right click to spawn"
-      - 'nbt:{"entity_data":{"id":"minecraft:villager","Invulnerable":1b,"PersistenceRequired":1b,"Willing":0b,"data":{"server_shop":1b,"shop_name":"Nitwit"},"VillagerData":{"level":99,"profession":"minecraft:nitwit","type":"minecraft:plains"}}}'
+    Reward: 'give %player% villager_spawn_egg[entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,data:{server_shop:1b,shop_name:"Nitwit"},VillagerData:{level:99,profession:"minecraft:nitwit",type:"minecraft:plains"}},custom_name=''{"text":"Pip","color":"gold"}'',lore=[''{"text":"Right click to spawn","color":"gray"}'']] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Pip's Egg &6for &f㒖&7%price%"
     InventoryLocation: 22
   Shepherd_Villager:
@@ -297,15 +242,10 @@ shop:
       - "lore9:&7  Apple: &f㒖&710 TB"
       - "lore10:"
       - "lore11:&6Price: &f㒖&720,000 Trade Bars"
-    RewardType: item
+    RewardType: command
     PriceType: money
     Price: 20000
-    Reward:
-      - "type:villager_spawn_egg"
-      - "amount:1"
-      - "name:&6Mara"
-      - "lore1:&7Right click to spawn"
-      - 'nbt:{"entity_data":{"id":"minecraft:villager","Invulnerable":1b,"PersistenceRequired":1b,"Willing":0b,"data":{"server_shop":1b,"shop_name":"Shepherd"},"VillagerData":{"level":99,"profession":"minecraft:shepherd","type":"minecraft:plains"}}}'
+    Reward: 'give %player% villager_spawn_egg[entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,data:{server_shop:1b,shop_name:"Shepherd"},VillagerData:{level:99,profession:"minecraft:shepherd",type:"minecraft:plains"}},custom_name=''{"text":"Mara","color":"gold"}'',lore=[''{"text":"Right click to spawn","color":"gray"}'']] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Mara's Egg &6for &f㒖&7%price%"
     InventoryLocation: 23
   Toolsmith_Villager:
@@ -323,15 +263,10 @@ shop:
       - "lore8:&7  Diamond: &f㒖&720 TB"
       - "lore9:"
       - "lore10:&6Price: &f㒖&720,000 Trade Bars"
-    RewardType: item
+    RewardType: command
     PriceType: money
     Price: 20000
-    Reward:
-      - "type:villager_spawn_egg"
-      - "amount:1"
-      - "name:&6Balin"
-      - "lore1:&7Right click to spawn"
-      - 'nbt:{"entity_data":{"id":"minecraft:villager","Invulnerable":1b,"PersistenceRequired":1b,"Willing":0b,"data":{"server_shop":1b,"shop_name":"Toolsmith"},"VillagerData":{"level":99,"profession":"minecraft:toolsmith","type":"minecraft:plains"}}}'
+    Reward: 'give %player% villager_spawn_egg[entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,data:{server_shop:1b,shop_name:"Toolsmith"},VillagerData:{level:99,profession:"minecraft:toolsmith",type:"minecraft:plains"}},custom_name=''{"text":"Balin","color":"gold"}'',lore=[''{"text":"Right click to spawn","color":"gray"}'']] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Balin's Egg &6for &f㒖&7%price%"
     InventoryLocation: 24
   Weaponsmith_Villager:
@@ -349,15 +284,10 @@ shop:
       - "lore8:&7  Netherite Ingot: &f㒖&7250 TB"
       - "lore9:"
       - "lore10:&6Price: &f㒖&720,000 Trade Bars"
-    RewardType: item
+    RewardType: command
     PriceType: money
     Price: 20000
-    Reward:
-      - "type:villager_spawn_egg"
-      - "amount:1"
-      - "name:&6Kael"
-      - "lore1:&7Right click to spawn"
-      - 'nbt:{"entity_data":{"id":"minecraft:villager","Invulnerable":1b,"PersistenceRequired":1b,"Willing":0b,"data":{"server_shop":1b,"shop_name":"Weaponsmith"},"VillagerData":{"level":99,"profession":"minecraft:weaponsmith","type":"minecraft:plains"}}}'
+    Reward: 'give %player% villager_spawn_egg[entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,data:{server_shop:1b,shop_name:"Weaponsmith"},VillagerData:{level:99,profession:"minecraft:weaponsmith",type:"minecraft:plains"}},custom_name=''{"text":"Kael","color":"gold"}'',lore=[''{"text":"Right click to spawn","color":"gray"}'']] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Kael's Egg &6for &f㒖&7%price%"
     InventoryLocation: 25
   UI_Navigation_9:
