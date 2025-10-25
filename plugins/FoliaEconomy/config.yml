@@ -1,9 +1,9 @@
 database:
-  host: localhost
-  user: economy
-  password: password
-  databaseName: economy
-  port: 3306
+  host: ${DB_HOST}
+  user: ${DB_USER}
+  password: ${DB_PASS}
+  databaseName: Folia_BrendoEco
+  port: ${DB_PORT}
 
 currencyName: " Tradebars" #The currency name used
 USTime: true #Whether to use US time format
