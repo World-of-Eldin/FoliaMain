@@ -1,9 +1,9 @@
 name: Deploy Minecraft Plugins
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
     paths:
-      - 'plugins/**'
+      - "plugins/**"
   workflow_dispatch:
 jobs:
   deploy:
@@ -20,7 +20,7 @@ jobs:
           DB_JDBC: ${{ secrets.DB_JDBC }}
         run: |
           # Find all config files and substitute variables
-          find ./plugins -type f \( -name "*.yml" -o -name "*.yaml" -o -name "*.properties" -o -name "*.txt" -o -name "*.conf" -o -name "*.cfg" \) | while read file; do
+          find ./plugins -type f \( -name "*.yml" -o -name "*.yaml" -o -name "*.properties" -o -name "*.txt" -o -name "*.conf" -o -name "*.cfg" -o -name "*.js" \) | while read file; do
             echo "Processing: $file"
             # Create a temporary file with substitutions
             envsubst < "$file" > "$file.tmp"
