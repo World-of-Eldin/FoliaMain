@@ -122,8 +122,8 @@ function getPlayerName(uuidString) {
   }
 }
 
-// Command: /txhistory [player] [page]
-addCommand("txhistory", {
+// Command: /history [player] [page]
+addCommand("history", {
   onCommand: function (sender, args) {
     const Scheduler = Bukkit.getGlobalRegionScheduler();
     args = toArray(args);
@@ -232,7 +232,7 @@ addCommand("txhistory", {
           ChatColor.GRAY +
             "Page " +
             page +
-            " | Use /txhistory " +
+            " | Use /history " +
             (page + 1) +
             " for more"
         );
