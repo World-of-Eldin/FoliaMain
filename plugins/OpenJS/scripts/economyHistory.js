@@ -309,7 +309,7 @@ addCommand("settimezone", {
   },
 });
 
-// Command: /listtimezones - Show common timezones
+// Command: /listtimezones - Show common timezones.
 addCommand("listtimezones", {
   onCommand: function (sender, args) {
     sender.sendMessage(ChatColor.GOLD + "═══════════════════════════════════");
