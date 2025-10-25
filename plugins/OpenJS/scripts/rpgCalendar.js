@@ -29,7 +29,7 @@ registerSchedule(
   {
     handler: function () {
       DiskApi.loadFile("CalendarData", false, true);
-      var fullTime = Server.getWorld("world").getFullTime();
+      var fullTime = Server.getWorld("world").getTime();
       var historicalDay = parseInt(
         DiskApi.getVar("CalendarData", "DayCount", 0, true)
       );
