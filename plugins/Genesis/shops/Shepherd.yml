@@ -29,7 +29,7 @@ shop:
       - "type:Beetroot"
     Reward_middle: 0.3
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 20
+    InventoryLocation: 21
   Sweet_Berries:
     MenuItem:
       - "type:Sweet_Berries"
@@ -58,7 +58,7 @@ shop:
       - "type:Sweet_Berries"
     Reward_middle: 1
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 21
+    InventoryLocation: 22
   Cooked_Rabbit:
     MenuItem:
       - "type:Cooked_Rabbit"
@@ -87,7 +87,7 @@ shop:
       - "type:Cooked_Rabbit"
     Reward_middle: 2
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 22
+    InventoryLocation: 23
   Honey_Bottle:
     MenuItem:
       - "type:Honey_Bottle"
@@ -116,7 +116,7 @@ shop:
       - "type:Honey_Bottle"
     Reward_middle: 7
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 23
+    InventoryLocation: 24
   Apple:
     MenuItem:
       - "type:Apple"
@@ -145,7 +145,7 @@ shop:
       - "type:Apple"
     Reward_middle: 10
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 24
+    InventoryLocation: 25
   UI_Navigation_9:
     MenuItem:
       - type:AIR

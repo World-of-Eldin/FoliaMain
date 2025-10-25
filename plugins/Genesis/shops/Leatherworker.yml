@@ -29,7 +29,7 @@ shop:
       - "type:Rabbit_Hide"
     Reward_middle: 2
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 21
+    InventoryLocation: 22
   Leather:
     MenuItem:
       - "type:Leather"
@@ -58,7 +58,7 @@ shop:
       - "type:Leather"
     Reward_middle: 2
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 22
+    InventoryLocation: 23
   Rabbit_Foot:
     MenuItem:
       - "type:Rabbit_Foot"
@@ -87,7 +87,7 @@ shop:
       - "type:Rabbit_Foot"
     Reward_middle: 8
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 23
+    InventoryLocation: 24
   UI_Navigation_9:
     MenuItem:
       - type:AIR
