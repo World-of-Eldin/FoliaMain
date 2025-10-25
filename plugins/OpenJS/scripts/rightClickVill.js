@@ -1,10 +1,7 @@
 const Bukkit = org.bukkit.Bukkit;
-const NamespacedKey = org.bukkit.NamespacedKey;
-const PersistentDataType = org.bukkit.persistence.PersistentDataType;
 var Console = Bukkit.getConsoleSender();
-var Scheduler = Bukkit.getServer().getScheduler();
-var Runnable = java.lang.Runnable;
 var Consumer = java.util.function.Consumer;
+var Server = plugin.getServer();
 
 // Valid shop names that villagers can open
 var validShops = [
@@ -31,20 +28,20 @@ registerEvent("org.bukkit.event.player.PlayerInteractEntityEvent", {
 
       const player = event.getPlayer();
       const villager = event.getRightClicked();
-      const pdc = villager.getPersistentDataContainer();
+      const tags = villager.getScoreboardTags();
 
-      // Create namespaced keys for custom data
-      const serverShopKey = new NamespacedKey("minecraft", "server_shop");
-      const shopNameKey = new NamespacedKey("minecraft", "shop_name");
+      // Check if this villager has the shop_villager tag
+      if (tags.contains("shop_villager")) {
+        // Find which shop this villager represents
+        var shopName = null;
+        for (var i = 0; i < validShops.length; i++) {
+          if (tags.contains("shop_" + validShops[i])) {
+            shopName = validShops[i];
+            break;
+          }
+        }
 
-      // Check if this villager is an official shop villager
-      const isServerShop = pdc.has(serverShopKey, PersistentDataType.BYTE) &&
-                           pdc.get(serverShopKey, PersistentDataType.BYTE) === 1;
-
-      if (isServerShop && pdc.has(shopNameKey, PersistentDataType.STRING)) {
-        const shopName = pdc.get(shopNameKey, PersistentDataType.STRING);
-
-        if (validShops.includes(shopName)) {
+        if (shopName !== null) {
           task.main(function () {
             Bukkit.dispatchCommand(
               Console,
