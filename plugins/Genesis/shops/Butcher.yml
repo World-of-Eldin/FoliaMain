@@ -1,0 +1,124 @@
+ShopName: Butcher
+DisplayName: "&f㒘㒘㒠"
+shop:
+  Cooked_Chicken:
+    MenuItem:
+      - "type:Cooked_Chicken"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&72 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Cooked_Chicken"
+      - "amount:1"
+    Reward_left: 2
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Cooked_Chicken"
+      - "amount:16"
+    Reward_shift_left: 32
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Cooked_Chicken"
+    Reward_middle: 2
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 21
+  Cooked_Mutton:
+    MenuItem:
+      - "type:Cooked_Mutton"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&72 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Cooked_Mutton"
+      - "amount:1"
+    Reward_left: 2
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Cooked_Mutton"
+      - "amount:16"
+    Reward_shift_left: 32
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Cooked_Mutton"
+    Reward_middle: 2
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 22
+  Cooked_Beef:
+    MenuItem:
+      - "type:Cooked_Beef"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&72 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Cooked_Beef"
+      - "amount:1"
+    Reward_left: 2
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Cooked_Beef"
+      - "amount:16"
+    Reward_shift_left: 32
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Cooked_Beef"
+    Reward_middle: 2
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 24
+  Cooked_Porkchop:
+    MenuItem:
+      - "type:Cooked_Porkchop"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&72 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Cooked_Porkchop"
+      - "amount:1"
+    Reward_left: 2
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Cooked_Porkchop"
+      - "amount:16"
+    Reward_shift_left: 32
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Cooked_Porkchop"
+    Reward_middle: 2
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 25
+  UI_Navigation_9:
+    MenuItem:
+      - type:AIR
+      - amount:1
+    InventoryLocation: 54

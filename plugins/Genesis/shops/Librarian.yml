@@ -1,0 +1,124 @@
+ShopName: Librarian
+DisplayName: "&f㒘㒘㒠"
+shop:
+  Lapis_Lazuli:
+    MenuItem:
+      - "type:Lapis_Lazuli"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&70.1 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Lapis_Lazuli"
+      - "amount:1"
+    Reward_left: 0.1
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Lapis_Lazuli"
+      - "amount:16"
+    Reward_shift_left: 1.6
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Lapis_Lazuli"
+    Reward_middle: 0.1
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 21
+  Book:
+    MenuItem:
+      - "type:Book"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&72.5 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Book"
+      - "amount:1"
+    Reward_left: 2.5
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Book"
+      - "amount:16"
+    Reward_shift_left: 40
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Book"
+    Reward_middle: 2.5
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 22
+  Nether_Star:
+    MenuItem:
+      - "type:Nether_Star"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&7400 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Nether_Star"
+      - "amount:1"
+    Reward_left: 400
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Nether_Star"
+      - "amount:16"
+    Reward_shift_left: 6400
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Nether_Star"
+    Reward_middle: 400
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 23
+  Lapis_Block:
+    MenuItem:
+      - "type:Lapis_Block"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&70.9 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Lapis_Block"
+      - "amount:1"
+    Reward_left: 0.9
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Lapis_Block"
+      - "amount:16"
+    Reward_shift_left: 14.4
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Lapis_Block"
+    Reward_middle: 0.9
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 30
+  UI_Navigation_9:
+    MenuItem:
+      - type:AIR
+      - amount:1
+    InventoryLocation: 54
