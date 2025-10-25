@@ -5,7 +5,22 @@ var Runnable = java.lang.Runnable;
 var Consumer = java.util.function.Consumer;
 
 // Valid shop names that villagers can open
-var validShops = ["Blacksmith", "Fishmonger", "FlowerShop", "Grocer", "SecretShop"];
+var validShops = [
+  "Armorer",
+  "Butcher",
+  "Cartographer",
+  "Cleric",
+  "Farmer",
+  "Fisherman",
+  "Fletcher",
+  "Leatherworker",
+  "Librarian",
+  "Mason",
+  "Nitwit",
+  "Shepherd",
+  "Toolsmith",
+  "Weaponsmith"
+];
 
 registerEvent("org.bukkit.event.player.PlayerInteractEntityEvent", {
   handleEvent: function (event) {

@@ -24,7 +24,7 @@ shop:
       - "amount:1"
       - "name:&6Gareth"
       - "lore1:&7Right click to spawn"
-      - 'nbt:{"EntityTag":{"CustomName":"\"Armorer\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains"}}}'
+      - 'nbt:{"EntityTag":{"CustomName":"\"Armorer\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains","profession":"minecraft:armorer"}}}'
     Message: "&6[&7BossShop&6] You've purchased &6Gareth's Egg &6for &f㒖&7%price%"
     InventoryLocation: 10
   Butcher_Villager:
@@ -50,7 +50,7 @@ shop:
       - "amount:1"
       - "name:&6Roland"
       - "lore1:&7Right click to spawn"
-      - 'nbt:{"EntityTag":{"CustomName":"\"Butcher\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains"}}}'
+      - 'nbt:{"EntityTag":{"CustomName":"\"Butcher\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains","profession":"minecraft:butcher"}}}'
     Message: "&6[&7BossShop&6] You've purchased &6Roland's Egg &6for &f㒖&7%price%"
     InventoryLocation: 11
   Cartographer_Villager:
@@ -76,7 +76,7 @@ shop:
       - "amount:1"
       - "name:&6Elara"
       - "lore1:&7Right click to spawn"
-      - 'nbt:{"EntityTag":{"CustomName":"\"Cartographer\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains"}}}'
+      - 'nbt:{"EntityTag":{"CustomName":"\"Cartographer\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains","profession":"minecraft:cartographer"}}}'
     Message: "&6[&7BossShop&6] You've purchased &6Elara's Egg &6for &f㒖&7%price%"
     InventoryLocation: 12
   Cleric_Villager:
@@ -102,7 +102,7 @@ shop:
       - "amount:1"
       - "name:&6Matthias"
       - "lore1:&7Right click to spawn"
-      - 'nbt:{"EntityTag":{"CustomName":"\"Cleric\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains"}}}'
+      - 'nbt:{"EntityTag":{"CustomName":"\"Cleric\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains","profession":"minecraft:cleric"}}}'
     Message: "&6[&7BossShop&6] You've purchased &6Matthias's Egg &6for &f㒖&7%price%"
     InventoryLocation: 13
   Farmer_Villager:
@@ -129,7 +129,7 @@ shop:
       - "amount:1"
       - "name:&6Bren"
       - "lore1:&7Right click to spawn"
-      - 'nbt:{"EntityTag":{"CustomName":"\"Farmer\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains"}}}'
+      - 'nbt:{"EntityTag":{"CustomName":"\"Farmer\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains","profession":"minecraft:farmer"}}}'
     Message: "&6[&7BossShop&6] You've purchased &6Bren's Egg &6for &f㒖&7%price%"
     InventoryLocation: 14
   Fisherman_Villager:
@@ -155,7 +155,7 @@ shop:
       - "amount:1"
       - "name:&6Caspian"
       - "lore1:&7Right click to spawn"
-      - 'nbt:{"EntityTag":{"CustomName":"\"Fisherman\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains"}}}'
+      - 'nbt:{"EntityTag":{"CustomName":"\"Fisherman\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains","profession":"minecraft:fisherman"}}}'
     Message: "&6[&7BossShop&6] You've purchased &6Caspian's Egg &6for &f㒖&7%price%"
     InventoryLocation: 15
   Fletcher_Villager:
@@ -179,7 +179,7 @@ shop:
       - "amount:1"
       - "name:&6Rowan"
       - "lore1:&7Right click to spawn"
-      - 'nbt:{"EntityTag":{"CustomName":"\"Fletcher\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains"}}}'
+      - 'nbt:{"EntityTag":{"CustomName":"\"Fletcher\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains","profession":"minecraft:fletcher"}}}'
     Message: "&6[&7BossShop&6] You've purchased &6Rowan's Egg &6for &f㒖&7%price%"
     InventoryLocation: 16
   Leatherworker_Villager:
@@ -204,7 +204,7 @@ shop:
       - "amount:1"
       - "name:&6Silas"
       - "lore1:&7Right click to spawn"
-      - 'nbt:{"EntityTag":{"CustomName":"\"Leatherworker\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains"}}}'
+      - 'nbt:{"EntityTag":{"CustomName":"\"Leatherworker\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains","profession":"minecraft:leatherworker"}}}'
     Message: "&6[&7BossShop&6] You've purchased &6Silas's Egg &6for &f㒖&7%price%"
     InventoryLocation: 19
   Librarian_Villager:
@@ -229,7 +229,7 @@ shop:
       - "amount:1"
       - "name:&6Aldric"
       - "lore1:&7Right click to spawn"
-      - 'nbt:{"EntityTag":{"CustomName":"\"Librarian\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains"}}}'
+      - 'nbt:{"EntityTag":{"CustomName":"\"Librarian\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains","profession":"minecraft:librarian"}}}'
     Message: "&6[&7BossShop&6] You've purchased &6Aldric's Egg &6for &f㒖&7%price%"
     InventoryLocation: 20
   Mason_Villager:
@@ -254,7 +254,7 @@ shop:
       - "amount:1"
       - "name:&6Thorne"
       - "lore1:&7Right click to spawn"
-      - 'nbt:{"EntityTag":{"CustomName":"\"Mason\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains"}}}'
+      - 'nbt:{"EntityTag":{"CustomName":"\"Mason\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains","profession":"minecraft:mason"}}}'
     Message: "&6[&7BossShop&6] You've purchased &6Thorne's Egg &6for &f㒖&7%price%"
     InventoryLocation: 21
   Nitwit_Villager:
@@ -278,7 +278,7 @@ shop:
       - "amount:1"
       - "name:&6Pip"
       - "lore1:&7Right click to spawn"
-      - 'nbt:{"EntityTag":{"CustomName":"\"Nitwit\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains"}}}'
+      - 'nbt:{"EntityTag":{"CustomName":"\"Nitwit\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains","profession":"minecraft:nitwit"}}}'
     Message: "&6[&7BossShop&6] You've purchased &6Pip's Egg &6for &f㒖&7%price%"
     InventoryLocation: 22
   Shepherd_Villager:
@@ -305,7 +305,7 @@ shop:
       - "amount:1"
       - "name:&6Mara"
       - "lore1:&7Right click to spawn"
-      - 'nbt:{"EntityTag":{"CustomName":"\"Shepherd\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains"}}}'
+      - 'nbt:{"EntityTag":{"CustomName":"\"Shepherd\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains","profession":"minecraft:shepherd"}}}'
     Message: "&6[&7BossShop&6] You've purchased &6Mara's Egg &6for &f㒖&7%price%"
     InventoryLocation: 23
   Toolsmith_Villager:
@@ -331,7 +331,7 @@ shop:
       - "amount:1"
       - "name:&6Balin"
       - "lore1:&7Right click to spawn"
-      - 'nbt:{"EntityTag":{"CustomName":"\"Toolsmith\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains"}}}'
+      - 'nbt:{"EntityTag":{"CustomName":"\"Toolsmith\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains","profession":"minecraft:toolsmith"}}}'
     Message: "&6[&7BossShop&6] You've purchased &6Balin's Egg &6for &f㒖&7%price%"
     InventoryLocation: 24
   Weaponsmith_Villager:
@@ -357,7 +357,7 @@ shop:
       - "amount:1"
       - "name:&6Kael"
       - "lore1:&7Right click to spawn"
-      - 'nbt:{"EntityTag":{"CustomName":"\"Weaponsmith\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains"}}}'
+      - 'nbt:{"EntityTag":{"CustomName":"\"Weaponsmith\"","CustomNameVisible":1b,"Invulnerable":1b,"Tags":["OfficialShopVillager"],"VillagerData":{"type":"minecraft:plains","profession":"minecraft:weaponsmith"}}}'
     Message: "&6[&7BossShop&6] You've purchased &6Kael's Egg &6for &f㒖&7%price%"
     InventoryLocation: 25
   UI_Navigation_9:
