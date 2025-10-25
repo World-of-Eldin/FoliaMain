@@ -29,7 +29,7 @@ shop:
       - "type:Lapis_Lazuli"
     Reward_middle: 0.1
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 21
+    InventoryLocation: 22
   Book:
     MenuItem:
       - "type:Book"
@@ -58,7 +58,7 @@ shop:
       - "type:Book"
     Reward_middle: 2.5
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 22
+    InventoryLocation: 23
   Nether_Star:
     MenuItem:
       - "type:Nether_Star"
@@ -87,7 +87,7 @@ shop:
       - "type:Nether_Star"
     Reward_middle: 400
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 23
+    InventoryLocation: 24
   Lapis_Block:
     MenuItem:
       - "type:Lapis_Block"
@@ -116,7 +116,7 @@ shop:
       - "type:Lapis_Block"
     Reward_middle: 0.9
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 30
+    InventoryLocation: 31
   UI_Navigation_9:
     MenuItem:
       - type:AIR

@@ -58,7 +58,7 @@ shop:
       - "type:Dried_Kelp_Block"
     Reward_middle: 1
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 23
+    InventoryLocation: 24
   UI_Navigation_9:
     MenuItem:
       - type:AIR

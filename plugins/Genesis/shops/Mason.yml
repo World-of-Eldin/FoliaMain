@@ -29,39 +29,10 @@ shop:
       - "type:Coal"
     Reward_middle: 0.2
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 21
-  Brick:
-    MenuItem:
-      - "type:Brick"
-      - "amount:1"
-      - "lore1:&6Sell Price: &f㒖&70.75 Trade Bars"
-      - "lore3:&6Left Click: &7sell 1"
-      - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
-    RewardType_left: money
-    PriceType_left: item
-    Price_left:
-      - "type:Brick"
-      - "amount:1"
-    Reward_left: 0.75
-    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
-    RewardType_shift_left: money
-    PriceType_shift_left: item
-    Price_shift_left:
-      - "type:Brick"
-      - "amount:16"
-    Reward_shift_left: 12
-    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
-      - "type:Brick"
-    Reward_middle: 0.75
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
     InventoryLocation: 22
-  Nether_Brick:
+  Bricks:
     MenuItem:
-      - "type:Nether_Brick"
+      - "type:Bricks"
       - "amount:1"
       - "lore1:&6Sell Price: &f㒖&70.75 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
@@ -70,24 +41,53 @@ shop:
     RewardType_left: money
     PriceType_left: item
     Price_left:
-      - "type:Nether_Brick"
+      - "type:Bricks"
       - "amount:1"
     Reward_left: 0.75
     Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
     RewardType_shift_left: money
     PriceType_shift_left: item
     Price_shift_left:
-      - "type:Nether_Brick"
+      - "type:Bricks"
       - "amount:16"
     Reward_shift_left: 12
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
     RewardType_middle: money
     PriceType_middle: itemall
     Price_middle:
-      - "type:Nether_Brick"
+      - "type:Bricks"
     Reward_middle: 0.75
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
     InventoryLocation: 23
+  Nether_Bricks:
+    MenuItem:
+      - "type:Nether_Bricks"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&70.75 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Middle Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Nether_Bricks"
+      - "amount:1"
+    Reward_left: 0.75
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Nether_Bricks"
+      - "amount:16"
+    Reward_shift_left: 12
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_middle: money
+    PriceType_middle: itemall
+    Price_middle:
+      - "type:Nether_Bricks"
+    Reward_middle: 0.75
+    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    InventoryLocation: 24
   Coal_Block:
     MenuItem:
       - "type:Coal_Block"
@@ -116,7 +116,7 @@ shop:
       - "type:Coal_Block"
     Reward_middle: 1.8
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 30
+    InventoryLocation: 31
   UI_Navigation_9:
     MenuItem:
       - type:AIR

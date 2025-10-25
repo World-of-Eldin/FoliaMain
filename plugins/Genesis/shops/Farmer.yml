@@ -29,7 +29,7 @@ shop:
       - "type:Carrot"
     Reward_middle: 0.3
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 20
+    InventoryLocation: 21
   Baked_Potato:
     MenuItem:
       - "type:Baked_Potato"
@@ -58,10 +58,10 @@ shop:
       - "type:Baked_Potato"
     Reward_middle: 0.35
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 21
-  Melon_Slice:
+    InventoryLocation: 22
+  Melon:
     MenuItem:
-      - "type:Melon_Slice"
+      - "type:Melon"
       - "amount:1"
       - "lore1:&6Sell Price: &f㒖&70.5 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
@@ -70,24 +70,24 @@ shop:
     RewardType_left: money
     PriceType_left: item
     Price_left:
-      - "type:Melon_Slice"
+      - "type:Melon"
       - "amount:1"
     Reward_left: 0.5
     Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
     RewardType_shift_left: money
     PriceType_shift_left: item
     Price_shift_left:
-      - "type:Melon_Slice"
+      - "type:Melon"
       - "amount:16"
     Reward_shift_left: 8
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
     RewardType_middle: money
     PriceType_middle: itemall
     Price_middle:
-      - "type:Melon_Slice"
+      - "type:Melon"
     Reward_middle: 0.5
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 22
+    InventoryLocation: 23
   Bread:
     MenuItem:
       - "type:Bread"
@@ -116,7 +116,7 @@ shop:
       - "type:Bread"
     Reward_middle: 2.5
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 23
+    InventoryLocation: 24
   Pumpkin_Pie:
     MenuItem:
       - "type:Pumpkin_Pie"
@@ -145,7 +145,7 @@ shop:
       - "type:Pumpkin_Pie"
     Reward_middle: 2.5
     Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
-    InventoryLocation: 24
+    InventoryLocation: 25
   UI_Navigation_9:
     MenuItem:
       - type:AIR
