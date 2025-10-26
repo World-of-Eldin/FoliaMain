@@ -18,13 +18,17 @@ declaration:
     attacker: 0
     # Set minimum amount of trusted players for the defender to receive a war declaration.
     defender_3: 0
-  # "from" and "to" define the hours of each day between which a declaration can be sent.
-  # Minimum: 0 (00:00 AM)
-  # Maximum: 23 (11:00 PM)
-  # Setting one of these to -1 will disable this option.
+
+  # Define when a declaration can be sent.
   send-time:
-    from: -1
-    to: -1
+    # Day of the week. 1 is Monday and 7 is Sunday.
+    # Example: 1,2,3 -> Allows a declaration be sent on Monday, Wednesday and Thursday.
+    # Default: 1-7 -> Allows all days.
+    days_range: "1-7"
+    # Hours of the above defined days during which a declaration can be sent.
+    # Uses 24 hour format. Default is 0-23 which includes any hour of the day.
+    hours_range: "0-23"
+
   # How much time do you want to give the defender lands for war preparation, before it will start?
   # NOTE: Timeunit is seconds
   # Default is one day
@@ -88,6 +92,9 @@ capture:
   max: 3
   # Only allow the team to place a capture flag every period.
   place-cooldown_time: 10m
+  # Should only be players with the MANAGE_WAR flag be able to place capture flags for their land?
+  # If enabled, land owners can restrict who can place flags using the role system.
+  restrict-placement: false
   # Set the chunks radius that will be affected by the capture flag. Invaders will start capturing once they enter the claimed area.
   # If set to 1, only the chunk in which the capture flag is placed in, is affected.
   # NOTE: This shouldn't be greater than your servers view distance.
@@ -109,6 +116,11 @@ capture:
     min: 30
     max_2: 127
 
+# Sound configuration
+# You can find the sound names by using the /playsound command ingame.
+# Format: sound,volume,pitch
+# The volume and pitch parameter are optional. They allow you to control how the sound is played.
+# Disabling a sound: Just set it to ''
 sounds:
   capture:
     place_sound: "BLOCK_BELL_USE"

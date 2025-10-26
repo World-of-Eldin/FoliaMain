@@ -347,6 +347,17 @@ general:
         ally: ally
         enemy: enemy
         here: here
+  day:
+    sunday: Sunday
+    monday: Monday
+    tuesday: Tuesday
+    wednesday: Wednesday
+    thursday: Thursday
+    friday: Friday
+    saturday: Saturday
+  combat-logout:
+    "{player} died, because they left the server while being engaged
+    in a fight (combat-tag)."
 
 help:
   help:
@@ -619,6 +630,9 @@ help:
               ownlands:
                 "[T]&e{parent} {subcmd} {args} &8- &7Modify max. own lands[H]&7Click
                 to copy.[/H][SC]{fullcmd}[/SC][/T]"
+            first-join-items:
+              "[T]&e{parent} {subcmd} {args} &8- &7Give enabled first
+              join items[H]&7Click to copy.[/H][SC]{fullcmd}[/SC][/T]"
 
         resetworld:
           "[T]&e{parent} {subcmd} {args} &8- &7Delete all claims in world[H]&7Click
@@ -868,6 +882,10 @@ lands:
         up: "#t#&6{object}[newline]&7leveled up: {level}"
         down: "#t#&6{object}[newline]&7leveled down to: {level}"
       inbox: "&eInbox &8- {object}&8: {message}"
+      combat_tag:
+        disabled:
+          "&cYour fly mode has been disabled. &7Flying is not allowed during
+          combat."
     teleportation:
       already:
         "&cYou can't start a second teleportation. There's already a teleportation
@@ -1218,6 +1236,9 @@ lands:
         empty:
           "&cThis name is invalid. &7You need to enter at least one character
           other than color codes."
+        reserved:
+          "&cThe name&4 {reserved}&c is reserved for other purposes. &7Please
+          choose a different name."
       money:
         fallback:
           "&7Notice:&c {cost} &7has been taken from your personal account,
@@ -1680,8 +1701,12 @@ lands:
           "&7Successfully accepted the invite from land&2 {land} &7to be trusted
           in the whole land."
         owner:
-          "&7You accepted the invite from land&2 {land}&7. You're now the owner
-          of land&2 {land}&7."
+          max:
+            "&cYou can't own any more lands. &7You reached your maximum amount
+            of&3 {max}&7 lands."
+          success:
+            "&7You accepted the invite from land&2 {land}&7. You're now the
+            owner of land&2 {land}&7."
         broadcast: "&2{land} &8| &7Player&3 {player} &7is now a member of our land."
     setowner:
       confirm: |
@@ -2014,9 +2039,13 @@ wars:
           "&7{winner}&7 won the war against {loser}&7 with&3 {winner_points}&7
           vs.&3 {loser_points}&7 points. It took&5 {time}&7."
         surrendered:
-          "{loser} &7surrendered with&3 {loser_points}&7 points. The war
-          ended and they paid&c {tribute} &7to their enemy {winner} &8(&3{winner_points}&7
-          points&8)&7. The war lasted&5 {time}&7."
+          war:
+            "{loser} &7surrendered with&3 {loser_points}&7 points. The war ended
+            and they paid&c {tribute} &7to their enemy {winner} &8(&3{winner_points}&7
+            points&8)&7. The war lasted&5 {time}&7."
+          preparation:
+            "{loser} &7surrendered during the war preparation period and
+            paid&c {tribute} &7to their enemy {winner}&7."
         draw:
           "&7The war between {attacker} &7and {defender} &7ended in a draw with&3
           {points}&7 points. It took&5 {time}&7."
@@ -2129,9 +2158,6 @@ wars:
       member:
         "&cYou can't declare war against {object}&c. &7You or the enemy leader
         are trusted in common lands and / or a nation."
-      hour-of-day:
-        "&cYou can only declare war between&4 {from} &ctill&4 {to}&c. &7Current
-        time:&5 {current}&8 (&7time zone: {timezone}&8)"
       enemies: |
         &cYou must add&4 {object} &cas an enemy first.
           [T]&7✖ Add as Enemy: &e/{cmd} &8[CLICK][H]&7Click here to add {object} &7as an enemy in order to declare war on them.[/H][C]{cmd}[/C][/T]
@@ -2216,6 +2242,15 @@ wars:
         defender: "&cYou can't declare war against {object}&c, because they need
           more trusted players. &7The required minimum for defenders to receive a
           war declaration is&3 {min} &7players."
+      hours:
+        "&cYou can only declare war during the following hours: {hours} &8(&7current
+        time:&5 {current}&7, time zone: {timezone}&8)"
+      days:
+        "&cYou can only declare war at the following days:&5 {days} &8(&7current
+        day:&5 {current}&7, time zone: {timezone}&8)"
+      peaceful:
+        "&cThis land has been marked as peaceful by an server admin. &7It
+        can't engage in any wars."
     deny:
       attacker:
         "&cAttackers can't deny their own war declaration. &7Only the defender
