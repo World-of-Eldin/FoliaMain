@@ -46,24 +46,9 @@ registerEvent("org.bukkit.event.player.PlayerInteractEntityEvent", {
           task.main(function () {
             Bukkit.dispatchCommand(
               Console,
-              "lp user " +
-                player.getName() +
-                " permission settemp genesis.open.command." +
-                shopName +
-                " true 2s"
+              "shop open " + shopName + " " + player.getName()
             );
           });
-
-          player.getScheduler().runDelayed(
-            plugin,
-            new Consumer({
-              accept: function () {
-                player.performCommand("shop open " + shopName);
-              },
-            }),
-            null,
-            5
-          );
         }
       }
     }
