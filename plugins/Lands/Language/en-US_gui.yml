@@ -1373,6 +1373,19 @@ gui:
             - "   &7Unlocked: {unlocked}"
           name: "&6&lWater and Lava Flow: {enabled}"
           material: WATER_BUCKET
+        entry_expiration_shield:
+          material: CLOCK
+          name: "&6&lExpiration Shield: {enabled}"
+          lore:
+            - "&8✖ &7Excludes the land from being deleted,"
+            - "   &7if the land is inactive."
+            - "    &8• &7This flag is only visible to server admins."
+        entry_peaceful:
+          material: CAKE
+          name: "&6&lPeaceful Land: {enabled}"
+          lore:
+            - "&8✖ &7Exclude this land from any wars."
+            - "    &8• &7This flag is only visible to server admins."
   list_role_settings:
     title: "&8Flags"
     items:
@@ -1717,6 +1730,16 @@ gui:
             - "   &7Unlocked: {unlocked}"
           name: "&6&lOpen Doors: {enabled}"
           material: IRON_DOOR
+        entry_no_damage:
+          material: CAKE
+          name: "&6&lNo Damage: {enabled}"
+          lore:
+            - "&8✖ &7Makes members of this role immune"
+            - "   &7to any damage other than PvP"
+            - "   &7or monsters."
+            - "    &8• &7Damage from players or monsters can"
+            - "      &7be toggled with their respective flags."
+            - "    &8• &7This flag is only visible to server admins."
   war-declaration_tribute:
     title: "&8Tribute"
     items:
@@ -3597,3 +3620,8 @@ common_sounds:
     # You can still override the "sound_set" for any item in their sections.
     failure: ENTITY_VILLAGER_NO
     success: ENTITY_PLAYER_LEVELUP
+skulls:
+  area_default:
+    material: DARK_OAK_FENCE
+  area_sub:
+    material: OAK_FENCE

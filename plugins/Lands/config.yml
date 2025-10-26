@@ -78,32 +78,6 @@ general:
   # Give players items at first join.
   # The item appearance can be edited in the GUI language file.
   first-join-items:
-    # The selection tool allows them to claim.
-    selection:
-      # Setting the slot or the amount of an item to a value lower than 1, will not give the item on first join.
-      slot_4: 1
-      amount: 1
-      # If disabled, players won't be able to use this item at all.
-      usage: true
-    # The info tool shows information about a claim when clicking on it.
-    info:
-      slot_5: 2
-      amount_2: 1
-      usage_2: true
-    # The camp block creates a temporary claim at placement.
-    camp:
-      slot_6: 3
-      amount_3: 1
-      usage_3: true
-    # Claim blocks claim the chunk they were placed into permanently, until the player unclaims the chunk.
-    claim_block:
-      slot_7: 4
-      # Claims a specific radius of chunks.
-      # 0 = only the current chunk
-      # 1 = (radius+1)² = 9 chunks
-      claim-radius_2: 1
-      amount_4: 1
-      usage_4: true
 
   # If false, chat message parts that are enclosed by [V]text[/T] will only be sent to players
   # that have the lands.admin.verbose permission. This setting only applies to chat messages.
@@ -344,6 +318,7 @@ land:
     enabled_2: true
     # Should claim attempts that would violate the force-near restrictions be treated as new lands?
     treat-as-new: true
+
   # Chunk claiming by placing a special claim block.
   # You can give claimblocks by executing the command /lands admin player <player> give claimblock [amount]
   # If you don't want your players to claim via command, just
@@ -546,6 +521,9 @@ land:
       death-remove: true
       # Deny teleportation if player has active combat tag?
       deny-teleport: true
+      # Disable fly during combat?
+      disable-fly: true
+
     # Should players, which are members in a common land, be able to fight in wilderness?
     # NOTE: This option requires server restart / reload.
     ally-wilderness: true
@@ -646,7 +624,6 @@ chunk:
       # Prevent spawning from spawner blocks, if the monster spawn flag isn't set?
       spawners: false
       # Remove monsters that enter a land or wilderness where monster spawning is disabled? Monsters with a custom name won't be removed.
-      # NOTE: It is recommended to keep this disabled. It can cause incompatibilities with 3rd party mob plugins and might affect your servers performance due minecraft limitations.
       # NOTE: This will also remove monsters spawned by spawners.
       # This option requires server reload / restart.
       remove_2: false
@@ -669,7 +646,7 @@ sub-area:
 # Camp items can be given at first join or by executing /lands player <player> give
 camp:
   # NOTE: This setting requires server reload / restart.
-  enabled_21: true
+  enabled_21: false
   # Set how much it should cost. This also includes the chunks that are being claimed.
   costs_8: 0
   # After how much time should camps be deleted?
@@ -710,6 +687,8 @@ player:
 unstuck:
   # Set the cooldown for this command.
   unstuck-cooldown_time: 1h
+  # Allow movement during unstuck teleportation?
+  allow-movement: false
 
 # Random teleportation (/lands wild)
 # When using this make sure to set the spawn of each world using /setworldspawn.
@@ -752,7 +731,8 @@ introduction:
     container-placement: true
 
 # Sound configuration
-# Format: SOUND:VOLUME:PITCH
+# You can find the sound names by using the /playsound command ingame.
+# Format: sound,volume,pitch
 # The volume and pitch parameter are optional. They allow you to control how the sound is played.
 # Disabling a sound: Just set it to ''
 sounds:
@@ -968,10 +948,10 @@ database:
   # If you want to synchronize lands and claims across servers, please read the setup instructions: https://wiki.incredibleplugins.com/lands/configuration/database#synchronizing-claims-across-servers
   mysql-v2:
     enabled_19: true
-    address_2: ${DB_HOST}
-    port_2: ${DB_PORT}
-    username_2: ${DB_USER}
-    password_2: ${DB_PASS}
+    address_2: 127.0.0.1
+    port_2: 3306
+    username_2: folia_admin
+    password_2: 9P3!9Uh^X&NdBws4
     database_2: "Folia_Lands"
 
     # It is highly recommended to set a unique table prefix if the plugin shares a database with other plugins.
@@ -987,9 +967,6 @@ database:
     database-index: 1
     username_3: "default"
     password_3: "password"
-    # Should the plugin send log messages in console whenever a Redis message was received from another server?
-    # This is forcefully enabled, if "logging.debug" is enabled below.
-    log: true
     # This should be the name that you configured for this server in your BungeeCord or Velocity config.
     # NOTE: If you're using mutlipaper, this option will be overridden by multipaper's own name decision.
     # NOTE: This option can be overriden in server-name.yml to allow you copying this file (config.yml) to other servers without adjust this section.
@@ -1043,6 +1020,10 @@ integration:
   # lead to unexpected results, depending on your use-case.
   # This option requires a server reload / restart.
   mythicmobs: false
+
+  # Should skins be fetched from the 3rd party plugin SkinsRestorer.
+  # This option requires the option "general.fetch-skins-names" to be enabled.
+  skins-restorer: false
 
   # Options for vehicles of the Vehicles plugin. This doesn't affect Minecraft vanilla vehicles.
   # If enabled:
