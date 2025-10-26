@@ -24,8 +24,8 @@ var Months = [
 ];
 
 // Command to check fullTime values
-registerCommand("checkfulltime", {
-  handler: function (sender, args) {
+addCommand("checkfulltime", {
+  onCommand: function (sender, args) {
     const world = Server.getWorld("world");
     const fullTime = world.getFullTime();
     const currentTime = world.getTime();
