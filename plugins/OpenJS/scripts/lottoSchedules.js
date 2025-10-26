@@ -1,5 +1,5 @@
 //!PlaceholderAPI
-const hours = 48; //The number of hours between each draw
+const hours = 72; //The number of hours between each draw
 const announcementRate = 1; //The number of hours between each lottery announcement
 const rollOverChance = 10; //The chance of a rollover (in percent)
 const rollOverChanceDropRate = 1; //The drop rate of this chance on each subsequent iteration (in percent)
@@ -12,6 +12,7 @@ const Bukkit = org.bukkit.Bukkit;
 const Console = Bukkit.getConsoleSender();
 const Scheduler = Bukkit.getGlobalRegionScheduler();
 const ChatColor = org.bukkit.ChatColor;
+const discordSRV = Server.getPluginManager().getPlugin("DiscordSRV");
 task.repeat(0, 10, () => { //Run every 10 seconds
     DiskApi.loadFile("LottoTimePassage", false, true)
     const timePassed = DiskApi.getVar("LottoTimePassage", "time", 0, true);
@@ -56,13 +57,16 @@ function gambling() {
 
                     if (winningTicket >= startingTicket && winningTicket <= endingTicket) {
                     const winningMoney = (totalTickets * ticketValue + extraMoney) * (1 - tax/100);
-                    Server.broadcastMessage(ChatColor.GOLD +"Lottery: " + ChatColor.GREEN + playerInData + " won " + winningMoney + ChatColor.RESET + " 㒖" + ChatColor.GREEN + "Tradebars");
+                    message = ChatColor.GOLD +"Lottery: " + ChatColor.GREEN + playerInData + " won " + winningMoney + ChatColor.RESET + " 㒖" + ChatColor.GREEN + "Tradebars";
+                    discordMessage = ChatColor.GOLD +"Lottery: " + ChatColor.GREEN + playerInData + " won " + winningMoney + ChatColor.RESET + ChatColor.GREEN + " Tradebars";
+                    Server.broadcastMessage(message);
                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
                         const player = Bukkit.getPlayerExact(playerInData);
-                            const balancePlaceholder = "%foliaeconomy_balance%"
-                            const balanceStr = PlaceholderAPI.parseString(player, balancePlaceholder);
-                            const balance = Number(balanceStr);
+                        const balancePlaceholder = "%foliaeconomy_balance%"
+                        const balanceStr = PlaceholderAPI.parseString(player, balancePlaceholder);
+                        const balance = Number(balanceStr);
                         Bukkit.dispatchCommand(Console, "setbal " + playerInData + " " + (balance + winningMoney)); //Give the player the money
+                        Bukkit.dispatchCommand(Console, "discordsrv bcast #1388388677612474469 " + discordMessage);
                     });
                 }
                 totalTicketsCalculated = totalTicketsCalculated + ticketCount;
