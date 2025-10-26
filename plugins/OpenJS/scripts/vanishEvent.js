@@ -27,8 +27,8 @@ registerEvent("org.bukkit.event.player.PlayerJoinEvent", {
             const onlinePlayers = Bukkit.getOnlinePlayers();
 
             onlinePlayers.forEach(player => {
-                if(player.hasPermission("eldin.staff")) {
-                   joiningPlayer.hidePlayer(player); //Hide the joining player
+                if(player.hasPermission("eldin.staff") && player.hasMetadata("vanished")) {
+                   joiningPlayer.hidePlayer(player); //Hide the player
                 }
             }) 
         }
