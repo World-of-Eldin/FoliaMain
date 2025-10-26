@@ -82,13 +82,13 @@ general:
     selection:
       # Setting the slot or the amount of an item to a value lower than 1, will not give the item on first join.
       slot_4: 1
-      amount: 0
+      amount: 1
       # If disabled, players won't be able to use this item at all.
       usage: true
     # The info tool shows information about a claim when clicking on it.
     info:
       slot_5: 2
-      amount_2: 0
+      amount_2: 1
       usage_2: true
     # The camp block creates a temporary claim at placement.
     camp:
