@@ -1,11 +1,11 @@
-ShopName: VillagerShops
+ShopName: VillagerShops_Desert
 DisplayName: "&f㒘㒘㔶"
 shop:
   Armorer_Villager:
     MenuItem:
       - "type:villager_spawn_egg"
       - "amount:1"
-      - "name:&6Gareth's Egg (Plains)"
+      - "name:&6Gareth's Egg (Desert)"
       - "lore1:&7Spawns &6Gareth&7, an Armorer"
       - "lore2:&7who buys metals and gems"
       - "lore3:"
@@ -19,14 +19,14 @@ shop:
     RewardType: command
     PriceType: money
     Price: 20000
-    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Gareth''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Gareth"},Tags:["shop_villager","shop_Armorer"],VillagerData:{level:99,profession:"minecraft:armorer",type:"minecraft:plains"}}] 1'
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Gareth''s Egg (Desert)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Gareth"},Tags:["shop_villager","shop_Armorer"],VillagerData:{level:99,profession:"minecraft:armorer",type:"minecraft:desert"}}] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Gareth's Egg &6for &f㒖&7%price%"
     InventoryLocation: 20
   Butcher_Villager:
     MenuItem:
       - "type:villager_spawn_egg"
       - "amount:1"
-      - "name:&6Roland's Egg (Plains)"
+      - "name:&6Roland's Egg (Desert)"
       - "lore1:&7Spawns &6Roland&7, a Butcher"
       - "lore2:&7who buys cooked meats"
       - "lore3:"
@@ -40,14 +40,14 @@ shop:
     RewardType: command
     PriceType: money
     Price: 20000
-    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Roland''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Roland"},Tags:["shop_villager","shop_Butcher"],VillagerData:{level:99,profession:"minecraft:butcher",type:"minecraft:plains"}}] 1'
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Roland''s Egg (Desert)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Roland"},Tags:["shop_villager","shop_Butcher"],VillagerData:{level:99,profession:"minecraft:butcher",type:"minecraft:desert"}}] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Roland's Egg &6for &f㒖&7%price%"
     InventoryLocation: 21
   Cartographer_Villager:
     MenuItem:
       - "type:villager_spawn_egg"
       - "amount:1"
-      - "name:&6Elara's Egg (Plains)"
+      - "name:&6Elara's Egg (Desert)"
       - "lore1:&7Spawns &6Elara&7, a Cartographer"
       - "lore2:&7who buys exploration items"
       - "lore3:"
@@ -61,14 +61,14 @@ shop:
     RewardType: command
     PriceType: money
     Price: 20000
-    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Elara''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Elara"},Tags:["shop_villager","shop_Cartographer"],VillagerData:{level:99,profession:"minecraft:cartographer",type:"minecraft:plains"}}] 1'
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Elara''s Egg (Desert)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Elara"},Tags:["shop_villager","shop_Cartographer"],VillagerData:{level:99,profession:"minecraft:cartographer",type:"minecraft:desert"}}] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Elara's Egg &6for &f㒖&7%price%"
     InventoryLocation: 22
   Cleric_Villager:
     MenuItem:
       - "type:villager_spawn_egg"
       - "amount:1"
-      - "name:&6Matthias's Egg (Plains)"
+      - "name:&6Matthias's Egg (Desert)"
       - "lore1:&7Spawns &6Matthias&7, a Cleric"
       - "lore2:&7who buys brewing ingredients"
       - "lore3:"
@@ -82,14 +82,14 @@ shop:
     RewardType: command
     PriceType: money
     Price: 20000
-    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Matthias''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Matthias"},Tags:["shop_villager","shop_Cleric"],VillagerData:{level:99,profession:"minecraft:cleric",type:"minecraft:plains"}}] 1'
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Matthias''s Egg (Desert)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Matthias"},Tags:["shop_villager","shop_Cleric"],VillagerData:{level:99,profession:"minecraft:cleric",type:"minecraft:desert"}}] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Matthias's Egg &6for &f㒖&7%price%"
     InventoryLocation: 23
   Farmer_Villager:
     MenuItem:
       - "type:villager_spawn_egg"
       - "amount:1"
-      - "name:&6Bren's Egg (Plains)"
+      - "name:&6Bren's Egg (Desert)"
       - "lore1:&7Spawns &6Bren&7, a Farmer"
       - "lore2:&7who buys farm products"
       - "lore3:"
@@ -104,14 +104,14 @@ shop:
     RewardType: command
     PriceType: money
     Price: 20000
-    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Bren''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Bren"},Tags:["shop_villager","shop_Farmer"],VillagerData:{level:99,profession:"minecraft:farmer",type:"minecraft:plains"}}] 1'
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Bren''s Egg (Desert)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Bren"},Tags:["shop_villager","shop_Farmer"],VillagerData:{level:99,profession:"minecraft:farmer",type:"minecraft:desert"}}] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Bren's Egg &6for &f㒖&7%price%"
     InventoryLocation: 24
   Fisherman_Villager:
     MenuItem:
       - "type:villager_spawn_egg"
       - "amount:1"
-      - "name:&6Caspian's Egg (Plains)"
+      - "name:&6Caspian's Egg (Desert)"
       - "lore1:&7Spawns &6Caspian&7, a Fisherman"
       - "lore2:&7who buys fish"
       - "lore3:"
@@ -125,14 +125,14 @@ shop:
     RewardType: command
     PriceType: money
     Price: 20000
-    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Caspian''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Caspian"},Tags:["shop_villager","shop_Fisherman"],VillagerData:{level:99,profession:"minecraft:fisherman",type:"minecraft:plains"}}] 1'
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Caspian''s Egg (Desert)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Caspian"},Tags:["shop_villager","shop_Fisherman"],VillagerData:{level:99,profession:"minecraft:fisherman",type:"minecraft:desert"}}] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Caspian's Egg &6for &f㒖&7%price%"
     InventoryLocation: 25
   Fletcher_Villager:
     MenuItem:
       - "type:villager_spawn_egg"
       - "amount:1"
-      - "name:&6Rowan's Egg (Plains)"
+      - "name:&6Rowan's Egg (Desert)"
       - "lore1:&7Spawns &6Rowan&7, a Fletcher"
       - "lore2:&7who buys arrow materials"
       - "lore3:"
@@ -144,14 +144,14 @@ shop:
     RewardType: command
     PriceType: money
     Price: 20000
-    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Rowan''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Rowan"},Tags:["shop_villager","shop_Fletcher"],VillagerData:{level:99,profession:"minecraft:fletcher",type:"minecraft:plains"}}] 1'
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Rowan''s Egg (Desert)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Rowan"},Tags:["shop_villager","shop_Fletcher"],VillagerData:{level:99,profession:"minecraft:fletcher",type:"minecraft:desert"}}] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Rowan's Egg &6for &f㒖&7%price%"
     InventoryLocation: 26
   Leatherworker_Villager:
     MenuItem:
       - "type:villager_spawn_egg"
       - "amount:1"
-      - "name:&6Silas's Egg (Plains)"
+      - "name:&6Silas's Egg (Desert)"
       - "lore1:&7Spawns &6Silas&7, a Leatherworker"
       - "lore2:&7who buys leather goods"
       - "lore3:"
@@ -164,14 +164,14 @@ shop:
     RewardType: command
     PriceType: money
     Price: 20000
-    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Silas''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Silas"},Tags:["shop_villager","shop_Leatherworker"],VillagerData:{level:99,profession:"minecraft:leatherworker",type:"minecraft:plains"}}] 1'
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Silas''s Egg (Desert)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Silas"},Tags:["shop_villager","shop_Leatherworker"],VillagerData:{level:99,profession:"minecraft:leatherworker",type:"minecraft:desert"}}] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Silas's Egg &6for &f㒖&7%price%"
     InventoryLocation: 29
   Librarian_Villager:
     MenuItem:
       - "type:villager_spawn_egg"
       - "amount:1"
-      - "name:&6Aldric's Egg (Plains)"
+      - "name:&6Aldric's Egg (Desert)"
       - "lore1:&7Spawns &6Aldric&7, a Librarian"
       - "lore2:&7who buys knowledge items"
       - "lore3:"
@@ -184,14 +184,14 @@ shop:
     RewardType: command
     PriceType: money
     Price: 20000
-    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Aldric''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Aldric"},Tags:["shop_villager","shop_Librarian"],VillagerData:{level:99,profession:"minecraft:librarian",type:"minecraft:plains"}}] 1'
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Aldric''s Egg (Desert)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Aldric"},Tags:["shop_villager","shop_Librarian"],VillagerData:{level:99,profession:"minecraft:librarian",type:"minecraft:desert"}}] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Aldric's Egg &6for &f㒖&7%price%"
     InventoryLocation: 30
   Mason_Villager:
     MenuItem:
       - "type:villager_spawn_egg"
       - "amount:1"
-      - "name:&6Thorne's Egg (Plains)"
+      - "name:&6Thorne's Egg (Desert)"
       - "lore1:&7Spawns &6Thorne&7, a Mason"
       - "lore2:&7who buys stone and bricks"
       - "lore3:"
@@ -204,14 +204,14 @@ shop:
     RewardType: command
     PriceType: money
     Price: 20000
-    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Thorne''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Thorne"},Tags:["shop_villager","shop_Mason"],VillagerData:{level:99,profession:"minecraft:mason",type:"minecraft:plains"}}] 1'
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Thorne''s Egg (Desert)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Thorne"},Tags:["shop_villager","shop_Mason"],VillagerData:{level:99,profession:"minecraft:mason",type:"minecraft:desert"}}] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Thorne's Egg &6for &f㒖&7%price%"
     InventoryLocation: 31
   Nitwit_Villager:
     MenuItem:
       - "type:villager_spawn_egg"
       - "amount:1"
-      - "name:&6Pip's Egg (Plains)"
+      - "name:&6Pip's Egg (Desert)"
       - "lore1:&7Spawns &6Pip&7, a Nitwit"
       - "lore2:&7who buys shiny items"
       - "lore3:"
@@ -223,14 +223,14 @@ shop:
     RewardType: command
     PriceType: money
     Price: 20000
-    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Pip''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Pip"},Tags:["shop_villager","shop_Nitwit"],VillagerData:{level:99,profession:"minecraft:nitwit",type:"minecraft:plains"}}] 1'
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Pip''s Egg (Desert)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Pip"},Tags:["shop_villager","shop_Nitwit"],VillagerData:{level:99,profession:"minecraft:nitwit",type:"minecraft:desert"}}] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Pip's Egg &6for &f㒖&7%price%"
     InventoryLocation: 32
   Shepherd_Villager:
     MenuItem:
       - "type:villager_spawn_egg"
       - "amount:1"
-      - "name:&6Mara's Egg (Plains)"
+      - "name:&6Mara's Egg (Desert)"
       - "lore1:&7Spawns &6Mara&7, a Shepherd"
       - "lore2:&7who buys foraged items"
       - "lore3:"
@@ -245,14 +245,14 @@ shop:
     RewardType: command
     PriceType: money
     Price: 20000
-    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Mara''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Mara"},Tags:["shop_villager","shop_Shepherd"],VillagerData:{level:99,profession:"minecraft:shepherd",type:"minecraft:plains"}}] 1'
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Mara''s Egg (Desert)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Mara"},Tags:["shop_villager","shop_Shepherd"],VillagerData:{level:99,profession:"minecraft:shepherd",type:"minecraft:desert"}}] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Mara's Egg &6for &f㒖&7%price%"
     InventoryLocation: 33
   Toolsmith_Villager:
     MenuItem:
       - "type:villager_spawn_egg"
       - "amount:1"
-      - "name:&6Balin's Egg (Plains)"
+      - "name:&6Balin's Egg (Desert)"
       - "lore1:&7Spawns &6Balin&7, a Toolsmith"
       - "lore2:&7who buys tool materials"
       - "lore3:"
@@ -266,14 +266,14 @@ shop:
     RewardType: command
     PriceType: money
     Price: 20000
-    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Balin''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Balin"},Tags:["shop_villager","shop_Toolsmith"],VillagerData:{level:99,profession:"minecraft:toolsmith",type:"minecraft:plains"}}] 1'
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Balin''s Egg (Desert)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Balin"},Tags:["shop_villager","shop_Toolsmith"],VillagerData:{level:99,profession:"minecraft:toolsmith",type:"minecraft:desert"}}] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Balin's Egg &6for &f㒖&7%price%"
     InventoryLocation: 34
   Weaponsmith_Villager:
     MenuItem:
       - "type:villager_spawn_egg"
       - "amount:1"
-      - "name:&6Kael's Egg (Plains)"
+      - "name:&6Kael's Egg (Desert)"
       - "lore1:&7Spawns &6Kael&7, a Weaponsmith"
       - "lore2:&7who buys weapon materials"
       - "lore3:"
@@ -287,9 +287,17 @@ shop:
     RewardType: command
     PriceType: money
     Price: 20000
-    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Kael''s Egg (Plains)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Kael"},Tags:["shop_villager","shop_Weaponsmith"],VillagerData:{level:99,profession:"minecraft:weaponsmith",type:"minecraft:plains"}}] 1'
+    Reward: 'give %player% villager_spawn_egg[item_name={"color":"gold","text":"Kael''s Egg (Desert)"},entity_data={id:"minecraft:villager",Invulnerable:1b,PersistenceRequired:1b,Willing:0b,CustomName:{"color":"gold","text":"Kael"},Tags:["shop_villager","shop_Weaponsmith"],VillagerData:{level:99,profession:"minecraft:weaponsmith",type:"minecraft:desert"}}] 1'
     Message: "&6[&7BossShop&6] You've purchased &6Kael's Egg &6for &f㒖&7%price%"
     InventoryLocation: 35
+  Previous:
+    MenuItem:
+      - type:crimson_button
+      - amount:1
+      - name:&6Next Page
+    InventoryLocation: 45
+    RewardType: shop
+    Reward: VillagerShops
   Next:
     MenuItem:
       - type:warped_button
@@ -297,4 +305,4 @@ shop:
       - name:&6Next Page
     InventoryLocation: 54
     RewardType: shop
-    Reward: VillagerShops_Desert
+    Reward: VillagerShops_Jungle
