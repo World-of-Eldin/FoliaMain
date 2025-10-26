@@ -1,5 +1,5 @@
 ShopName: VillagerShops_Swamp
-DisplayName: "&f㒘㒘㔶"
+DisplayName: "&f㒘㒘㔻"
 shop:
   Armorer_Villager:
     MenuItem:
@@ -295,7 +295,7 @@ shop:
       - type:crimson_button
       - amount:1
       - name:&6Next Page
-    InventoryLocation: 45
+    InventoryLocation: 46
     RewardType: shop
     Reward: VillagerShops_Snow
   Next:
