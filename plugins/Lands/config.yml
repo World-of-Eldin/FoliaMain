@@ -78,6 +78,32 @@ general:
   # Give players items at first join.
   # The item appearance can be edited in the GUI language file.
   first-join-items:
+    # The selection tool allows them to claim.
+    selection:
+      # Setting the slot or the amount of an item to a value lower than 1, will not give the item on first join.
+      slot_4: 1
+      amount: 0
+      # If disabled, players won't be able to use this item at all.
+      usage: true
+    # The info tool shows information about a claim when clicking on it.
+    info:
+      slot_5: 2
+      amount_2: 0
+      usage_2: true
+    # The camp block creates a temporary claim at placement.
+    camp:
+      slot_6: 3
+      amount_3: 0
+      usage_3: true
+    # Claim blocks claim the chunk they were placed into permanently, until the player unclaims the chunk.
+    claim_block:
+      slot_7: 4
+      # Claims a specific radius of chunks.
+      # 0 = only the current chunk
+      # 1 = (radius+1)² = 9 chunks
+      claim-radius_2: 1
+      amount_4: 0
+      usage_4: true
 
   # If false, chat message parts that are enclosed by [V]text[/T] will only be sent to players
   # that have the lands.admin.verbose permission. This setting only applies to chat messages.
