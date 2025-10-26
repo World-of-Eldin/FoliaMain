@@ -1,3 +1,5 @@
+# Config Date 10/25/25
+
 # This file is only relevant if Redis is enabled in config.yml.
 # Here you can override the server-name and master option for Redis.
 # Since copying the config.yml from one server to another will cause issues, if you don't adjust

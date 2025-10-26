@@ -1,3 +1,5 @@
+# Config Date 10/25/25
+
 # Wiki Page (configuration): hhttps://wiki.incredibleplugins.com/lands/configuration/wars
 # Explanation for players: https://wiki.incredibleplugins.com/lands/players/general/wars
 
@@ -79,9 +81,9 @@ capture:
   enabled_3: true
   # A capture point must be crafted. Players can see the recipe in their /war menu.
   recipe_list:
-    - 'AIR,RED_STAINED_GLASS_PANE,AIR'
-    - 'AIR,BEACON,AIR'
-    - 'IRON_BLOCK,IRON_BLOCK,IRON_BLOCK'
+    - "AIR,RED_STAINED_GLASS_PANE,AIR"
+    - "AIR,BEACON,AIR"
+    - "IRON_BLOCK,IRON_BLOCK,IRON_BLOCK"
   # Set the maximum amount of capture points a team can have placed at the same time.
   max: 3
   # Only allow the team to place a capture flag every period.
@@ -109,7 +111,7 @@ capture:
 
 sounds:
   capture:
-    place_sound: 'BLOCK_BELL_USE'
+    place_sound: "BLOCK_BELL_USE"
 
 # War status message interval. This message appears while the war is running. This is very useful to inform players, which might have been offline for some time, that their land is participating in a war.
 status-interval_time: 15m
@@ -129,7 +131,7 @@ hide-player: false
 nametag: true
 
 # Here you can define a list of commands, which shouldn't get executed while a player is engaged in a war.
-cmd-blacklist_list: [ ]
+cmd-blacklist_list: []
 
 # Cutomize what happens when a defender surrenders.
 surrender:
@@ -206,10 +208,10 @@ end:
   # {loser_owner} - Owner of the loser.
   # Set a command to [] in order to disable it.
   winner:
-    winner-cmds_list: [ ]
+    winner-cmds_list: []
 
   loser:
-    loser-cmds_list: [ ]
+    loser-cmds_list: []
 
   # The looser will pay a specific amount of money to the attackers when the war ends.
   # Set the reward mode.
@@ -220,7 +222,7 @@ end:
 
 # Here you can enable natural flags during a war.
 # List of available land-flags: https://wiki.incredibleplugins.com/lands/configuration/natural-flags
-land-flags_list: [ ]
+land-flags_list: []
 
 # Should players keep their inventory, if they die during a war?
 keep-inventory:
