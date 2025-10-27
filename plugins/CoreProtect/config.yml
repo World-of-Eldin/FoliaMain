@@ -3,7 +3,7 @@ use-mysql: true
 table-prefix:
 mysql-host: ${DB_HOST}
 mysql-port: ${DB_PORT}
-mysql-database: Folia_CoreProtect
+mysql-database: ${DB_CoreProtect}
 mysql-username: ${DB_USER}
 mysql-password: ${DB_PASS}
 language: en

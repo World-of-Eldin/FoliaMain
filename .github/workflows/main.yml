@@ -18,6 +18,10 @@ jobs:
           DB_USER: ${{ secrets.DB_USER_MAIN }}
           DB_PASS: ${{ secrets.DB_PASS_MAIN }}
           DB_JDBC: ${{ secrets.DB_JDBC_MAIN }}
+          DB_BrendoEco: ${{secrets.DB_BrendoEco_MAIN }}
+          DB_CoreProtect: ${{secrets.DB_CoreProtect_MAIN }}
+          DB_Lands: ${{secrets.DB_Lands_MAIN }}
+          DB_LuckPerms: ${{ secrets.DB_LuckPerms_MAIN }}
         run: |
           # Find all config files and substitute variables
           find ./plugins -type f \( -name "*.yml" -o -name "*.yaml" -o -name "*.properties" -o -name "*.txt" -o -name "*.conf" -o -name "*.cfg" -o -name "*.js" \) | while read file; do
