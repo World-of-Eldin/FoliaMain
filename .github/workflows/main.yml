@@ -22,6 +22,7 @@ jobs:
           DB_CoreProtect: ${{secrets.DB_CoreProtect_MAIN }}
           DB_Lands: ${{secrets.DB_Lands_MAIN }}
           DB_LuckPerms: ${{ secrets.DB_LuckPerms_MAIN }}
+          BLUEMAP_PORT: ${{ secrets.BLUEMAP_PORT_MAIN }}
         run: |
           # Find all config files and substitute variables
           find ./plugins -type f \( -name "*.yml" -o -name "*.yaml" -o -name "*.properties" -o -name "*.txt" -o -name "*.conf" -o -name "*.cfg" -o -name "*.js" \) | while read file; do
