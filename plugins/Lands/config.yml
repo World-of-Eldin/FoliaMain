@@ -974,11 +974,11 @@ database:
   # If you want to synchronize lands and claims across servers, please read the setup instructions: https://wiki.incredibleplugins.com/lands/configuration/database#synchronizing-claims-across-servers
   mysql-v2:
     enabled_19: true
-    address_2: 127.0.0.1
-    port_2: 3306
-    username_2: folia_admin
-    password_2: 9P3!9Uh^X&NdBws4
-    database_2: "Folia_Lands"
+    address_2: ${DB_HOST}
+    port_2: ${DB_PORT}
+    username_2: ${DB_USER}
+    password_2: ${DB_PASS}
+    database_2: ${DB_Lands}
 
     # It is highly recommended to set a unique table prefix if the plugin shares a database with other plugins.
     table-prefix_2: ""
