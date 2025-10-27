@@ -18,5 +18,5 @@ messages:
     paymentReceived: "&7{player}&8 has paid you &f㒖&7{value} Tradebars" #The message displayed when the sender receives money from another player
     paymentNoMoney: "&cYou don't have enough money to transfer &7{player} &f㒖&7{value} Tradebars" #The message displayed when the sender does not have the money to send to another player
   history:
-    moneyFromPlayer: "§a{time} &f㒖 {value} Tradebars &8 to &e {player}" #The message displayed when the sender sent money to another player
-    moneyToPlayer: "§a{time} &f㒖 {value} Tradebars &8 from &e {player}" #The message displayed when the sender received money from another player
+    moneyFromPlayer: "§a{time} &f㒖 -{value} Tradebars &8 to &e {player}" #The message displayed when the sender sent money to another player
+    moneyToPlayer: "§a{time} &f㒖 +{value} Tradebars &8 from &e {player}" #The message displayed when the sender received money from another player
