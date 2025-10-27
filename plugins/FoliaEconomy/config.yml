@@ -2,7 +2,7 @@ database:
   host: ${DB_HOST}
   user: ${DB_USER}
   password: ${DB_PASS}
-  databaseName: Folia_BrendoEco
+  databaseName: ${DB_BrendoEco}
   port: ${DB_PORT}
 
 currencyName: " Tradebars" #The currency name used

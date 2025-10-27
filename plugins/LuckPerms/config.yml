@@ -17,7 +17,7 @@ use-server-uuid-cache: false
 storage-method: MySQL
 data:
   address: ${DB_HOST}
-  database: Folia_LuckPerms
+  database: ${DB_LuckPerms}
   username: ${DB_USER}
   password: ${DB_PASS}
   pool-settings:
