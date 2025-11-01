@@ -88,6 +88,63 @@ registerEvent("org.bukkit.event.player.PlayerPickupItemEvent", { //Stop vanished
     }
 })
 
+registerEvent("org.bukkit.event.player.PlayerInteractEvent", { //Stop vanished players interacting with containers which play animations
+    handleEvent: function(event) {
+        const player = event.getPlayer()
+        if(player.hasMetadata("vanished")) {
+            if(event.getAction() == "RIGHT_CLICK_BLOCK") {
+                block = event.getClickedBlock()
+                if(block) {
+                    blocktype = block.getType();
+                    let chestInventory = "";
+                    let rightBlock = false;
+
+                    if(blocktype == "CHEST" || blocktype == "TRAPPED_CHEST") {
+                        event.setCancelled(true);
+                        rightBlock = true;
+                        if(block.getState().getBlockData().getType() == "LEFT" || block.getState().getBlockData().getType() == "RIGHT") {
+                            chestInventory = block.getState().getInventory(); //Get the full double chest inventory
+                        }
+                        else {
+                            chestInventory = block.getState().getBlockInventory();
+                        }
+                    }
+
+                    else if(blocktype == "SHULKER_BOX" || blocktype == "BARREL") {
+                        event.setCancelled(true);
+                        chestInventory = block.getState().getInventory();
+                        rightBlock = true;
+                    }
+
+                    if(rightBlock) {
+                        const inventory = Bukkit.createInventory(null, chestInventory.getSize(), "Container Preview");
+                        inventory.setContents(chestInventory.getContents());
+                        event.getPlayer().openInventory(inventory);
+                    }
+                }
+            }
+        }
+    }
+})
+
+registerEvent("org.bukkit.event.inventory.InventoryClickEvent", { //Prevent movement of items in non-interactable containers
+    handleEvent: function(event) {
+        const view = event.getView();
+        if (view.getTitle() === "Container Preview") {
+            event.setCancelled(true);
+        }
+    }
+});
+
+registerEvent("org.bukkit.event.inventory.InventoryDragEvent", { //Prevent movement of items in non-interactable containers
+    handleEvent: function(event) {
+        const view = event.getView();
+        if (view.getTitle() === "Container Preview") {
+            event.setCancelled(true);
+        }
+    }
+});
+
 registerEvent("org.bukkit.event.server.TabCompleteEvent", {
     handleEvent: function(event) {
         const completions = event.getCompletions(); //The tab completions for the event
