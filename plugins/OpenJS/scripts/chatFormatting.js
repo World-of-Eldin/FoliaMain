@@ -21,17 +21,20 @@ registerEvent("org.bukkit.event.player.AsyncPlayerChatEvent", {
 
     event.setCancelled(true);
     const player = event.getPlayer();
-    if(!player.hasMetadata("vanished")) {
+    if(!player.hasMetadata("vanished") && !player.hasMetadata("muted")) {
         org.bukkit.Bukkit.broadcastMessage(formattedMessage);
     }
     else {
-        const onlinePlayers = Bukkit.getOnlinePlayers();
+      const onlinePlayers = Bukkit.getOnlinePlayers();
 
-        onlinePlayers.forEach(player => {
-            if(player.hasPermission("eldin.staff")) {
-                player.sendMessage(formattedMessage);
-            }
-        }) 
+      onlinePlayers.forEach(player => {
+        if(player.hasMetadata("muted")) {
+          player.sendMessage(ChatColor.RED + "You are muted")
+        }
+        else if(player.hasPermission("eldin.staff")) {
+          player.sendMessage(ChatColor.GREEN + "Private: " + ChatColor.RESET + formattedMessage);
+        }
+      }) 
     }
   },
 });
