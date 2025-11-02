@@ -1,3 +1,4 @@
+const Bukkit = org.bukkit.Bukkit;
 const logger = org.bukkit.Bukkit.getLogger();
 const ChatColor = org.bukkit.ChatColor;
 
@@ -24,7 +25,13 @@ registerEvent("org.bukkit.event.player.AsyncPlayerChatEvent", {
         org.bukkit.Bukkit.broadcastMessage(formattedMessage);
     }
     else {
-        player.sendMessage(ChatColor.RED + "You are currently vanished")
+        const onlinePlayers = Bukkit.getOnlinePlayers();
+
+        onlinePlayers.forEach(player => {
+            if(player.hasPermission("eldin.staff")) {
+                player.sendMessage(formattedMessage);
+            }
+        }) 
     }
   },
 });
