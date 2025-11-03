@@ -28,7 +28,7 @@ addCommand("toplands", {
                         const topLandsName = PlaceholderAPI.parseString(sender, topLandsPlaceholderName)
                         const topLandsOwner = PlaceholderAPI.parseString(sender, topLandsPlaceholderOwner)
                         const topLandsSize = PlaceholderAPI.parseString(sender, topLandsPlaceholderSize)
-                        if(topLandsName != "§8None") {
+                        if(!topLandsName.contains("None")) {
                             sender.sendMessage("§b #" + i + " " +  ChatColor.GREEN + topLandsName + " §e- " + topLandsOwner + ": §7" +  + topLandsSize + " chunks");
                         }
                     }
@@ -57,7 +57,7 @@ addCommand("nextrank", {
         for(i = 1; !landsEnded && i < 10000; i++) {
              const topLandsPlaceholderName = `%lands_top_land_chunks_${i}_name%`
              const topLandsName = PlaceholderAPI.parseString(sender, topLandsPlaceholderName)
-             if(topLandsName != "§8None")
+             if((!topLandsName.contains("None")))
              {
                 landCount++;
              }
