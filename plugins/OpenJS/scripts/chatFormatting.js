@@ -1,3 +1,4 @@
+const Bukkit = org.bukkit.Bukkit;
 const logger = org.bukkit.Bukkit.getLogger();
 const ChatColor = org.bukkit.ChatColor;
 
@@ -20,11 +21,20 @@ registerEvent("org.bukkit.event.player.AsyncPlayerChatEvent", {
 
     event.setCancelled(true);
     const player = event.getPlayer();
-    if(!player.hasMetadata("vanished")) {
+    if(!player.hasMetadata("vanished") && !player.hasMetadata("muted")) {
         org.bukkit.Bukkit.broadcastMessage(formattedMessage);
     }
     else {
-        player.sendMessage(ChatColor.RED + "You are currently vanished")
+      const onlinePlayers = Bukkit.getOnlinePlayers();
+
+      onlinePlayers.forEach(player => {
+        if(player.hasMetadata("muted")) {
+          player.sendMessage(ChatColor.RED + "You are muted")
+        }
+        else if(player.hasPermission("eldin.staff")) {
+          player.sendMessage(ChatColor.GREEN + "Private: " + ChatColor.RESET + formattedMessage);
+        }
+      }) 
     }
   },
 });

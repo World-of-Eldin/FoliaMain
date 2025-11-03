@@ -43,7 +43,7 @@ addCommand("lottery", {
                                     }
 
                                     else {
-                                        sender.sendMessage(ChatColor.RED + "A lottery ticket costs " + ticketValue + ChatColor.RESET + " 㒖" + ChatColor.RED + "Tradebars");
+                                        sender.sendMessage(ChatColor.RED + "A lottery ticket costs " + ticketValue + ChatColor.RESET + " 㒖" + ChatColor.RED + "Trade Bars");
                                     }
                                 }
 
@@ -70,7 +70,7 @@ addCommand("lottery", {
                         DiskApi.loadFile("LottoTimePassage", false, true)
                         const timer = DiskApi.getVar("LottoTimePassage", "time", 0, true);
                         sender.sendMessage(ChatColor.GOLD + "Total Tickets:" + ChatColor.GREEN + " There are a total of " + total + " tickets");
-                        sender.sendMessage(ChatColor.GOLD + "Ticket Count:" + ChatColor.GREEN + " You have a total of " + ticketCount + " tickets, worth " + ticketCount * ticketValue * (1 - tax/100) + ChatColor.RESET + " 㒖" + ChatColor.GREEN + "Tradebars");
+                        sender.sendMessage(ChatColor.GOLD + "Ticket Count:" + ChatColor.GREEN + " You have a total of " + ticketCount + " tickets, worth " + ticketCount * ticketValue * (1 - tax/100) + ChatColor.RESET + " 㒖" + ChatColor.GREEN + "Trade Bars");
 
                         if(total != 0) { //Ensure that no division by 0 occurs
                             sender.sendMessage(ChatColor.GOLD + "Chances:" + ChatColor.GREEN + " This gives you a " + (ticketCount/total * 100).toFixed(2) + "% chance of winning")
@@ -80,7 +80,7 @@ addCommand("lottery", {
                             sender.sendMessage(ChatColor.GOLD + "Chances:" + ChatColor.GREEN + " This gives you a 0% chance of winning")
                         }
 
-                        sender.sendMessage(ChatColor.GOLD + "Current Pot:" + ChatColor.GREEN + " " + (total * ticketValue + extraMoney) * (1 - tax/100) + ChatColor.RESET + " 㒖" + ChatColor.GREEN + "Tradebars")
+                        sender.sendMessage(ChatColor.GOLD + "Current Pot:" + ChatColor.GREEN + " " + (total * ticketValue + extraMoney) * (1 - tax/100) + ChatColor.RESET + " 㒖" + ChatColor.GREEN + "Trade Bars")
                         const timerValue = hours * 3600 - Number(timer);
                         sender.sendMessage(ChatColor.GOLD + "Remaining Time: " + ChatColor.GREEN + remainingTime(timerValue))
                     })
