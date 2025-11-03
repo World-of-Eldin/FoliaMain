@@ -32,7 +32,7 @@ addCommand("toplands", {
                             sender.sendMessage("§b #" + i + " " +  ChatColor.GREEN + topLandsName + " §e- " + topLandsOwner + ": §7" +  + topLandsSize + " chunks");
                         }
                     }
-                    sender.sendMessage(ChatColor.GOLD + `Use /landstop ${Number(page) + 1} to see more`)
+                    sender.sendMessage(ChatColor.GOLD + `Use /toplands ${Number(page) + 1} to see more`)
                 }
             else {
                 sender.sendMessage(ChatColor.RED + "The number must be whole")
@@ -54,7 +54,7 @@ addCommand("nextrank", {
         landCount = 0;
         landsEnded = false;
 
-        for(i = 1; !landsEnded; i++) {
+        for(i = 1; !landsEnded && i < 10000; i++) {
              const topLandsPlaceholderName = `%lands_top_land_chunks_${i}_name%`
              const topLandsName = PlaceholderAPI.parseString(sender, topLandsPlaceholderName)
              if(topLandsName != "§8None")
