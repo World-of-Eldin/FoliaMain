@@ -57,8 +57,8 @@ function gambling() {
 
                     if (winningTicket >= startingTicket && winningTicket <= endingTicket) {
                     const winningMoney = (totalTickets * ticketValue + extraMoney) * (1 - tax/100);
-                    message = ChatColor.GOLD +"Lottery: " + ChatColor.GREEN + playerInData + " won " + winningMoney + ChatColor.RESET + " 㒖" + ChatColor.GREEN + "Tradebars";
-                    discordMessage = ChatColor.GOLD +"Lottery: " + ChatColor.GREEN + playerInData + " won " + winningMoney + ChatColor.RESET + ChatColor.GREEN + " Tradebars";
+                    message = ChatColor.GOLD +"Lottery: " + ChatColor.GREEN + playerInData + " won " + winningMoney + ChatColor.RESET + " 㒖" + ChatColor.GREEN + "Trade Bars";
+                    discordMessage = ChatColor.GOLD +"Lottery: " + ChatColor.GREEN + playerInData + " won " + winningMoney + ChatColor.RESET + ChatColor.GREEN + " Trade Bars";
                     Server.broadcastMessage(message);
                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
                         const player = Bukkit.getPlayerExact(playerInData);
@@ -98,7 +98,7 @@ task.repeat(announcementRate * 1800, announcementRate * 3600, () => { //Broadcas
     const timerValue = hours * 3600 - Number(timer);
     const totalTickets = DiskApi.getVar("LottoData", "total", 0, true);
     Server.broadcastMessage(ChatColor.GOLD + "Lottery:")
-    Server.broadcastMessage(ChatColor.GOLD + "Pot: " + ChatColor.GREEN + (totalTickets * ticketValue + extraMoney) + ChatColor.RESET + " 㒖" + ChatColor.GREEN + "Tradebars")
+    Server.broadcastMessage(ChatColor.GOLD + "Pot: " + ChatColor.GREEN + (totalTickets * ticketValue + extraMoney) + ChatColor.RESET + " 㒖" + ChatColor.GREEN + "Trade Bars")
     Server.broadcastMessage(ChatColor.GOLD + "Remaining Time: " + ChatColor.GREEN + remainingTime(timerValue))
 });
 

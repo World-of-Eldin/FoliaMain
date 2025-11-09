@@ -43,7 +43,7 @@ registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
                             const updatedPlayerData = playerDataList.join(",");
                             DiskApi.setVar("BountyData", "players", updatedPlayerData, true)
                             DiskApi.saveFile("BountyData", false, true);
-                            Server.broadcastMessage("§e§l" + victimName + "'s bounty was claimed by " + responsiblePlayer + ", giving them " + bountyValue + ChatColor.RESET + " 㒖" + "§e§l" + "Tradebars")
+                            Server.broadcastMessage("§e§l" + victimName + "'s bounty was claimed by " + responsiblePlayer + ", giving them " + bountyValue + ChatColor.RESET + " 㒖" + "§e§l" + "Trade Bars")
                             const responsiblePlayerAddress = entityResponsible.getAddress().getAddress().getHostAddress(); //The IP address of the killer
                             const victimAddress = victim.getAddress().getAddress().getHostAddress(); //The IP address of the victim
                             const responsiblePlayerHostName = entityResponsible.getAddress().getHostName(); //The host name of the killer

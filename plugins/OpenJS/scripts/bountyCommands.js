@@ -42,16 +42,16 @@ addCommand("bounty", {
                                             DiskApi.saveFile("BountyData", false, true);
                                             Bukkit.dispatchCommand(Console, "setbal " + sender.getName() + " " + (balance - bountyValue)); //Remove the money from the player
                                             if(bountyValue != totalBounty) {
-                                                Server.broadcastMessage("§e§l" + "A bounty has been placed on " + playerWithBounty + "'s head by " + sendingPlayer + ", worth " + bountyValue + ChatColor.RESET + " 㒖" + "§e§l" + "Tradebars" + ", taking their total bounty to " + totalBounty + ChatColor.RESET + " 㒖" + "§e§l" + " Tradebars");
+                                                Server.broadcastMessage("§e§l" + "A bounty has been placed on " + playerWithBounty + "'s head by " + sendingPlayer + ", worth " + bountyValue + ChatColor.RESET + " 㒖" + "§e§l" + "Trade Bars" + ", taking their total bounty to " + totalBounty + ChatColor.RESET + " 㒖" + "§e§l" + " Trade Bars");
                                             }
 
                                             else {
-                                                Server.broadcastMessage("§e§l" + "A bounty has been placed on " + playerWithBounty + "'s head by " + sendingPlayer + ", worth " + bountyValue + ChatColor.RESET + " 㒖" + "§e§l" + "Tradebars")
+                                                Server.broadcastMessage("§e§l" + "A bounty has been placed on " + playerWithBounty + "'s head by " + sendingPlayer + ", worth " + bountyValue + ChatColor.RESET + " 㒖" + "§e§l" + "Trade Bars")
                                             }
                                         }
 
                                         else {
-                                            sender.sendMessage(ChatColor.RED + "You do not have " + bountyValue + " 㒖 Tradebars");
+                                            sender.sendMessage(ChatColor.RED + "You do not have " + bountyValue + " 㒖 Trade Bars");
                                         }
                                     }
                                     else {
@@ -90,7 +90,7 @@ addCommand("bounty", {
 
                             if(victimInList) {
                                 const bountyValue = DiskApi.getVar("BountyData", victim, 0, true);
-                                sender.sendMessage(ChatColor.GREEN + victim + " has a bounty of " + bountyValue + ChatColor.RESET + " 㒖" +  ChatColor.GREEN + "Tradebars for the taking!!")
+                                sender.sendMessage(ChatColor.GREEN + victim + " has a bounty of " + bountyValue + ChatColor.RESET + " 㒖" +  ChatColor.GREEN + "Trade Bars for the taking!!")
                             }
 
                             else {
