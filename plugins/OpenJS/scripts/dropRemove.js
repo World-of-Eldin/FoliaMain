@@ -1,4 +1,4 @@
-const bannedDrops = ["IRON_INGOT", "GOLD_NUGGET", "GOLD_INGOT", "EMERALD", "COPPER_INGOT"]
+const bannedDrops = ["IRON_INGOT", "GOLD_NUGGET", "GOLD_INGOT", "EMERALD", "COPPER_INGOT", "COAL", "REDSTONE"]
 
 // Prevent any entity (except players) from dropping these items
 registerEvent("org.bukkit.event.entity.EntityDeathEvent", {

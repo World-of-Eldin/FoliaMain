@@ -7,5 +7,9 @@ registerEvent("org.bukkit.event.world.PortalCreateEvent", {
                 event.setCancelled(true);
             }
         }
+        
+        else {
+            event.setCancelled(true);
+        }
     }
 })
