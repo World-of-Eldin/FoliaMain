@@ -3,7 +3,6 @@ registerEvent("org.bukkit.event.player.PlayerInteractEvent", {
     handleEvent: function(event) {
         const player = event.getPlayer();
         const block = event.getClickedBlock()
-        const Server = plugin.getServer();
         if(block != null) {
 
             if(block.getType().toString().indexOf("SIGN") > -1 && event.getAction().toString() === "RIGHT_CLICK_BLOCK") { //Check that the block is a sign and that player right clicked it
@@ -33,8 +32,8 @@ registerEvent("org.bukkit.event.player.PlayerInteractEvent", {
                     if(liftUp) {
                         log.info("Lift Up ran")
                         for(let i = liftY; i < 320; i++) { //Search upwards from lift location to the height limit
-                            const world = Server.getWorld("world"); 
-                            const location = new org.bukkit.Location(player.getWorld(), liftX, i, liftZ);
+                            const world = player.getWorld()
+                            const location = new org.bukkit.Location(world, liftX, i, liftZ);
                             const blockAtLocation = world.getBlockAt(location);
                             if(blockAtLocation.getType().toString().indexOf("SIGN") > -1) {
                                 
@@ -52,9 +51,8 @@ registerEvent("org.bukkit.event.player.PlayerInteractEvent", {
 
                     if(liftDown) {
                         for(let i = liftY; i > -64; i--) { //Search downwars from lift location to the height limit
-                            log.info("Lift Down ran")
-                            const world = Server.getWorld("world");
-                            const location = new org.bukkit.Location(player.getWorld(), liftX, i, liftZ);
+                            const world = player.getWorld()
+                            const location = new org.bukkit.Location(world, liftX, i, liftZ);
                             const blockAtLocation = world.getBlockAt(location);
                             if(blockAtLocation.getType().toString().indexOf("SIGN") > -1) {
                                 
