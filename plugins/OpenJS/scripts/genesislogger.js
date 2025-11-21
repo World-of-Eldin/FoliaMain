@@ -1,7 +1,9 @@
-itemCount = 0; //The count of items sold
+itemCount = 0;
 const Bukkit = org.bukkit.Bukkit;
 const Console = Bukkit.getConsoleSender();
 const Scheduler = Bukkit.getGlobalRegionScheduler();
+const villagers = ["Aldric", "Balin", "Bren", "Caspian", "Elara", "Gareth", "Kael", "Mara", "Matthias", "Pip", "Roland", "Rowan", "Silas", "Thorne"]
+
 registerEvent("studio.magemonkey.genesis.events.GenesisPlayerPurchaseEvent", {
     handleEvent: function(event) {
         player = event.getPlayer()
@@ -42,6 +44,13 @@ registerEvent("studio.magemonkey.genesis.events.GenesisPlayerPurchasedEvent", {
             discordMessage = player.getName() + " sold " + price + " for " + rewardNumber + " Trade Bars";
 
             if(!reward.contains("Trade Bars")) {
+                if(reward.contains("villager")) {
+                    villagers.forEach(villager => {
+                        if(reward.contains(villager)) {
+                            reward = villager;
+                        }
+                    });
+                }
                 discordMessage = player.getName() + " paid " + price + " for " + reward;
             }
 
