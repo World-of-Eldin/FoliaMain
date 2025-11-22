@@ -19,12 +19,15 @@ var validShops = [
   "Shepherd",
   "Toolsmith",
   "Weaponsmith",
-  "VillagerShops"
+  "VillagerShops",
 ];
 
 registerEvent("org.bukkit.event.player.PlayerInteractEntityEvent", {
   handleEvent: function (event) {
-    if (event.getRightClicked().getType().name() === "VILLAGER") {
+    if (
+      event.getRightClicked().getType().name() === "VILLAGER" ||
+      event.getRightClicked().getType().name() === "WANDERING_TRADER"
+    ) {
       event.setCancelled(true);
 
       const player = event.getPlayer();

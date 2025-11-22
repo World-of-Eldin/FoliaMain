@@ -8,7 +8,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&730 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -23,12 +23,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 480
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Emerald"
-    Reward_middle: 30
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 30
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 22
   Echo_Shard:
     MenuItem:
@@ -37,7 +37,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&7100 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -52,12 +52,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 1600
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Echo_Shard"
-    Reward_middle: 100
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 100
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 24
   Emerald_Block:
     MenuItem:
@@ -66,7 +66,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&7270 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -81,12 +81,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 4320
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Emerald_Block"
-    Reward_middle: 270
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 270
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 31
   UI_Navigation_9:
     MenuItem:

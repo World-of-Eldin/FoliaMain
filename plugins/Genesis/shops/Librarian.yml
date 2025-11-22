@@ -8,7 +8,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&70.1 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -23,12 +23,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 1.6
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Lapis_Lazuli"
-    Reward_middle: 0.1
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 0.1
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 22
   Book:
     MenuItem:
@@ -37,7 +37,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&72.5 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -52,12 +52,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 40
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Book"
-    Reward_middle: 2.5
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 2.5
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 23
   Nether_Star:
     MenuItem:
@@ -66,7 +66,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&7400 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -81,12 +81,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 6400
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Nether_Star"
-    Reward_middle: 400
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 400
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 24
   Lapis_Block:
     MenuItem:
@@ -95,7 +95,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&70.9 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -110,12 +110,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 14.4
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Lapis_Block"
-    Reward_middle: 0.9
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 0.9
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 31
   UI_Navigation_9:
     MenuItem:

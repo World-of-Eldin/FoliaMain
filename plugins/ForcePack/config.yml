@@ -20,7 +20,10 @@ Server:
       # For example, placing your resource pack as "plugins/ForcePack/pack.zip", the url will just be "forcepack://pack.zip".
       # ONLY PLAYERS ON 1.20.3+ CAN RECEIVE MULTIPLE RESOURCE PACKS. The first URL/Hash pair will be taken for older client versions.
       # URLs list and hashes list MUST BE THE SAME SIZE if generate-hash is disabled.
-      urls: ["https://www.dropbox.com/scl/fi/cx6zdkto6679z5jkkg0y8/Eldin_Pack.zip?rlkey=x93r2novwfzqn4keiylszujst&st=f2fx24h7&dl=1"]
+      urls:
+        [
+          "https://www.dropbox.com/scl/fi/9csv84cqrae5jrrdwnh3w/EldinPack.zip?rlkey=nemfyri73ir1zrue9dopxuhgp&st=a1cu72ps&dl=1",
+        ]
       # Whether to automatically generate the SHA-1 hash.
       # The hash setting will be ignored if this is true, however it will fall back to that if the generation fails.
       generate-hash: true
