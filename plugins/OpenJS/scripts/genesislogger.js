@@ -9,8 +9,7 @@ registerEvent("studio.magemonkey.genesis.events.GenesisPlayerPurchaseEvent", {
         player = event.getPlayer()
         items = player.getInventory().getContents(); //Get inventory contents
         const clickType = event.getClickType()
-
-        if(clickType == "MIDDLE") { //Ensure that logic only runs on middle click
+        if(clickType == "SHIFT_RIGHT") { //Ensure that logic only runs on middle click
             const spentItem = event.getShopItem().getPrice(clickType)
             for(let i = 0; i < items.length; i++) {
                 const item = items[i];
@@ -41,7 +40,10 @@ registerEvent("studio.magemonkey.genesis.events.GenesisPlayerPurchasedEvent", {
             let rewardNumber  = reward.match(/-?\d+\.?\d*/g);
             const priceNumber = price.match(/-?\d+\.?\d*/g)
             rewardNumber = rewardNumber * priceNumber //Get full price for all items combined
-            discordMessage = player.getName() + " sold " + price + " for " + rewardNumber + " Trade Bars";
+            discordMessage = player.getName() + " sold " + price + " for " + rewardValue + " Trade Bars";
+            if(clickType == "SHIFT_RIGHT") {
+                discordMessage = player.getName() + " sold " + price + " for " + rewardNumber + " Trade Bars";
+            }
 
             if(!reward.contains("Trade Bars")) {
                 if(reward.contains("villager")) {
