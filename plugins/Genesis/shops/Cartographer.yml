@@ -8,7 +8,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&75 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -23,12 +23,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 80
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Amethyst_Shard"
-    Reward_middle: 5
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 5
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 21
   Quartz:
     MenuItem:
@@ -37,7 +37,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&73 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -52,12 +52,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 48
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Quartz"
-    Reward_middle: 3
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 3
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 22
   Chorus_Fruit:
     MenuItem:
@@ -66,7 +66,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&70.5 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -81,12 +81,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 8
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Chorus_Fruit"
-    Reward_middle: 0.5
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 0.5
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 24
   Heart_of_the_Sea:
     MenuItem:
@@ -95,7 +95,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&760 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -110,12 +110,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 960
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Heart_of_the_Sea"
-    Reward_middle: 60
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 60
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 25
   UI_Navigation_9:
     MenuItem:
