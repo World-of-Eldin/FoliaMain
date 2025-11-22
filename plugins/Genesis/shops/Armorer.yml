@@ -8,7 +8,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&70.5 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -23,12 +23,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 8
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Copper_Ingot"
-    Reward_middle: 0.5
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 0.5
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 21
   Iron_Ingot:
     MenuItem:
@@ -37,7 +37,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&71.5 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -52,12 +52,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 24
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Iron_Ingot"
-    Reward_middle: 1.5
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 1.5
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 22
   Gold_Ingot:
     MenuItem:
@@ -66,7 +66,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&73 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -81,12 +81,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 48
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Gold_Ingot"
-    Reward_middle: 3
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 3
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 24
   Diamond:
     MenuItem:
@@ -95,7 +95,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&720 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -110,12 +110,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 320
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Diamond"
-    Reward_middle: 20
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 20
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 25
   Copper_Block:
     MenuItem:
@@ -124,7 +124,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&74.5 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -139,12 +139,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 72
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Copper_Block"
-    Reward_middle: 4.5
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 4.5
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 30
   Iron_Block:
     MenuItem:
@@ -153,7 +153,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&713.5 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -168,12 +168,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 216
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Iron_Block"
-    Reward_middle: 13.5
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 13.5
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 31
   Gold_Block:
     MenuItem:
@@ -182,7 +182,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&727 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -197,12 +197,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 432
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Gold_Block"
-    Reward_middle: 27
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 27
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 33
   Diamond_Block:
     MenuItem:
@@ -211,7 +211,7 @@ shop:
       - "lore1:&6Sell Price: &f㒖&7180 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Middle Click: &7sell all"
+      - "lore5:&6Shift Right Click: &7sell all"
     RewardType_left: money
     PriceType_left: item
     Price_left:
@@ -226,12 +226,12 @@ shop:
       - "amount:16"
     Reward_shift_left: 2880
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_middle: money
-    PriceType_middle: itemall
-    Price_middle:
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
       - "type:Diamond_Block"
-    Reward_middle: 180
-    Message_middle: "&6[&7BossShop&6] You've sold &7%price_middle% &6for &f㒖&7%reward_middle%"
+    Reward_shift_right: 180
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 34
   UI_Navigation_9:
     MenuItem:

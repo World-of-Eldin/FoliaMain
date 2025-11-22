@@ -33,7 +33,7 @@ features:
   upkeep: false
   # Taxes can be further configured in the taxes section (this file).
   # For taxes to work, Vault and a economy plugin, that supports Vault, needs to be installed.
-  taxes: true
+  taxes: false
   # Lands and nations can be in relations, such as ally, enemy and neutral.
   # If you disable this option, all existing relations will be deleted.
   # This is useful in combination with wars. However, you can also use it with wars disabled.
@@ -252,7 +252,7 @@ teleport:
   costs_9: 0
   # Set the cost of any teleportation to 0 for players that joined the server for the first time.
   # You can define a time span here. Example: 1d = players that joined the server 23 hours ago, won't pay for any teleportation.
-  first-join_time: 2h
+  first-join_time: 0h
   # Waittime
   # Timeunit: seconds
   wait: 3
@@ -391,7 +391,7 @@ land:
       # This cooldown won't apply to players that aren't trusted in the land.
       spawn-cooldown_time: 1800s
       # Teleport a player to the land spawn after they died?
-      re-spawn: true
+      re-spawn: false
 
   # Rent/sell areas settings - Wiki: https://github.corent:m/Angeschossen/Lands/wiki/Rent-System
   # Rent = The players can rent a area of their choice without needing to get trusted. They can decide how long they want to rent it.
@@ -725,7 +725,7 @@ random-teleport:
   # The minimum and maximum distance is measured from the world spawn (/setworldspawn).
   # The maximum distance can't be larger than the size of your world border.
   wild-worlds_list:
-    - "world:800:30000"
+    - "world:800:8000"
 
   # Should permissions for random teleportation be per world based instead of just lands.command.wild?
   # Example: world 'A': lands.command.wild.a, world 'B': lands.command.wild.b
@@ -1045,7 +1045,7 @@ integration:
   # It's not possible to distingush between hostile and friendly mobs with MythicMobs, so this might
   # lead to unexpected results, depending on your use-case.
   # This option requires a server reload / restart.
-  mythicmobs: false
+  mythicmobs: true
 
   # Should skins be fetched from the 3rd party plugin SkinsRestorer.
   # This option requires the option "general.fetch-skins-names" to be enabled.
