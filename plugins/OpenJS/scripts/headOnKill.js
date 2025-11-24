@@ -7,7 +7,6 @@ const Material = org.bukkit.Material;
 
 registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
     handleEvent: function(event) {
-        DiskApi.loadFile("BountyData", false, true);
         const entityResponsible = event.getDamageSource().getCausingEntity();
         const victim = event.getEntity();
         if (entityResponsible) {
