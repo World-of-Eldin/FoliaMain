@@ -42,12 +42,12 @@ registerEvent("org.bukkit.event.block.BlockBreakEvent", {
       .set(key, PersistentDataType.STRING, mobType);
 
     // Set display name to show mob type
-    meta.setDisplayName("�6" + mobType + " Spawner");
+    meta.setDisplayName("§6" + mobType + " Spawner");
 
     // Add lore
     const lore = java.util.Arrays.asList(
-      "�7Place this spawner to create",
-      "�7a " + mobType + " spawner"
+      "§7Place this spawner to create",
+      "§7a " + mobType + " spawner"
     );
     meta.setLore(lore);
 
@@ -62,9 +62,10 @@ registerEvent("org.bukkit.event.block.BlockBreakEvent", {
 registerEvent("org.bukkit.event.block.BlockPlaceEvent", {
   handleEvent: function (event) {
     const block = event.getBlockPlaced();
+    const blockType = block.getType().toString();
 
-    // Check if the placed block is a spawner
-    if (block.getType().toString() !== "SPAWNER") {
+    // Only handle regular spawners (trial spawners don't use the same mob type system)
+    if (blockType !== "SPAWNER") {
       return;
     }
 
@@ -86,13 +87,26 @@ registerEvent("org.bukkit.event.block.BlockPlaceEvent", {
 
     const mobType = container.get(key, PersistentDataType.STRING);
 
-    // Set the spawner's mob type
-    task.main(function () {
-      const spawner = block.getState();
+    // Set the spawner's mob type - use region scheduler for Folia compatibility
+    const location = block.getLocation();
+    const regionScheduler = Bukkit.getRegionScheduler();
 
-      const entityType = org.bukkit.entity.EntityType.valueOf(mobType);
-      spawner.setSpawnedType(entityType);
-      spawner.update();
-    });
+    regionScheduler.runDelayed(
+      plugin,
+      location,
+      function () {
+        const spawner = block.getState();
+
+        try {
+          const entityType = org.bukkit.entity.EntityType.valueOf(mobType);
+          spawner.setSpawnedType(entityType);
+          spawner.update();
+          player.sendMessage("§aSuccessfully set spawner to: " + mobType);
+        } catch (e) {
+          player.sendMessage("§cError setting spawner: " + e);
+        }
+      },
+      1
+    );
   },
 });
