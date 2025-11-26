@@ -30,35 +30,6 @@ shop:
     Reward_shift_right: 30
     Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 22
-  Echo_Shard:
-    MenuItem:
-      - "type:Echo_Shard"
-      - "amount:1"
-      - "lore1:&6Sell Price: &f㒖&7100 Trade Bars"
-      - "lore3:&6Left Click: &7sell 1"
-      - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Shift Right Click: &7sell all"
-    RewardType_left: money
-    PriceType_left: item
-    Price_left:
-      - "type:Echo_Shard"
-      - "amount:1"
-    Reward_left: 100
-    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
-    RewardType_shift_left: money
-    PriceType_shift_left: item
-    Price_shift_left:
-      - "type:Echo_Shard"
-      - "amount:16"
-    Reward_shift_left: 1600
-    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_shift_right: money
-    PriceType_shift_right: itemall
-    Price_shift_right:
-      - "type:Echo_Shard"
-    Reward_shift_right: 100
-    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
-    InventoryLocation: 24
   Emerald_Block:
     MenuItem:
       - "type:Emerald_Block"
@@ -88,6 +59,64 @@ shop:
     Reward_shift_right: 270
     Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 31
+  Cookie:
+    MenuItem:
+      - "type:Cookie"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&70.2 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Shift Right Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Cookie"
+      - "amount:1"
+    Reward_left: 0.2
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Cookie"
+      - "amount:16"
+    Reward_shift_left: 3.2
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
+      - "type:Cookie"
+    Reward_shift_right: 0.2
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
+    InventoryLocation: 23
+  Nautilus_Shell:
+    MenuItem:
+      - "type:Nautilus_Shell"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&710 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Shift Right Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Nautilus_Shell"
+      - "amount:1"
+    Reward_left: 10
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Nautilus_Shell"
+      - "amount:16"
+    Reward_shift_left: 160
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
+      - "type:Nautilus_Shell"
+    Reward_shift_right: 10
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
+    InventoryLocation: 24
   UI_Navigation_9:
     MenuItem:
       - type:AIR
