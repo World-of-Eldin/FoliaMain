@@ -87,7 +87,7 @@ shop:
       - "type:Chorus_Fruit"
     Reward_shift_right: 0.5
     Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
-    InventoryLocation: 23
+    InventoryLocation: 24
   Echo_Shard:
     MenuItem:
       - "type:Echo_Shard"
@@ -116,7 +116,7 @@ shop:
       - "type:Echo_Shard"
     Reward_shift_right: 250
     Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
-    InventoryLocation: 24
+    InventoryLocation: 25
   UI_Navigation_9:
     MenuItem:
       - type:AIR
