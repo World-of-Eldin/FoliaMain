@@ -1,4 +1,4 @@
-# Config Date 10/25/25
+# Config Date 11/26/25
 
 general:
   keep-level: false
@@ -64,6 +64,7 @@ land:
         down:
           - 'lp user {owner} meta addprefix 3 "㐒 "'
           - "lp user {owner} meta removeprefix 4"
+          - "lp user {owner} permission unset eldin.xp.bottle"
     5:
       title: "Hamlet"
       requirements:
@@ -78,6 +79,7 @@ land:
         reached:
           - 'lp user {owner} meta addprefix 4 "㐟 "'
           - "lp user {owner} meta removeprefix 3"
+          - "lp user {owner} permission set eldin.xp.bottle"
         # Remove Earl
         down:
           - 'lp user {owner} meta addprefix 4 "㐟 "'
@@ -100,6 +102,7 @@ land:
         down:
           - 'lp user {owner} meta addprefix 5 "㐡 "'
           - "lp user {owner} meta removeprefix 6"
+          - "lp user {owner} meta unset eldin.create.netherportal"
     7:
       title: "Town"
       requirements:
@@ -114,6 +117,7 @@ land:
         reached:
           - 'lp user {owner} meta addprefix 6 "㐢 "'
           - "lp user {owner} meta removeprefix 5"
+          - "lp user {owner} permission set eldin.create.netherportal"
         # Remove Prince
         down:
           - 'lp user {owner} meta addprefix 6 "㐢 "'
