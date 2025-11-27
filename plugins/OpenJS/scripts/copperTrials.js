@@ -10,7 +10,7 @@ registerEvent("org.bukkit.event.block.BlockBreakEvent", {
     handleEvent: function(event) {
         const blockMined = event.getBlock(); //The block mined by the player
         if(blockMined.getType().toString() === "WAXED_COPPER_BLOCK") {
-           lookup = CoreProtectAPI.blockLookup(blockMined, 100000000)
+           lookup = CoreProtectAPI.blockLookup(blockMined, -1)
            if(lookup.size() === 0) {
                 event.setDropItems(false)
            }
