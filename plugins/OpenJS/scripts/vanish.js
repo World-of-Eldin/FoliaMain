@@ -1,6 +1,7 @@
 const Bukkit = org.bukkit.Bukkit;
 const PotionEffect = org.bukkit.potion.PotionEffect;
 const PotionEffectType = org.bukkit.potion.PotionEffectType;
+const ChatColor = org.bukkit.ChatColor;
 addCommand("vanish", { 
     onCommand: function(sender, args) {
         if (!sender.hasMetadata("vanished")) { //Check that the sender is not already vanished
@@ -61,3 +62,48 @@ addCommand("god", {
     }},
     "eldin.staff"
 );
+
+addCommand("msg", {
+    onCommand(sender, args) {
+        messanger(sender, args, "msg")
+    }}
+);
+
+addCommand("tell", {
+    onCommand(sender, args) {
+        messanger(sender, args, "tell")
+    }}
+);
+
+function messanger(sender, args, command) {
+    if (args.length === 2) {
+        commandPlayer = args[0]
+        message = args[1]
+        const onlinePlayers = Bukkit.getOnlinePlayers();
+        playerOnline = false
+        onlinePlayers.forEach(player => { //Ensure that the player is online
+            if(commandPlayer === player.getName()) {
+                playerOnline = true;
+            }
+        })
+
+
+        if(playerOnline) {
+            playerObject = Bukkit.getPlayerExact(commandPlayer)
+            if(playerObject.hasMetadata("vanished")) {
+                sender.sendMessage(ChatColor.RED + "No player was found")
+            }
+            else {
+                sender.sendMessage(ChatColor.GRAY + ChatColor.ITALIC + `You whisper to ${commandPlayer}: ${message}`)
+                playerObject.sendMessage(ChatColor.GRAY + ChatColor.ITALIC + `${sender.getName()} whispers to you: ${message}`)
+            }
+        }
+        else {
+            sender.sendMessage(ChatColor.RED + "No player was found")
+        }
+    }
+
+    else {
+        sender.sendMessage(ChatColor.RED + `Command format: /${command} <playername> <message>`);
+    }
+}
