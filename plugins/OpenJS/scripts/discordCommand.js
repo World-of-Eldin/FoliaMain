@@ -1,52 +1,50 @@
-// Discord Command
-// Provides /discord command with clickable link to Discord server
+// Discord Command Override
+// Intercepts /discord command and provides clickable link to Discord server
 
 const Bukkit = org.bukkit.Bukkit;
 const ChatColor = org.bukkit.ChatColor;
-const Component = net.kyori.adventure.text.Component;
-const ClickEvent = net.kyori.adventure.text.event.ClickEvent;
-const HoverEvent = net.kyori.adventure.text.event.HoverEvent;
 
 // CONFIGURE YOUR DISCORD INVITE LINK HERE
 const DISCORD_INVITE = "https://discord.gg/VBGVzNzyr7";
 
+// Function to send Discord invite message
+function sendDiscordMessage(sender) {
+  sender.sendMessage(
+    ChatColor.DARK_PURPLE + "═══════════════════════════════════"
+  );
+  sender.sendMessage(
+    "㒐 " + ChatColor.DARK_PURPLE + "Join our Discord server!"
+  );
+  sender.sendMessage(ChatColor.GOLD + DISCORD_INVITE);
+  sender.sendMessage(
+    ChatColor.DARK_PURPLE + "═══════════════════════════════════"
+  );
+}
+
+// Register the command so it shows up properly in client
 addCommand("discord", {
   onCommand: function (sender, args) {
-    // Create clickable link component
-    const message = Component.text()
-      .append(
-        Component.text("═══════════════════════════════════").color(
-          ChatColor.DARK_PURPLE
-        )
-      )
-      .append(Component.newline())
-      .append(
-        Component.text("㒐 Join our Discord server!").color(
-          ChatColor.DARK_PURPLE
-        )
-      )
-      .append(Component.newline())
-      .append(Component.text("  "))
-      .append(
-        Component.text(DISCORD_INVITE)
-          .color(ChatColor.GOLD)
-          .clickEvent(ClickEvent.openUrl(DISCORD_INVITE))
-          .hoverEvent(
-            HoverEvent.showText(Component.text("Click to open Discord invite!"))
-          )
-      )
-      .append(Component.newline())
-      .append(
-        Component.text("═══════════════════════════════════").color(
-          ChatColor.DARK_PURPLE
-        )
-      )
-      .build();
+    sendDiscordMessage(sender);
+  },
+});
 
-    sender.sendMessage(message);
+// Also intercept via event in case DiscordSRV tries to handle it first
+registerEvent("org.bukkit.event.player.PlayerCommandPreprocessEvent", {
+  handleEvent: function (event) {
+    const message = event.getMessage().toLowerCase();
+    const player = event.getPlayer();
+
+    // Check if this is the /discord command
+    if (message === "/discord" || message.startsWith("/discord ")) {
+      // Cancel DiscordSRV's command
+      event.setCancelled(true);
+
+      // Send our custom message
+      sendDiscordMessage(player);
+    }
   },
 });
 
 log.info(
-  "Discord command loaded! Use /discord to get the Discord invite link."
+  "Discord command override loaded! /discord will now show custom invite link."
 );

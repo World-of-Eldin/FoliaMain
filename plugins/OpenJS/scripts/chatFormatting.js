@@ -4,6 +4,11 @@ const ChatColor = org.bukkit.ChatColor;
 
 registerEvent("org.bukkit.event.player.AsyncPlayerChatEvent", {
   handleEvent: function (event) {
+    // Check if event is already cancelled by another plugin (like Lands)
+    if (event.isCancelled()) {
+      return;
+    }
+
     var prefix = getPlayerPrefix(event.getPlayer());
     var suffix = getPlayerSuffix(event.getPlayer());
     var formattedName = getPlayerFormattedName(event.getPlayer());
