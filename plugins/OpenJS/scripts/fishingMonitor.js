@@ -12,11 +12,11 @@ registerEvent("org.bukkit.event.player.PlayerFishEvent", {
     if (event.getState() == "CAUGHT_FISH") {
       const start = biteTimes[player.getUniqueId()];
       const elapsedMs = Date.now() - start;
-      const seconds = (elapsedMs / 1000).toFixed(2);
+      const seconds = (elapsedMs / 1000).toFixed(3);
       delete biteTimes[player.getUniqueId()];
-      discordMessage = `${player.getName()} caught a ${event
+      discordMessage = player.getName() + " caught a " + event
         .getCaught()
-        .getName()} in ${seconds} seconds`;
+        .getName() + " in " + seconds + " seconds";
       Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
         Bukkit.dispatchCommand(
           Console,
