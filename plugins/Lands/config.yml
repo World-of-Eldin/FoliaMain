@@ -391,7 +391,7 @@ land:
       # This cooldown won't apply to players that aren't trusted in the land.
       spawn-cooldown_time: 1800s
       # Teleport a player to the land spawn after they died?
-      re-spawn: false
+      re-spawn: true
 
   # Rent/sell areas settings - Wiki: https://github.corent:m/Angeschossen/Lands/wiki/Rent-System
   # Rent = The players can rent a area of their choice without needing to get trusted. They can decide how long they want to rent it.
