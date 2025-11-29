@@ -76,9 +76,14 @@ addCommand("tell", {
 );
 
 function messanger(sender, args, command) {
-    if (args.length === 2) {
+    if (args.length >= 2) {
         commandPlayer = args[0]
-        message = args[1]
+        i = 1
+        message = ""
+        while (i < args.length) {
+            message = message + args[i] + " "
+            i++
+        }
         const onlinePlayers = Bukkit.getOnlinePlayers();
         playerOnline = false
         onlinePlayers.forEach(player => { //Ensure that the player is online
@@ -94,8 +99,8 @@ function messanger(sender, args, command) {
                 sender.sendMessage(ChatColor.RED + "No player was found")
             }
             else {
-                sender.sendMessage(ChatColor.GRAY + ChatColor.ITALIC + `You whisper to ${commandPlayer}: ${message}`)
-                playerObject.sendMessage(ChatColor.GRAY + ChatColor.ITALIC + `${sender.getName()} whispers to you: ${message}`)
+                sender.sendMessage(ChatColor.GRAY + ChatColor.ITALIC + "You whisper to " + commandPlayer + ": " + message)
+                playerObject.sendMessage(ChatColor.GRAY + ChatColor.ITALIC + sender.getName() + " whispers to you: " + message)
             }
         }
         else {
