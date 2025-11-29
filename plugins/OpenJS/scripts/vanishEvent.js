@@ -114,6 +114,15 @@ registerEvent("org.bukkit.event.player.PlayerPickupItemEvent", { //Stop vanished
     }
 })
 
+registerEvent("org.bukkit.event.player.PlayerDropItemEvent", { //Stop vanished players dropping items
+    handleEvent: function(event) {
+        const player = event.getPlayer()
+        if(player.hasMetadata("vanished")) {
+            event.setCancelled(true);
+        }
+    }
+})
+
 registerEvent("org.bukkit.event.player.PlayerInteractEvent", { //Stop vanished players interacting with containers which play animations
     handleEvent: function(event) {
         const player = event.getPlayer()
