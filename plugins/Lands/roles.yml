@@ -1,4 +1,4 @@
-# Config Date 10/25/25
+# Config Date 11/26/25
 
 # In this file you can edit/add default roles.
 # Please note that each config section (role section) name and role name must be unique.
@@ -64,57 +64,16 @@ land:
     owner:
       name: "&4&lOwner"
       # The icon supports minecraft URL values (example: https://minecraft-heads.com/) and normal material values.
-      icon: "skin:83f642814fa2551e7763d04060c532adea51015cbfe030cbb78e82c92092a6fb"
+      icon: "skin:http://textures.minecraft.net/texture/6f77d9f1deb9530c8fcfd88ac97e1bad755d512d0dffd27b201711195dee1b5c"
       # Default flag values. Please note that these only apply to new land creations. The flags of the owner role can only be toggled by server administrators.
       # Using ALL instead of a list will give this role all player flags. Flags which are only for admin lands won't be set for this role.
       default: "ALL"
 
-    # This role can't be deleted, but is only visible if an area is rented or in admin lands.
-    tenant:
-      name: "&6&lTenant"
-      # The icon supports minecraft URL values (example: https://minecraft-heads.com/) and normal material values.
-      icon: "skin:d831830a7bd3b1ab05beb98dc2f9fc5ea550b3cf649fd94d483da7cd39f7c063"
-      # Allow lands to toggle specific flags for this role? They can only do this while the area is NOT rented.
-      # WARNING: Keep in mind that this could allow lands to rent out areas, in which tenants can't do much or nothing depending
-      # on the "allow-edit" list. You can add "all" to the list to allow them to toggle all flags for this role.
-      # NOTE: They still need the general toggle permission for the flags. These can be found in the wiki: https://wiki.incredibleplugins.com/lands/configuration/roles-and-their-flags#flags
-      allow-toggle-flags: []
-      # Default flag values. Please note that these only apply to new rentals.
-      # Only admin lands can change these flags ingame. This prevents lands abusing this and selling areas where the tanant would have no permission to do anything.
-      default:
-        - BLOCK_PLACE
-        - BLOCK_BREAK
-        - PLANT
-        - HARVEST
-        - SHEAR
-        - INTERACT_GENERAL
-        - INTERACT_DOOR
-        - INTERACT_TRAPDOOR
-        - INTERACT_CONTAINER
-        - INTERACT_MECHANISM
-        - INTERACT_VILLAGER
-        - BLOCK_IGNITE
-        - ATTACK_PLAYER
-        - ATTACK_ANIMAL
-        - ATTACK_MONSTER
-        - FLY
-        - ELYTRA
-        - LAND_ENTER
-        - SPAWN_TELEPORT
-        - ENDER_PEARL
-        - VEHICLE_USE
-        - ITEM_PICKUP
-        - TRAMPLE_FARMLAND
-        - PLAYER_TRUST
-        - PLAYER_SETROLE
-        - PLAYER_UNTRUST
-        - PLAYER_BAN
-
     # This role can be deleted, in case you don't want it.
-    admin:
-      name: "&c&lAdmin"
+    coowner:
+      name: "&c&lCo-Owner"
       # The icon supports texture values (example: https://minecraft-heads.com/) and normal material values.
-      icon: "skin:548e2397834b1a16b15b71a52175ed8ae6919366dfecd3882a85f8236ff5d1d4"
+      icon: "skin:http://textures.minecraft.net/texture/f001571a28e904fe9777c5e12ac406a28f83f663ff8d33d16041e16ea0dc9ad4"
       # Should members of this role automatically be added to new sub areas?
       parent: true
       # Default flag values. Please note that these only apply to new land creations. Players will be able to change them later in their land menu if the flag is listed under 'display' above.
@@ -246,6 +205,47 @@ land:
         - VEHICLE_USE
         - ITEM_PICKUP
         - LAND_CLAIM_BORDER
+
+    # This role can't be deleted, but is only visible if an area is rented or in admin lands.
+    tenant:
+      name: "&6&lTenant"
+      # The icon supports minecraft URL values (example: https://minecraft-heads.com/) and normal material values.
+      icon: "skin:d831830a7bd3b1ab05beb98dc2f9fc5ea550b3cf649fd94d483da7cd39f7c063"
+      # Allow lands to toggle specific flags for this role? They can only do this while the area is NOT rented.
+      # WARNING: Keep in mind that this could allow lands to rent out areas, in which tenants can't do much or nothing depending
+      # on the "allow-edit" list. You can add "all" to the list to allow them to toggle all flags for this role.
+      # NOTE: They still need the general toggle permission for the flags. These can be found in the wiki: https://wiki.incredibleplugins.com/lands/configuration/roles-and-their-flags#flags
+      allow-toggle-flags: []
+      # Default flag values. Please note that these only apply to new rentals.
+      # Only admin lands can change these flags ingame. This prevents lands abusing this and selling areas where the tanant would have no permission to do anything.
+      default:
+        - BLOCK_PLACE
+        - BLOCK_BREAK
+        - PLANT
+        - HARVEST
+        - SHEAR
+        - INTERACT_GENERAL
+        - INTERACT_DOOR
+        - INTERACT_TRAPDOOR
+        - INTERACT_CONTAINER
+        - INTERACT_MECHANISM
+        - INTERACT_VILLAGER
+        - BLOCK_IGNITE
+        - ATTACK_PLAYER
+        - ATTACK_ANIMAL
+        - ATTACK_MONSTER
+        - FLY
+        - ELYTRA
+        - LAND_ENTER
+        - SPAWN_TELEPORT
+        - ENDER_PEARL
+        - VEHICLE_USE
+        - ITEM_PICKUP
+        - TRAMPLE_FARMLAND
+        - PLAYER_TRUST
+        - PLAYER_SETROLE
+        - PLAYER_UNTRUST
+        - PLAYER_BAN
 
     # NOTE: The visitor role can not be deleted.
     visitor:
