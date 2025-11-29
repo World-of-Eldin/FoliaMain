@@ -13,6 +13,10 @@ messages:
     selfBalance: "&8Your balance is &f㒖&7{value} Tradebars" #The message displayed when a player checks their own balance
     otherBalance: "&7{player}'s&8 balance is &f㒖&7{value} Tradebars" #The message displayed when a player checks the balance of another player
     setBalance: "&7{player}'s&8 balance is set to &f㒖&7{value} Tradebars" #The message displayed when a player's balance is set
+    addBalanceSender: "&7{player}'s&8 balance is now &f㒖&7{value} Tradebars" #The message displayed when a player's balance is added to
+    addBalanceReceiver: "&7Your balance is now &f㒖&7{value} Tradebars" #The message displayed when a player's balance is added to
+    withdrawBalanceSender: "&7{player}'s&8 balance is now &f㒖&7{value} Tradebars" #The message displayed when a player's balance is withdrawn from
+    withdrawBalanceReceiver: "&7Your balance is now &f㒖&7{value} Tradebars" #The message displayed when a player's balance is withdrawn from
   payment:
     paymentSent: "&8You have payed &7{player} &f㒖&7{value} Tradebars" #The message displayed when the sender sends money to another player
     paymentReceived: "&7{player}&8 has paid you &f㒖&7{value} Tradebars" #The message displayed when the sender receives money from another player
