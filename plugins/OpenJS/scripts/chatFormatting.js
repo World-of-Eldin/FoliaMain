@@ -210,3 +210,41 @@ const emojiCodeReplace = (message) => {
   message = message.replace(new RegExp(":discord:", "g"), "㒐");
   return message;
 };
+
+addCommand("adminchat", {
+    onCommand(sender, args) {
+      if(args.length >= 1) {
+        i = 0
+        message = ""
+        while (i < args.length) {
+          message = message + args[i] + " "
+          i++
+        }
+        const onlinePlayers = Bukkit.getOnlinePlayers();
+        var prefix = getPlayerPrefix(sender);
+        var suffix = getPlayerSuffix(sender);
+        var formattedName = getPlayerFormattedName(sender);
+        var formattedMessage = ChatColor.translateAlternateColorCodes(
+        "&",
+        prefix +
+          formattedName +
+          " " +
+          suffix +
+          ChatColor.RESET +
+          ": " +
+          emojiCodeReplace(message)
+        );
+
+        onlinePlayers.forEach(playerOnline => {
+          if(playerOnline.hasPermission("eldin.staff")) {
+            playerOnline.sendMessage(ChatColor.GREEN + "Private: " + ChatColor.RESET + formattedMessage);
+          }
+        }) 
+      }
+      
+      else {
+        sender.sendMessage(ChatColor.RED + "Command Format: /adminchat <message>")
+      }
+    }},
+    "eldin.staff"
+);

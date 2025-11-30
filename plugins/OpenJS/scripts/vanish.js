@@ -109,6 +109,6 @@ function messanger(sender, args, command) {
     }
 
     else {
-        sender.sendMessage(ChatColor.RED + `Command format: /${command} <playername> <message>`);
+        sender.sendMessage(ChatColor.RED + "Command format: " + "/" + command + " <playername> <message>");
     }
 }

@@ -57,13 +57,39 @@ registerEvent("org.bukkit.event.entity.EntityTargetEvent", { //Stop entities fro
     }
 })
 
-registerEvent("org.bukkit.event.entity.EntityDamageEvent", { //Stop damage being dealt to players in god mode
+registerEvent("org.bukkit.event.entity.EntityDamageEvent", { //Stop damage being dealt to players in god mode or vanish
     handleEvent: function(event) {
         const entity = event.getEntity();
+        const entityResponsible = event.getDamageSource().getCausingEntity();
         if(entity.getType().toString() === "PLAYER") {
             if(entity.hasMetadata("god")) { 
                 event.setCancelled(true);
             }
+        }
+        if (entityResponsible) {
+            if(entityResponsible.getType().toString() === "PLAYER") {
+                if(entityResponsible.hasMetadata("vanished")) {
+                    event.setCancelled(true);
+                }
+            }
+        }
+    }
+})
+
+registerEvent("org.bukkit.event.block.BlockBreakEvent", { //Stop vanished players from breaking blocks
+    handleEvent: function(event) {
+        const player = event.getPlayer();
+        if(player.hasMetadata("vanished")) { 
+            event.setCancelled(true);
+        }
+    }
+})
+
+registerEvent("org.bukkit.event.block.BlockPlaceEvent", { //Stop vanished players from placing blocks
+    handleEvent: function(event) {
+        const player = event.getPlayer();
+        if(player.hasMetadata("vanished")) { 
+            event.setCancelled(true);
         }
     }
 })
@@ -80,6 +106,15 @@ registerEvent("org.bukkit.event.entity.FoodLevelChangeEvent", { //Stop food leve
 })
 
 registerEvent("org.bukkit.event.player.PlayerPickupItemEvent", { //Stop vanished players picking up items
+    handleEvent: function(event) {
+        const player = event.getPlayer()
+        if(player.hasMetadata("vanished")) {
+            event.setCancelled(true);
+        }
+    }
+})
+
+registerEvent("org.bukkit.event.player.PlayerDropItemEvent", { //Stop vanished players dropping items
     handleEvent: function(event) {
         const player = event.getPlayer()
         if(player.hasMetadata("vanished")) {
