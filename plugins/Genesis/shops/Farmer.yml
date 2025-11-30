@@ -121,7 +121,7 @@ shop:
     MenuItem:
       - "type:Pumpkin_Pie"
       - "amount:1"
-      - "lore1:&6Sell Price: &f㒖&72.5 Trade Bars"
+      - "lore1:&6Sell Price: &f㒖&71.5 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
       - "lore5:&6Shift Right Click: &7sell all"
@@ -130,20 +130,20 @@ shop:
     Price_left:
       - "type:Pumpkin_Pie"
       - "amount:1"
-    Reward_left: 2.5
+    Reward_left: 1.5
     Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
     RewardType_shift_left: money
     PriceType_shift_left: item
     Price_shift_left:
       - "type:Pumpkin_Pie"
       - "amount:16"
-    Reward_shift_left: 40
+    Reward_shift_left: 24
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
     RewardType_shift_right: money
     PriceType_shift_right: itemall
     Price_shift_right:
       - "type:Pumpkin_Pie"
-    Reward_shift_right: 2.5
+    Reward_shift_right: 1.5
     Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 25
   UI_Navigation_9:
