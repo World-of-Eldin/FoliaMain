@@ -78,18 +78,22 @@ registerEvent("org.bukkit.event.entity.EntityDamageEvent", { //Stop damage being
 
 registerEvent("org.bukkit.event.block.BlockBreakEvent", { //Stop vanished players from breaking blocks
     handleEvent: function(event) {
-        const player = event.getPlayer();
-        if(player.hasMetadata("vanished")) { 
-            event.setCancelled(true);
+        if(event.getPlayer()) {
+            const player = event.getPlayer();
+            if(player.hasMetadata("vanished")) { 
+                event.setCancelled(true);
+            }
         }
     }
 })
 
 registerEvent("org.bukkit.event.block.BlockPlaceEvent", { //Stop vanished players from placing blocks
     handleEvent: function(event) {
-        const player = event.getPlayer();
-        if(player.hasMetadata("vanished")) { 
-            event.setCancelled(true);
+        if(event.getPlayer()) {
+            const player = event.getPlayer();
+            if(player.hasMetadata("vanished")) { 
+                event.setCancelled(true);
+            }
         }
     }
 })
