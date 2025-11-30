@@ -1,3 +1,5 @@
+//!import net.coreprotect.CoreProtect
+//!import net.coreprotect.CoreProtectAPI
 const Bukkit = org.bukkit.Bukkit;
 const Material = org.bukkit.Material;
 const ItemStack = org.bukkit.inventory.ItemStack;
@@ -5,6 +7,10 @@ const CreatureSpawner = org.bukkit.block.CreatureSpawner;
 const Enchantment = org.bukkit.enchantments.Enchantment;
 const NamespacedKey = org.bukkit.NamespacedKey;
 const PersistentDataType = org.bukkit.persistence.PersistentDataType;
+const CoreProtectPlugin = Bukkit.getPluginManager().getPlugin("CoreProtect");
+const CoreProtectAPI = getMethod(CoreProtect, "getAPI").invoke(
+  CoreProtectPlugin
+);
 
 // Handle breaking spawners with Silk Touch
 registerEvent("org.bukkit.event.block.BlockBreakEvent", {
@@ -30,6 +36,18 @@ registerEvent("org.bukkit.event.block.BlockBreakEvent", {
 
     // Cancel default drop behavior
     event.setDropItems(false);
+
+    // Check CoreProtect history to determine if spawner is naturally generated
+    const lookup = CoreProtectAPI.blockLookup(block, -1);
+    const isNaturallyGenerated = lookup.size() === 0;
+
+    // Drop experience only for naturally generated spawners (15-43 exp)
+    if (isNaturallyGenerated) {
+      const expAmount = Math.floor(Math.random() * 29) + 15; // Random between 15-43
+      event.setExpToDrop(expAmount);
+    } else {
+      event.setExpToDrop(0);
+    }
 
     // Create a spawner item
     const spawnerItem = new ItemStack(Material.SPAWNER, 1);
