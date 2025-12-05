@@ -76,7 +76,7 @@ shop:
       - "lore5:&7  Lapis Lazuli: &f㒖&70.1 TB"
       - "lore6:&7  Redstone: &f㒖&70.15 TB"
       - "lore7:&7  Nether Wart: &f㒖&70.5 TB"
-      - "lore8:&7  Glowstone Dust: &f㒖&72 TB"
+      - "lore8:&7  Glowstone Dust: &f㒖&70.25 TB"
       - "lore9:"
       - "lore10:&6Price: &f㒖&720,000 Trade Bars"
     RewardType: command
