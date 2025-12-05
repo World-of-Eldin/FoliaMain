@@ -65,13 +65,25 @@ addCommand("god", {
 
 addCommand("msg", {
     onCommand(sender, args) {
-        messanger(sender, args, "msg")
+        if(!sender.hasMetadata("muted")) {
+            messanger(sender, args, "msg")
+        }
+
+        else {
+            sender.sendMessage(ChatColor.RED + "You are muted")
+        }
     }}
 );
 
 addCommand("tell", {
     onCommand(sender, args) {
-        messanger(sender, args, "tell")
+        if(!sender.hasMetadata("muted")) {
+            messanger(sender, args, "tell")
+        }
+
+        else {
+            sender.sendMessage(ChatColor.RED + "You are muted")
+        }
     }}
 );
 
