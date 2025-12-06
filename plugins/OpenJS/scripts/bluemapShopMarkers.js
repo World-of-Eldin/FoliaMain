@@ -1,164 +1,320 @@
 // BlueMap Shop Villager Markers
 // Automatically displays shop villagers on BlueMap
+// Reads villager data from DiskAPI (saved by villagerPositions.js)
 // Updates every 60 seconds
 
 const Bukkit = org.bukkit.Bukkit;
-const EntityType = org.bukkit.entity.EntityType;
+const Console = Bukkit.getConsoleSender();
+const OpenJSPlugin = Bukkit.getPluginManager().getPlugin("OpenJS");
 
-// BlueMap API imports
-const BlueMapAPI = de.bluecolored.bluemap.api.BlueMapAPI;
-const POIMarker = de.bluecolored.bluemap.api.markers.POIMarker;
-const MarkerSet = de.bluecolored.bluemap.api.markers.MarkerSet;
+// Get BlueMap API using reflection
+let BlueMapAPIClass = null;
+let POIMarkerClass = null;
+let MarkerSetClass = null;
+let StringClass = null;
+let DoubleClass = null;
 
-// Valid shop names (matching rightClickVill.js)
-const validShops = [
-  "Armorer",
-  "Butcher",
-  "Cartographer",
-  "Cleric",
-  "Farmer",
-  "Fisherman",
-  "Fletcher",
-  "Leatherworker",
-  "Librarian",
-  "Mason",
-  "Nitwit",
-  "Shepherd",
-  "Toolsmith",
-  "Weaponsmith",
-];
+try {
+  BlueMapAPIClass = java.lang.Class.forName(
+    "de.bluecolored.bluemap.api.BlueMapAPI"
+  );
+  POIMarkerClass = java.lang.Class.forName(
+    "de.bluecolored.bluemap.api.markers.POIMarker"
+  );
+  MarkerSetClass = java.lang.Class.forName(
+    "de.bluecolored.bluemap.api.markers.MarkerSet"
+  );
+  StringClass = java.lang.Class.forName("java.lang.String");
+  DoubleClass = java.lang.Double.TYPE;
+  Console.sendMessage(
+    "[BlueMap Shops] Loaded BlueMap API classes successfully"
+  );
+} catch (e) {
+  Console.sendMessage(
+    "[BlueMap Shops] §cFailed to load BlueMap API classes: " + e
+  );
+}
 
-// Icon colors for each profession (using hex colors)
-const shopColors = {
-  Armorer: "#808080", // Gray (armor)
-  Butcher: "#8B4513", // Brown (meat)
-  Cartographer: "#FFFFFF", // White (maps)
-  Cleric: "#9B59B6", // Purple (magic/potions)
-  Farmer: "#228B22", // Green (crops)
-  Fisherman: "#1E90FF", // Blue (water)
-  Fletcher: "#8B4513", // Brown (wood/arrows)
-  Leatherworker: "#A0522D", // Sienna (leather)
-  Librarian: "#FFD700", // Gold (books/knowledge)
-  Mason: "#696969", // Dark gray (stone)
-  Nitwit: "#90EE90", // Light green (special)
-  Shepherd: "#F0E68C", // Khaki (wool)
-  Toolsmith: "#4682B4", // Steel blue (tools)
-  Weaponsmith: "#B22222", // Firebrick (weapons)
+// Villager head icons - local asset files
+// Place PNG images in: plugins/BlueMap/web/assets/shopicons/
+const villagerIcons = {
+  Armorer: "assets/shopicons/armorer.png",
+  Butcher: "assets/shopicons/butcher.png",
+  Cartographer: "assets/shopicons/cartographer.png",
+  Cleric: "assets/shopicons/cleric.png",
+  Farmer: "assets/shopicons/farmer.png",
+  Fisherman: "assets/shopicons/fisherman.png",
+  Fletcher: "assets/shopicons/fletcher.png",
+  Leatherworker: "assets/shopicons/leatherworker.png",
+  Librarian: "assets/shopicons/librarian.png",
+  Mason: "assets/shopicons/mason.png",
+  Nitwit: "assets/shopicons/nitwit.png",
+  Shepherd: "assets/shopicons/shepherd.png",
+  Toolsmith: "assets/shopicons/toolsmith.png",
+  Weaponsmith: "assets/shopicons/weaponsmith.png",
+  VillagerShops: "assets/shopicons/librarian.png",
 };
+
+const villagerNames = {
+  Armorer: "Gareth",
+  Butcher: "Roland",
+  Cartographer: "Elara",
+  Cleric: "Matthias",
+  Farmer: "Bren",
+  Fisherman: "Caspian",
+  Fletcher: "Rowan",
+  Leatherworker: "Silas",
+  Librarian: "Aldric",
+  Mason: "Thorne",
+  Nitwit: "Pip",
+  Shepherd: "Mara",
+  Toolsmith: "Balin",
+  Weaponsmith: "Kael",
+  VillagerShops: "Tomas",
+};
+
+// World configurations - maps BlueMap map IDs to DiskAPI file names
+const worldConfigs = [
+  { mapId: "world", diskFile: "world_Villagers" },
+  { mapId: "world_nether", diskFile: "world_nether_Villagers" },
+  { mapId: "world_the_end", diskFile: "world_the_end_Villagers" },
+];
 
 function updateShopMarkers() {
   try {
-    // Check if BlueMap API is available
-    const blueMapOptional = BlueMapAPI.getInstance();
-    if (!blueMapOptional.isPresent()) {
-      console.log("[BlueMap Shops] BlueMap API not available yet");
+    if (!BlueMapAPIClass || !POIMarkerClass || !MarkerSetClass) {
+      Console.sendMessage("[BlueMap Shops] §cBlueMap API classes not loaded");
       return;
     }
 
-    const blueMap = blueMapOptional.get();
+    // Get BlueMap API instance
+    const getInstanceMethod = BlueMapAPIClass.getMethod("getInstance");
+    const blueMapOptional = getInstanceMethod.invoke(null);
 
-    // Get the overworld map
-    const maps = blueMap.getMaps();
-    const worldMap = maps
-      .stream()
-      .filter(function (m) {
-        return m.getWorld().getName().equals("world");
-      })
-      .findFirst();
+    // Check if Optional is present
+    const isPresentMethod = blueMapOptional.getClass().getMethod("isPresent");
+    const isPresent = isPresentMethod.invoke(blueMapOptional);
 
-    if (!worldMap.isPresent()) {
-      console.log("[BlueMap Shops] Could not find world map");
+    if (!isPresent) {
+      Console.sendMessage("[BlueMap Shops] BlueMap API not available yet");
       return;
     }
 
-    const map = worldMap.get();
+    // Get the BlueMap API instance from Optional
+    const getMethod = blueMapOptional.getClass().getMethod("get");
+    const blueMap = getMethod.invoke(blueMapOptional);
 
-    // Create or get the marker set
-    const markerSet = MarkerSet.builder()
-      .label("Villager Shops")
-      .toggleable(true)
-      .defaultHidden(false)
-      .build();
+    // Get all maps
+    const getMapsMethod = blueMap.getClass().getMethod("getMaps");
+    const mapsCollection = getMapsMethod.invoke(blueMap);
+    const mapsArray = mapsCollection.toArray();
 
-    // Get all entities in the world
-    const world = Bukkit.getWorld("world");
-    if (!world) {
-      console.log("[BlueMap Shops] Could not find world");
-      return;
-    }
-
-    const entities = world.getEntities();
-    let markerCount = 0;
-
-    // Iterate through all entities
-    for (let i = 0; i < entities.size(); i++) {
-      const entity = entities.get(i);
-
-      // Check if it's a villager or wandering trader
-      if (
-        entity.getType() !== EntityType.VILLAGER &&
-        entity.getType() !== EntityType.WANDERING_TRADER
-      ) {
-        continue;
-      }
-
-      const tags = entity.getScoreboardTags();
-
-      // Check if this villager has the shop_villager tag
-      if (!tags.contains("shop_villager")) {
-        continue;
-      }
-
-      // Find which shop this villager represents
-      let shopName = null;
-      for (let j = 0; j < validShops.length; j++) {
-        if (tags.contains("shop_" + validShops[j])) {
-          shopName = validShops[j];
-          break;
-        }
-      }
-
-      if (shopName === null) {
-        continue;
-      }
-
-      // Get villager location
-      const loc = entity.getLocation();
-      const x = loc.getX();
-      const y = loc.getY();
-      const z = loc.getZ();
-
-      // Create marker
-      const markerId = "shop_" + shopName.toLowerCase();
-      const color = shopColors[shopName] || "#FFFFFF";
-
-      const marker = POIMarker.builder()
-        .label(shopName + " Shop")
-        .position(x, y, z)
-        .build();
-
-      // Set marker color using reflection (BlueMap API might use different method)
+    // Process each world
+    worldConfigs.forEach((worldConfig) => {
       try {
-        marker.setStyleClasses(
-          java.util.Arrays.asList("shop-marker", shopName.toLowerCase())
+        // Find the BlueMap map for this world
+        let worldMap = null;
+        for (let i = 0; i < mapsArray.length; i++) {
+          const mapObj = mapsArray[i];
+          try {
+            const getIdMethod = mapObj.getClass().getMethod("getId");
+            const mapId = getIdMethod.invoke(mapObj);
+
+            if (mapId && mapId.toString() === worldConfig.mapId) {
+              worldMap = mapObj;
+              break;
+            }
+          } catch (e) {
+            // Skip maps we can't identify
+          }
+        }
+
+        if (!worldMap) {
+          Console.sendMessage(
+            "[BlueMap Shops] §eCould not find map: " + worldConfig.mapId
+          );
+          return;
+        }
+
+        // Create MarkerSet using builder
+        const markerSetBuilderMethod = MarkerSetClass.getMethod("builder");
+        const markerSetBuilder = markerSetBuilderMethod.invoke(null);
+        const markerSetBuilderClass = markerSetBuilder.getClass();
+
+        // Set label
+        const labelMethod = markerSetBuilderClass.getMethod(
+          "label",
+          StringClass
+        );
+        labelMethod.invoke(markerSetBuilder, "Villager Shops");
+
+        // Set optional properties
+        try {
+          const toggleableMethod = markerSetBuilderClass.getMethod(
+            "toggleable",
+            java.lang.Boolean.TYPE
+          );
+          toggleableMethod.invoke(
+            markerSetBuilder,
+            java.lang.Boolean.valueOf(true)
+          );
+        } catch (e) {
+          // Method doesn't exist, skip
+        }
+
+        try {
+          const defaultHiddenMethod = markerSetBuilderClass.getMethod(
+            "defaultHidden",
+            java.lang.Boolean.TYPE
+          );
+          defaultHiddenMethod.invoke(
+            markerSetBuilder,
+            java.lang.Boolean.valueOf(false)
+          );
+        } catch (e) {
+          // Method doesn't exist, skip
+        }
+
+        // Build the MarkerSet
+        const buildMethod = markerSetBuilderClass.getMethod("build");
+        const markerSet = buildMethod.invoke(markerSetBuilder);
+
+        // Load villager data from DiskAPI
+        DiskApi.loadFile(worldConfig.diskFile, false, true);
+
+        const villagerUUIDsJSON = DiskApi.getVar(
+          worldConfig.diskFile,
+          "Villager_UUIDS",
+          "[]",
+          true
+        );
+        const villagerUUIDs = JSON.parse(villagerUUIDsJSON);
+
+        let markerCount = 0;
+
+        // Create markers for each villager
+        villagerUUIDs.forEach((uuid) => {
+          if (!uuid) return; // Skip null UUIDs
+
+          const dataJSON = DiskApi.getVar(
+            worldConfig.diskFile,
+            uuid,
+            null,
+            true
+          );
+
+          if (!dataJSON) return;
+
+          try {
+            const data = JSON.parse(dataJSON);
+            const shopType = data.shopType;
+            const locationStr = data.location;
+
+            // Parse location "x y z"
+            const coords = locationStr.split(" ");
+            const x = parseFloat(coords[0]);
+            const y = parseFloat(coords[1]);
+            const z = parseFloat(coords[2]);
+
+            // Create POI marker using builder
+            const poiMarkerBuilderMethod = POIMarkerClass.getMethod("builder");
+            const poiMarkerBuilder = poiMarkerBuilderMethod.invoke(null);
+            const poiMarkerBuilderClass = poiMarkerBuilder.getClass();
+
+            // Set label
+            const poiLabelMethod = poiMarkerBuilderClass.getMethod(
+              "label",
+              StringClass
+            );
+            poiLabelMethod.invoke(
+              poiMarkerBuilder,
+              villagerNames[shopType] + "<br></br>" + shopType
+            );
+
+            // Set position
+            const positionMethod = poiMarkerBuilderClass.getMethod(
+              "position",
+              DoubleClass,
+              DoubleClass,
+              DoubleClass
+            );
+            positionMethod.invoke(poiMarkerBuilder, x, y, z);
+
+            // Set custom icon
+            const iconPath = villagerIcons[shopType] || "assets/poi.svg";
+            try {
+              const IntClass = java.lang.Integer.TYPE;
+              const iconMethod = poiMarkerBuilderClass.getMethod(
+                "icon",
+                StringClass,
+                IntClass,
+                IntClass
+              );
+              iconMethod.invoke(poiMarkerBuilder, iconPath, 8, 16);
+            } catch (e) {
+              Console.sendMessage(
+                "[BlueMap Shops] §cFailed to set icon for " +
+                  shopType +
+                  ": " +
+                  e
+              );
+            }
+
+            // Build the marker
+            const poiBuildMethod = poiMarkerBuilderClass.getMethod("build");
+            const marker = poiBuildMethod.invoke(poiMarkerBuilder);
+
+            // Add marker to set
+            const markerId = "shop_" + shopType.toLowerCase() + "_" + uuid;
+            const ObjectClass = java.lang.Class.forName("java.lang.Object");
+            const getMarkersMethod = markerSet
+              .getClass()
+              .getMethod("getMarkers");
+            const markersMap = getMarkersMethod.invoke(markerSet);
+            const putMethod = markersMap
+              .getClass()
+              .getMethod("put", ObjectClass, ObjectClass);
+            putMethod.invoke(markersMap, markerId, marker);
+
+            markerCount++;
+          } catch (e) {
+            Console.sendMessage(
+              "[BlueMap Shops] §cError creating marker for UUID " +
+                uuid +
+                ": " +
+                e
+            );
+          }
+        });
+
+        // Update the map with the marker set
+        const getMarkerSetsMethod = worldMap
+          .getClass()
+          .getMethod("getMarkerSets");
+        const markerSets = getMarkerSetsMethod.invoke(worldMap);
+        const ObjectClass = java.lang.Class.forName("java.lang.Object");
+        const markerSetsPutMethod = markerSets
+          .getClass()
+          .getMethod("put", ObjectClass, ObjectClass);
+        markerSetsPutMethod.invoke(markerSets, "shop_villagers", markerSet);
+
+        Console.sendMessage(
+          "[BlueMap Shops] §aUpdated " +
+            markerCount +
+            " markers for " +
+            worldConfig.mapId
         );
       } catch (e) {
-        // Ignore if method doesn't exist
+        Console.sendMessage(
+          "[BlueMap Shops] §cError processing " + worldConfig.mapId + ": " + e
+        );
       }
-
-      markerSet.put(markerId, marker);
-      markerCount++;
-    }
-
-    // Update the map with the new marker set
-    map.getMarkerSets().put("shop_villagers", markerSet);
-
-    console.log(
-      "[BlueMap Shops] Updated " + markerCount + " shop villager markers"
-    );
+    });
   } catch (e) {
-    console.log("[BlueMap Shops] Error updating markers: " + e);
-    console.log(e.stack);
+    Console.sendMessage("[BlueMap Shops] §cError updating markers: " + e);
+    if (e.printStackTrace) {
+      e.printStackTrace();
+    }
   }
 }
 
@@ -167,13 +323,13 @@ const globalScheduler = Bukkit.getGlobalRegionScheduler();
 
 // Initial update after 5 seconds (100 ticks) to allow BlueMap to fully load
 globalScheduler.runDelayed(
-  plugin,
+  OpenJSPlugin,
   function () {
     updateShopMarkers();
 
     // Then schedule repeating task
     globalScheduler.runAtFixedRate(
-      plugin,
+      OpenJSPlugin,
       function () {
         updateShopMarkers();
       },
@@ -184,4 +340,4 @@ globalScheduler.runDelayed(
   100 // Initial delay (5 seconds)
 );
 
-console.log("[BlueMap Shops] Script loaded - will update markers every 60 seconds");
+Console.sendMessage("§a[BlueMap Shops] Loaded - Updates every 60 seconds");
