@@ -236,11 +236,19 @@ registerEvent("org.bukkit.event.server.ServerListPingEvent", {
     }
 })
 
-task.repeat(0, 2, () => { //Refresh an action bar every 20 ticks to notify vanished players
+task.repeat(0, 2, () => { //Refresh an action bar every 20 ticks to notify players of their status
     const onlinePlayers = Bukkit.getOnlinePlayers();
         onlinePlayers.forEach(player => {
             if(player.hasMetadata("vanished")) {
                 player.sendActionBar(ChatColor.GOLD + "You are vanished");
+            }
+            
+            else if(player.hasMetadata("god")) {
+                player.sendActionBar(ChatColor.GOLD + "You are in god mode");
+            }
+
+            else if(player.getAllowFlight() === true) {
+                player.sendActionBar(ChatColor.GOLD + "Flight active");
             }
         }) 
 });
