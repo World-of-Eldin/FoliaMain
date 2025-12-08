@@ -65,7 +65,7 @@ addCommand("customdeath", {
                                 })
 
                                 if(correctDeathTypeUsed) { //Display the death message
-                                    const deathInData = DiskApi.getVar("DeathMessageData", deathType, 0, true);
+                                    const deathInData = DiskApi.getVar("DeathMessageData", deathType, '0', true);
                                     if(deathInData != 0) {
                                         sender.sendMessage(ChatColor.GOLD + "Death message for " + deathType + " is " + "\"" + ChatColor.GREEN + deathInData + ChatColor.GOLD + "\"");
                                     }
@@ -99,9 +99,9 @@ addCommand("customdeath", {
                                 })
 
                                 if(correctDeathTypeUsed) {
-                                    const deathInData = DiskApi.getVar("DeathMessageData", deathType, 0, true);
+                                    const deathInData = DiskApi.getVar("DeathMessageData", deathType, '0', true);
                                     if(deathInData != 0) { //Ensure that the death is present and reset it
-                                        DiskApi.setVar("DeathMessageData", deathType, 0, true);
+                                        DiskApi.setVar("DeathMessageData", deathType, '0', true);
                                         DiskApi.saveFile("DeathMessageData", true, true);
                                         sender.sendMessage(ChatColor.GOLD + "The death message for " + deathType + " has been reset")
                                     }

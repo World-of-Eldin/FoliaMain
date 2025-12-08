@@ -22,7 +22,7 @@ registerEvent("org.bukkit.event.entity.PlayerDeathEvent", {
                         })
 
                         if(deathTypeInList) { //Display the death message if data is present in DeathMessageData
-                            const deathInData = DiskApi.getVar("DeathMessageData", entityResponsible, 0, true);
+                            const deathInData = DiskApi.getVar("DeathMessageData", entityResponsible, '0', true);
                             if(deathInData != 0) {
                                 event.setDeathMessage(victim.getName() + " " +  deathInData);
                             }
@@ -49,7 +49,7 @@ registerEvent("org.bukkit.event.entity.PlayerDeathEvent", {
                         }
 
                         if(deathTypeInList) { //Display the message
-                            const deathInData = DiskApi.getVar("DeathMessageData", eventResponsible, 0, true);
+                            const deathInData = DiskApi.getVar("DeathMessageData", eventResponsible, '0', true);
                             if(deathInData != 0) {
                                 event.setDeathMessage(victim.getName() + " " + deathInData);
                             }

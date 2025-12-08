@@ -8,39 +8,31 @@ registerEvent("org.bukkit.event.vehicle.VehicleMoveEvent", {
           passenger
             .getLocation()
             .getBlock()
-            .getRelative(0, -0.5, 0)
+            .getRelative(0, 0, 0)
             .getType()
             .toString()
             .indexOf("ICE") >= 0 ||
           passenger
             .getLocation()
             .getBlock()
-            .getRelative(1, -0.5, 0)
+            .getRelative(1, 0, 0)
             .getType()
             .toString()
             .indexOf("ICE") >= 0 ||
           passenger
             .getLocation()
             .getBlock()
-            .getRelative(-1, -0.5, 0)
+            .getRelative(-1, 0, 0)
             .getType()
             .toString()
             .indexOf("ICE") >= 0 ||
           passenger
             .getLocation()
             .getBlock()
-            .getRelative(0, -0.5, 1)
+            .getRelative(0, 0, 1)
             .getType()
             .toString()
-            .indexOf("ICE") >= 0 ||
-          passenger
-            .getLocation()
-            .getBlock()
-            .getRelative(0, -0.5, 1)
-            .getType()
-            .toString()
-            .indexOf("ICE") >= 0
-        ) {
+            .indexOf("ICE") >= 0) {
           vehicle.removePassenger(passenger);
         }
       });

@@ -66,7 +66,7 @@ function getSpawnPoints(playerUUID) {
     const query =
       "SELECT spawn FROM lands WHERE members like CONCAT('%', ?, '%')"; //Get spawnpoints that player is member of
     const stmt = conn.prepareStatement(query);
-    stmt.setString(1, playerUUID);
+    stmt.setString(1, playerUUID.toString());
 
     const rs = stmt.executeQuery();
     const spawnPoints = [];

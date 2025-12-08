@@ -14,7 +14,7 @@ addCommand("vanish", {
             }) 
             sender.setMetadata("vanished", new org.bukkit.metadata.FixedMetadataValue(plugin, true)); //Set the player metadata to vanished
             sender.setMetadata("god", new org.bukkit.metadata.FixedMetadataValue(plugin, true)); //Set the player metadata to god
-            const nightVisionEffect = new PotionEffect(PotionEffectType.NIGHT_VISION, Number.MAX_VALUE, 0, false, false);
+            const nightVisionEffect = new PotionEffect(PotionEffectType.NIGHT_VISION, 100000000, 0, false, false);
             sender.addPotionEffect(nightVisionEffect); //Add a night vision effect
             sender.setAllowFlight(true); //Allow flight
         }

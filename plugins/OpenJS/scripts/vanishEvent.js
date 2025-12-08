@@ -13,7 +13,7 @@ registerEvent("org.bukkit.event.player.PlayerJoinEvent", {
                     player.hidePlayer(joiningPlayer); //Hide the sender to all non-staff players
                 }
             }) 
-            const nightVisionEffect = new PotionEffect(PotionEffectType.NIGHT_VISION, Number.MAX_VALUE, 0, false, false);
+            const nightVisionEffect = new PotionEffect(PotionEffectType.NIGHT_VISION, 100000000, 0, false, false);
             joiningPlayer.addPotionEffect(nightVisionEffect);
             joiningPlayer.setMetadata("vanished", new org.bukkit.metadata.FixedMetadataValue(plugin, true)); //Set the player metadata to vanished
             joiningPlayer.setAllowFlight(true); //Allow flight
@@ -225,7 +225,7 @@ registerEvent("org.bukkit.event.server.ServerListPingEvent", {
         if (listedPlayers != null) {
             const iterator = listedPlayers.iterator();
             while (iterator.hasNext()) {
-                const player = Bukkit.getPlayer(iterator.next().id); //Get the next player
+                const player = Bukkit.getPlayer(iterator.next().id()); //Get the next player
                 if (player && player.hasMetadata("vanished")) {
                     iterator.remove(); //Remove the player from the list
                 }
