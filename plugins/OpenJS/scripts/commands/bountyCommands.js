@@ -32,10 +32,9 @@ addCommand("bounty", {
                                     if(playerOnline && playerWithBounty != sendingPlayer) {
                                         const balancePlaceholder = "%foliaeconomy_balance%"
                                         const balance = PlaceholderAPI.parseString(sender, balancePlaceholder) //Get the player's balance
-                                        log.info(balance);
 
                                         if(balance >= bountyValue) { //Check that the player can afford the ticket
-                                            const currentBounty = DiskApi.getVar("BountyData", playerWithBounty, 0, true);
+                                            const currentBounty = DiskApi.getVar("BountyData", playerWithBounty, '0', true);
                                             const totalBounty = bountyValue + currentBounty;
                                             DiskApi.setVar("BountyData", playerWithBounty, totalBounty, true);
                                             savePLayer(playerWithBounty, "BountyData")
@@ -78,7 +77,7 @@ addCommand("bounty", {
                 case "info":
                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
                         if(args.length === 2) { //Check that 2 arguments were used
-                            const playerData = DiskApi.getVar("BountyData", "players", 0, true);
+                            const playerData = DiskApi.getVar("BountyData", "players", '0', true);
                             const playerDataList = playerData.split(",");
                             const victim = args[1];
                             let victimInList = false;
@@ -89,7 +88,7 @@ addCommand("bounty", {
                             });
 
                             if(victimInList) {
-                                const bountyValue = DiskApi.getVar("BountyData", victim, 0, true);
+                                const bountyValue = DiskApi.getVar("BountyData", victim, '0', true);
                                 sender.sendMessage(ChatColor.GREEN + victim + " has a bounty of " + bountyValue + ChatColor.RESET + " 㒖" +  ChatColor.GREEN + "Trade Bars for the taking!!")
                             }
 
@@ -106,14 +105,14 @@ addCommand("bounty", {
 
                 case "top":
                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () { 
-                        const playerData = DiskApi.getVar("BountyData", "players", 0, true);
+                        const playerData = DiskApi.getVar("BountyData", "players", '0', true);
 
                         if(playerData != 0) { //Ensure that any bounties have been set
                             const playerDataList = playerData.split(",");
                             let topBountyHolders = []; //An object to store players and their bounty value
 
                             playerDataList.forEach(playerInData => { //For every player, get their personal bounty and push it to topTicketHolders
-                                let bountyValue = DiskApi.getVar("BountyData", playerInData, 0, true)
+                                let bountyValue = DiskApi.getVar("BountyData", playerInData, '0', true)
                                 topBountyHolders.push({name: playerInData, bounty: bountyValue});
                             })
                             topBountyHolders.sort((a, b) => b.bounty - a.bounty);

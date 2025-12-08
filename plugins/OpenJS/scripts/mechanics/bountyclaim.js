@@ -15,7 +15,7 @@ registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
             if(entityResponsible != victim) {
                 if (entityResponsible.getType().toString() === "PLAYER" && victim.getType().toString() === 'PLAYER') {
                     const responsiblePlayer = entityResponsible.getName().toString();
-                    const playerData = DiskApi.getVar("BountyData", "players", 0, true);
+                    const playerData = DiskApi.getVar("BountyData", "players", '0', true);
 
                     const victimName = event.getEntity().getName();
                     if (playerData != 0) {
@@ -28,7 +28,7 @@ registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
                         });
 
                         if (victimInList) {
-                            const bountyValue = DiskApi.getVar("BountyData", victimName, 0, true);
+                            const bountyValue = DiskApi.getVar("BountyData", victimName, '0', true);
                             Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
                                 const player = entityResponsible;
                                 const balanceStr = PlaceholderAPI.parseString(player, "%foliaeconomy_balance%");
@@ -37,7 +37,7 @@ registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
                                 log.info("Correct balance: " + balance);
                                 Bukkit.dispatchCommand(Console, "setbal " + responsiblePlayer + " " + (balance + bountyValue)); //Give the killer money
                             });
-                            DiskApi.setVar("BountyData", victimName, 0, true);
+                            DiskApi.setVar("BountyData", victimName, '0', true);
                             const indexToRemove = playerDataList.indexOf(victimName);
                             playerDataList.splice(indexToRemove, 1); //Splice of the string to remove the index of the individual player
                             const updatedPlayerData = playerDataList.join(",");

@@ -1,6 +1,7 @@
 var Bukkit = org.bukkit.Bukkit;
 var ChatColor = org.bukkit.ChatColor;
 var Server = plugin.getServer();
+const Scheduler = Bukkit.getGlobalRegionScheduler();
 
 var serverMessageHeader =
   ChatColor.GOLD + "[" + ChatColor.GRAY + "Server" + ChatColor.GOLD + "] ";
@@ -33,8 +34,9 @@ addCommand(
           );
           return;
         }
-
-        Server.getWorld("world").setFullTime(args[1]);
+        Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+          Server.getWorld("world").setFullTime(parseInt(args[1]));
+        })
         sender.sendMessage(
           serverMessageHeader +
             "World time has been set to " +

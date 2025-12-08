@@ -25,7 +25,7 @@ addCommand("lottery", {
                                     const valueOfTicket = ticketValue * args[1];
 
                                     if(balance >= valueOfTicket) { //Check that the player can afford the ticket
-                                        const playerTickets = DiskApi.getVar("LottoData", sender.getName(), 0, true);
+                                        const playerTickets = DiskApi.getVar("LottoData", sender.getName(), '0', true);
                                         const numberOfTickets = Number(playerTickets) + Number(args[1]);
 
                                         if(!(numberOfTickets > maxTickets)) { //Check that the player has not gone over the ticket purchase limit
@@ -65,10 +65,10 @@ addCommand("lottery", {
 
                 case "info":
                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
-                        const total = DiskApi.getVar("LottoData", "total", 0, true);
-                        const ticketCount = DiskApi.getVar("LottoData", sender.getName(), 0, true);
+                        const total = DiskApi.getVar("LottoData", "total", '0', true);
+                        const ticketCount = DiskApi.getVar("LottoData", sender.getName(), '0', true);
                         DiskApi.loadFile("LottoTimePassage", false, true)
-                        const timer = DiskApi.getVar("LottoTimePassage", "time", 0, true);
+                        const timer = DiskApi.getVar("LottoTimePassage", "time", '0', true);
                         sender.sendMessage(ChatColor.GOLD + "Total Tickets:" + ChatColor.GREEN + " There are a total of " + total + " tickets");
                         sender.sendMessage(ChatColor.GOLD + "Ticket Count:" + ChatColor.GREEN + " You have a total of " + ticketCount + " tickets, worth " + ticketCount * ticketValue * (1 - tax/100) + ChatColor.RESET + " 㒖" + ChatColor.GREEN + "Trade Bars");
 
@@ -88,15 +88,15 @@ addCommand("lottery", {
 
                 case "top":
                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () { 
-                        const playerData = DiskApi.getVar("LottoData", "players", 0, true);
+                        const playerData = DiskApi.getVar("LottoData", "players", '0', true);
 
                         if(playerData != 0) { //Ensure that players have purchased tickets
-                            const totalTickets = DiskApi.getVar("LottoData", "total", 0, true);
+                            const totalTickets = DiskApi.getVar("LottoData", "total", '0', true);
                             const playerDataList = playerData.split(",");
                             let topTicketHolders = []; //An object to store players and their ticket count
 
                             playerDataList.forEach(playerInData => { //For every player, get their personal number of tickets and push it to topTicketHolders
-                                let ticketCount = DiskApi.getVar("LottoData", playerInData, 0, true)
+                                let ticketCount = DiskApi.getVar("LottoData", playerInData, '0', true)
                                 topTicketHolders.push({name: playerInData, tickets: ticketCount});
                             })
 
@@ -138,7 +138,7 @@ addCommand("lottery", {
 });
 
 function savePlayer(player, file) {
-    const playerData = DiskApi.getVar(file, "players", 0, true);
+    const playerData = DiskApi.getVar(file, "players", '0', true);
 
     if(playerData != 0) { //Check that player data is not 0 (the fallback value)
         let playerAlreadyInList = false;
@@ -162,7 +162,7 @@ function savePlayer(player, file) {
 }
 
 function saveTotal(total, file) {
-    const totalData = DiskApi.getVar(file, "total", 0, true);
+    const totalData = DiskApi.getVar(file, "total", '0', true);
         DiskApi.setVar(file, "total", Number(total) + Number(totalData), true)
 
     DiskApi.saveFile(file, true, false)

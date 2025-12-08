@@ -38,7 +38,7 @@ addCommand("checkfulltime", {
     sender.sendMessage("§eTicks until next day: §f" + (24000 - (fullTime % 24000)));
 
     DiskApi.loadFile("CalendarData", false, true);
-    let savedDay = DiskApi.getVar("CalendarData", "DayCount", 0, true);
+    let savedDay = DiskApi.getVar("CalendarData", "DayCount", '0', true);
     sender.sendMessage("§eSaved DayCount: §f" + savedDay);
 
     return true;
@@ -52,7 +52,7 @@ registerSchedule(
     handler: function () {
       const currentTime = Server.getWorld("world").getTime();
       DiskApi.loadFile("CalendarData", false, true);
-      let daycount = DiskApi.getVar("CalendarData", "DayCount", 0, true);
+      let daycount = DiskApi.getVar("CalendarData", "DayCount", '0', true);
       if(currentTime >= 23800 && currentTime <= 24000) {
         const currentDay = daycount + 1;
         
