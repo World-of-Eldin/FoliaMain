@@ -17,7 +17,6 @@ var yourRankMessage =
 
 addCommand("rank", {
   onCommand: function (sender, args) {
-    sender.sendMessage(String(Bukkit.getScheduler()));
     var permissions = sender.getEffectivePermissions().toArray();
     var rank = "";
     var highestPriority = -1;
