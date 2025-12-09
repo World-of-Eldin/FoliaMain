@@ -4,13 +4,19 @@ const GameMode = org.bukkit.GameMode;
 addCommand("spectator", {
     onCommand(sender, args) {
         sender.setGameMode(GameMode.SPECTATOR)
-    }},
-    "eldin.staff"
-)
+    },
+    onTabComplete: function (sender, args) {
+        return []
+    }
+},
+"eldin.staff")
 
 addCommand("survival", {
     onCommand(sender, args) {
         sender.setGameMode(GameMode.SURVIVAL)
-    }},
-    "eldin.staff"
-)
+    },
+    onTabComplete: function (sender, args) {
+        return []
+    }
+},
+"eldin.staff")

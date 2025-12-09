@@ -1,10 +1,9 @@
 //!PlaceholderAPI
-const ticketValue = getShared("ticketValue");
-const hours = getShared("hours");
-const remainingTime = getShared("remainingTime");
-const maxTickets = getShared("maxTickets");
-const extraMoney = getShared("extraMoney");
-const tax = getShared("tax");
+const ticketValue = 1000;
+const hours = 72;
+const maxTickets = 5;
+const extraMoney = 1000;
+const tax = 10;
 addCommand("lottery", {
     onCommand: function(sender, args) {
         const Bukkit = org.bukkit.Bukkit;
@@ -131,9 +130,9 @@ addCommand("lottery", {
     onTabComplete: function(sender, args) {
         args = toArray(args);
         if (args.length === 1) {
-            return toJavaList(["buy", "info", "top"]);
+            return ["buy", "info", "top"];
         }
-        return toJavaList([]);
+        return []
     }
 });
 
@@ -168,4 +167,45 @@ function saveTotal(total, file) {
     DiskApi.saveFile(file, true, false)
 }
 
-setShared("savePlayer", savePlayer);
+
+function remainingTime(totalSeconds) {
+    let drawTimeMessage = "";
+
+    const weeks = Math.floor(totalSeconds / 604800);
+    totalSeconds -= weeks * 604800;
+    if (weeks > 0) {
+        drawTimeMessage += weeks + " week" + (weeks > 1 ? "s" : "") + ", ";
+    }
+
+    const days = Math.floor(totalSeconds / 86400);
+    totalSeconds -= days * 86400;
+    if (days > 0) {
+        drawTimeMessage += days + " day" + (days > 1 ? "s" : "") + ", ";
+    }
+
+    const hours = Math.floor(totalSeconds / 3600);
+    totalSeconds -= hours * 3600;
+    if (hours > 0) {
+        drawTimeMessage += hours + " hour" + (hours > 1 ? "s" : "") + ", ";
+    }
+
+    const minutes = Math.floor(totalSeconds / 60);
+    totalSeconds -= minutes * 60;
+    if (minutes > 0) {
+        drawTimeMessage += minutes + " minute" + (minutes > 1 ? "s" : "") + " and ";
+    }
+
+    const seconds = totalSeconds;
+    if (seconds > 0 || drawTimeMessage === "") {
+        drawTimeMessage += seconds + " second" + (seconds !== 1 ? "s" : "");
+    }
+
+    if (drawTimeMessage.endsWith(", ")) { //Remove a comma a the end
+        drawTimeMessage = drawTimeMessage.slice(0, -2);
+    }
+
+    if (drawTimeMessage.endsWith("and ")) { //Remove an and a the end
+        drawTimeMessage = drawTimeMessage.slice(0, -4);
+    }
+    return drawTimeMessage;
+}

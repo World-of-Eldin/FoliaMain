@@ -204,9 +204,9 @@ addCommand("invsee", {
         playerNames.push(player.getName());
       });
 
-      return toJavaList(playerNames);
+      return playerNames;
     }
 
-    return toJavaList([]);
+    return [];
   },
 });

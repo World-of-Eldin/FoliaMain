@@ -143,10 +143,3 @@ function remainingTime(totalSeconds) {
     }
     return drawTimeMessage;
 }
-
-setShared("ticketValue", ticketValue)
-setShared("hours", hours)
-setShared("maxTickets", maxTickets)
-setShared("extraMoney", extraMoney)
-setShared("remainingTime", remainingTime)
-setShared("tax", tax);

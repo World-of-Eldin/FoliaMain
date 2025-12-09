@@ -23,5 +23,22 @@ addCommand("mute", {
             message = ChatColor.RED + "A player name must be specified as the first argument of this command"
         }
         sender.sendMessage(message)
+    },
+    onTabComplete: function (sender, args) {
+    args = toArray(args);
+
+    if (args.length === 1) {
+      // Provide tab completion with online player names
+      const onlinePlayers = Bukkit.getOnlinePlayers();
+      let playerNames = [];
+
+      onlinePlayers.forEach((player) => {
+        playerNames.push(player.getName());
+      });
+
+      return playerNames;
     }
+
+    return [];
+  },
 },"eldin.staff");

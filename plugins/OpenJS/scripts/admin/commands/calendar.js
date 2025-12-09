@@ -53,7 +53,7 @@ addCommand(
       }
     },
     onTabComplete: function () {
-      return toJavaList(["setAge", "setFullTime"]);
+      return ["setAge", "setFullTime"];
     },
   },
   "eldin.staff"

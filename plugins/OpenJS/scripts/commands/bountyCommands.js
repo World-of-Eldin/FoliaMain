@@ -5,7 +5,6 @@ addCommand("bounty", {
         const Console = Bukkit.getConsoleSender();
         const Scheduler = Bukkit.getGlobalRegionScheduler();
         const ChatColor = org.bukkit.ChatColor;
-        const savePLayer = getShared("savePlayer");
         const minBounty = 1000;
         args = toArray(args);
         DiskApi.loadFile("BountyData", true, true)
@@ -146,7 +145,7 @@ addCommand("bounty", {
     onTabComplete: function(sender, args) {
         args = toArray(args);
         if (args.length === 1) {
-            return toJavaList(["set", "info", "top"]);
+            return ["set", "info", "top"];
         }
 
         if((args[0] === "set" || args[0] === "info") && args.length === 2) { //Provide tab completion with player names
@@ -156,8 +155,32 @@ addCommand("bounty", {
                 playerNames.push(player.getName());
             })
 
-            return toJavaList(playerNames);
+            return playerNames;
         }
-        return toJavaList([]);
+        return [];
     }
 });
+
+function savePlayer(player, file) {
+    const playerData = DiskApi.getVar(file, "players", '0', true);
+
+    if(playerData != 0) { //Check that player data is not 0 (the fallback value)
+        let playerAlreadyInList = false;
+        const playerDataList = playerData.split(","); //Create a list by splitting playerData based on commas
+        
+        playerDataList.forEach(playerInData => {
+            if(playerInData === player) {
+                playerAlreadyInList = true;
+            }
+        });
+
+        if(!playerAlreadyInList) //If player is in the list, do not add them again
+        {
+            DiskApi.setVar(file, "players", player + "," + playerData, true)
+        }
+    }
+
+    else {
+        DiskApi.setVar(file, "players", player, true)    
+    }
+}

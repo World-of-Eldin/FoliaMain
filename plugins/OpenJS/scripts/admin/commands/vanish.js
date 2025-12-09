@@ -1,7 +1,6 @@
 const Bukkit = org.bukkit.Bukkit;
 const PotionEffect = org.bukkit.potion.PotionEffect;
 const PotionEffectType = org.bukkit.potion.PotionEffectType;
-const ChatColor = org.bukkit.ChatColor;
 addCommand("vanish", { 
     onCommand: function(sender, args) {
         if (!sender.hasMetadata("vanished")) { //Check that the sender is not already vanished
@@ -27,10 +26,12 @@ addCommand("vanish", {
             sender.removePotionEffect(PotionEffectType.NIGHT_VISION); //Remove the night vision effect
             sender.removeMetadata("vanished", plugin); //Remove the vanished metadata
         }
+    }, 
+    onTabComplete: function (sender, args) {
+        return []
     }
-    },
-    "eldin.staff"
-);
+},
+"eldin.staff");
 
 addCommand("fly", {
     onCommand: function(sender, args) {
@@ -43,10 +44,12 @@ addCommand("fly", {
             sender.setAllowFlight(false) //Remove flight 
             sender.sendMessage("You can no longer fly");
         }
+    }, 
+    onTabComplete: function (sender, args) {
+        return []
     }
-    },
-    "eldin.staff"
-);
+},
+"eldin.staff");
 
 addCommand("god", {
     onCommand(sender, args) {
@@ -59,68 +62,9 @@ addCommand("god", {
             sender.removeMetadata("god", plugin);
             sender.sendMessage("You are no longer in god mode"); //Remove the god metadata
         }
-    }},
-    "eldin.staff"
-);
-
-addCommand("msg", {
-    onCommand(sender, args) {
-        if(!sender.hasMetadata("muted")) {
-            messanger(sender, args, "msg")
-        }
-
-        else {
-            sender.sendMessage(ChatColor.RED + "You are muted")
-        }
-    }}
-);
-
-addCommand("tell", {
-    onCommand(sender, args) {
-        if(!sender.hasMetadata("muted")) {
-            messanger(sender, args, "tell")
-        }
-
-        else {
-            sender.sendMessage(ChatColor.RED + "You are muted")
-        }
-    }}
-);
-
-function messanger(sender, args, command) {
-    if (args.length >= 2) {
-        commandPlayer = args[0]
-        i = 1
-        message = ""
-        while (i < args.length) {
-            message = message + args[i] + " "
-            i++
-        }
-        const onlinePlayers = Bukkit.getOnlinePlayers();
-        playerOnline = false
-        onlinePlayers.forEach(player => { //Ensure that the player is online
-            if(commandPlayer === player.getName()) {
-                playerOnline = true;
-            }
-        })
-
-
-        if(playerOnline) {
-            playerObject = Bukkit.getPlayerExact(commandPlayer)
-            if(playerObject.hasMetadata("vanished")) {
-                sender.sendMessage(ChatColor.RED + "No player was found")
-            }
-            else {
-                sender.sendMessage(ChatColor.GRAY + ChatColor.ITALIC + "You whisper to " + commandPlayer + ": " + message)
-                playerObject.sendMessage(ChatColor.GRAY + ChatColor.ITALIC + sender.getName() + " whispers to you: " + message)
-            }
-        }
-        else {
-            sender.sendMessage(ChatColor.RED + "No player was found")
-        }
+    }, 
+    onTabComplete: function (sender, args) {
+        return []
     }
-
-    else {
-        sender.sendMessage(ChatColor.RED + "Command format: " + "/" + command + " <playername> <message>");
-    }
-}
+},
+"eldin.staff");

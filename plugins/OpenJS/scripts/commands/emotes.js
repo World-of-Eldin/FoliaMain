@@ -114,6 +114,6 @@ addCommand("emotes", {
     },
     
     onTabComplete: function(sender, args) {
-        return toJavaList([]);
+        return [];
     }
 })

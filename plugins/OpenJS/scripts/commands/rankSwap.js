@@ -248,8 +248,11 @@ addCommand("rank", {
       sender.sendMessage(yourRankMessage + rank);
     }
   },
-  onTabComplete: function () {
-    return toJavaList(["swap"]);
+  onTabComplete: function (sender, args) {
+    args = toArray(args);
+    if(args.length === 1) {
+      return ["swap"];
+    }
   },
 });
 
