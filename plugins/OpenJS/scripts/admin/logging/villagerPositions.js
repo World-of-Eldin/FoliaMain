@@ -102,13 +102,8 @@ function scanForVillagers(worldString) {
   });
 }
 
-Bukkit.getGlobalRegionScheduler().runAtFixedRate(
-  OpenJSPlugin,
-  function () {
-    scanForVillagers("world");
-    scanForVillagers("world_nether");
-    scanForVillagers("world_the_end");
-  },
-  100,
-  1200
-);
+task.repeat(5, 60, function () {
+  scanForVillagers("world");
+  scanForVillagers("world_nether");
+  scanForVillagers("world_the_end");
+});
