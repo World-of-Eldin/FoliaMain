@@ -75,6 +75,7 @@ function messanger(sender, args, command) {
             }
             else {
                 lastMessaged[sender] = playerObject;
+                lastMessaged[playerObject] = sender;
                 sender.sendMessage(ChatColor.GRAY + ChatColor.ITALIC + "You whisper to " + commandPlayer + ": " + message)
                 playerObject.sendMessage(ChatColor.GRAY + ChatColor.ITALIC + sender.getName() + " whispers to you: " + message)
             }
