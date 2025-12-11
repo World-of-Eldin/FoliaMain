@@ -1,11 +1,12 @@
 // powder-snow-solid-boots.js
-// Makes powder snow solid for players wearing any boots (not just leather) OR riding horses with armor
+// Makes powder snow solid for players wearing boots with Frost Walker enchantment OR riding horses with armor
 // Uses client-side fake blocks to trick the client into treating powder snow as solid
 
 const Material = org.bukkit.Material;
 const Bukkit = org.bukkit.Bukkit;
 const EntityDamageEvent = org.bukkit.event.entity.EntityDamageEvent;
 const Location = org.bukkit.Location;
+const Enchantment = org.bukkit.enchantments.Enchantment;
 const Console = Bukkit.getConsoleSender();
 
 Console.sendMessage("[Powder Snow Bypass] Loading script...");
@@ -20,12 +21,22 @@ function locKey(x, y, z) {
   return x + "," + y + "," + z;
 }
 
-// Check if player has valid (non-leather) boots
+// Check if player has boots with Frost Walker enchantment
 function hasValidBoots(player) {
   const boots = player.getInventory().getBoots();
   if (boots == null) return false;
   const bootType = boots.getType().toString();
-  return bootType != "AIR" && bootType != "LEATHER_BOOTS";
+  if (bootType == "AIR") return false;
+
+  // Check if boots have Frost Walker enchantment
+  try {
+    return boots.containsEnchantment(Enchantment.FROST_WALKER);
+  } catch (e) {
+    Console.sendMessage(
+      "[Powder Snow Bypass] §cError checking Frost Walker enchantment: " + e
+    );
+    return false;
+  }
 }
 
 // Check if player is riding a horse with armor (not mule/donkey)
@@ -390,5 +401,5 @@ registerEvent("org.bukkit.event.block.BlockPlaceEvent", {
 
 Console.sendMessage("[Powder Snow Bypass] §aLoaded successfully!");
 Console.sendMessage(
-  "[Powder Snow Bypass] §aPlayers with boots (except leather) or riding horses with armor will see powder snow as solid snow blocks."
+  "[Powder Snow Bypass] §aPlayers with Frost Walker boots or riding horses with armor will see powder snow as solid snow blocks."
 );
