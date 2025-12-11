@@ -9,7 +9,7 @@ const defaultZ = -24
 const DB_CONFIG = {
   host: "${DB_HOST}",
   port: "${DB_PORT}",
-  database: "${Folia_Lands}",
+  database: "${DB_LANDS}",
   user: "${DB_USER}",
   password: "${DB_PASS}"
 };
