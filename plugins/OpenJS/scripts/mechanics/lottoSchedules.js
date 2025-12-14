@@ -61,11 +61,7 @@ function gambling() {
                     discordMessage = ChatColor.GOLD +"Lottery: " + ChatColor.GREEN + playerInData + " won " + winningMoney + ChatColor.RESET + ChatColor.GREEN + " Trade Bars";
                     Server.broadcastMessage(message);
                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
-                        const player = Bukkit.getPlayerExact(playerInData);
-                        const balancePlaceholder = "%foliaeconomy_balance%"
-                        const balanceStr = PlaceholderAPI.parseString(player, balancePlaceholder);
-                        const balance = Number(balanceStr);
-                        Bukkit.dispatchCommand(Console, "setbal " + playerInData + " " + (balance + winningMoney)); //Give the player the money
+                        Bukkit.dispatchCommand(Console, "addbal " + playerInData + " " + winningMoney); //Give the player the money
                         Bukkit.dispatchCommand(Console, "discordsrv bcast #1388388677612474469 " + discordMessage);
                     });
                 }
