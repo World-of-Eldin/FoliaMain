@@ -18,7 +18,9 @@ addCommand("lottery", {
                 case "buy":
                     Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
                         if(args.length === 2) { //Check that 2 arguments were used
-                            if(args[1] >= 1 && args[1] <= maxTickets) { //Check that the number is within the set range
+                            DiskApi.loadFile("LottoTimePassage", false, true)
+                            const iterations = DiskApi.getVar("LottoTimePassage", "iterations", '0', true);
+                            if(args[1] >= 1 && args[1] <= maxTickets * (iterations + 1)) { //Check that the number is within the set range
                                 if(args[1] % 1 === 0) { //Check that the number is whole
                                     const balancePlaceholder = "%foliaeconomy_balance%"
                                     const balance = PlaceholderAPI.parseString(sender, balancePlaceholder) //Get the player's balance
@@ -27,10 +29,9 @@ addCommand("lottery", {
                                     if(balance >= valueOfTicket) { //Check that the player can afford the ticket
                                         const playerTickets = DiskApi.getVar("LottoData", sender.getName(), '0', true);
                                         const numberOfTickets = Number(playerTickets) + Number(args[1]);
-
-                                        if(!(numberOfTickets > maxTickets)) { //Check that the player has not gone over the ticket purchase limit
+                                        if(!(numberOfTickets > maxTickets * (iterations + 1))) { //Check that the player has not gone over the ticket purchase limit
                                             sender.sendMessage(ChatColor.GOLD +"You have purchased " + args[1] + " tickets");
-                                            Bukkit.dispatchCommand(Console, "setbal " + sender.getName() + " " + (balance - valueOfTicket)); //Remove the money from the player
+                                            Bukkit.dispatchCommand(Console, "withdrawbal " + sender.getName() + " " + valueOfTicket); //Remove the money from the player
                                             DiskApi.setVar("LottoData", sender.getName(), numberOfTickets, true)
                                             saveTotal(args[1], "LottoData")
                                             savePlayer(sender.getName(), "LottoData");
@@ -38,7 +39,7 @@ addCommand("lottery", {
                                         }
 
                                         else {
-                                            sender.sendMessage(ChatColor.RED + "The maximum number of tickets is " + maxTickets + " tickets, use /lottery info to see how many you have purchased")
+                                            sender.sendMessage(ChatColor.RED + "The maximum number of tickets is " + maxTickets * (iterations + 1) + " tickets, use /lottery info to see how many you have purchased")
                                         }
                                     }
 
