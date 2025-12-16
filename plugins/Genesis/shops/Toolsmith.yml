@@ -5,6 +5,35 @@ shop:
     MenuItem:
       - "type:Coal"
       - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&70.3 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Shift Right Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Coal"
+      - "amount:1"
+    Reward_left: 0.3
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Coal"
+      - "amount:16"
+    Reward_shift_left: 4.8
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
+      - "type:Coal"
+    Reward_shift_right: 0.3
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
+    InventoryLocation: 21
+  Redstone:
+    MenuItem:
+      - "type:Redstone"
+      - "amount:1"
       - "lore1:&6Sell Price: &f㒖&70.2 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
@@ -12,58 +41,29 @@ shop:
     RewardType_left: money
     PriceType_left: item
     Price_left:
-      - "type:Coal"
+      - "type:Redstone"
       - "amount:1"
     Reward_left: 0.2
     Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
     RewardType_shift_left: money
     PriceType_shift_left: item
     Price_shift_left:
-      - "type:Coal"
+      - "type:Redstone"
       - "amount:16"
     Reward_shift_left: 3.2
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
     RewardType_shift_right: money
     PriceType_shift_right: itemall
     Price_shift_right:
-      - "type:Coal"
+      - "type:Redstone"
     Reward_shift_right: 0.2
-    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
-    InventoryLocation: 21
-  Redstone:
-    MenuItem:
-      - "type:Redstone"
-      - "amount:1"
-      - "lore1:&6Sell Price: &f㒖&70.15 Trade Bars"
-      - "lore3:&6Left Click: &7sell 1"
-      - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Shift Right Click: &7sell all"
-    RewardType_left: money
-    PriceType_left: item
-    Price_left:
-      - "type:Redstone"
-      - "amount:1"
-    Reward_left: 0.15
-    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
-    RewardType_shift_left: money
-    PriceType_shift_left: item
-    Price_shift_left:
-      - "type:Redstone"
-      - "amount:16"
-    Reward_shift_left: 2.4
-    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_shift_right: money
-    PriceType_shift_right: itemall
-    Price_shift_right:
-      - "type:Redstone"
-    Reward_shift_right: 0.15
     Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 22
   Iron_Ingot:
     MenuItem:
       - "type:Iron_Ingot"
       - "amount:1"
-      - "lore1:&6Sell Price: &f㒖&71.5 Trade Bars"
+      - "lore1:&6Sell Price: &f㒖&73 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
       - "lore5:&6Shift Right Click: &7sell all"
@@ -72,27 +72,27 @@ shop:
     Price_left:
       - "type:Iron_Ingot"
       - "amount:1"
-    Reward_left: 1.5
+    Reward_left: 3
     Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
     RewardType_shift_left: money
     PriceType_shift_left: item
     Price_shift_left:
       - "type:Iron_Ingot"
       - "amount:16"
-    Reward_shift_left: 24
+    Reward_shift_left: 48
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
     RewardType_shift_right: money
     PriceType_shift_right: itemall
     Price_shift_right:
       - "type:Iron_Ingot"
-    Reward_shift_right: 1.5
+    Reward_shift_right: 3
     Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 24
   Diamond:
     MenuItem:
       - "type:Diamond"
       - "amount:1"
-      - "lore1:&6Sell Price: &f㒖&720 Trade Bars"
+      - "lore1:&6Sell Price: &f㒖&722 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
       - "lore5:&6Shift Right Click: &7sell all"
@@ -101,25 +101,54 @@ shop:
     Price_left:
       - "type:Diamond"
       - "amount:1"
-    Reward_left: 20
+    Reward_left: 22
     Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
     RewardType_shift_left: money
     PriceType_shift_left: item
     Price_shift_left:
       - "type:Diamond"
       - "amount:16"
-    Reward_shift_left: 320
+    Reward_shift_left: 352
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
     RewardType_shift_right: money
     PriceType_shift_right: itemall
     Price_shift_right:
       - "type:Diamond"
-    Reward_shift_right: 20
+    Reward_shift_right: 22
     Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 25
   Coal_Block:
     MenuItem:
       - "type:Coal_Block"
+      - "amount:1"
+      - "lore1:&6Sell Price: &f㒖&72.7 Trade Bars"
+      - "lore3:&6Left Click: &7sell 1"
+      - "lore4:&6Shift Left Click: &7sell 16"
+      - "lore5:&6Shift Right Click: &7sell all"
+    RewardType_left: money
+    PriceType_left: item
+    Price_left:
+      - "type:Coal_Block"
+      - "amount:1"
+    Reward_left: 2.7
+    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
+    RewardType_shift_left: money
+    PriceType_shift_left: item
+    Price_shift_left:
+      - "type:Coal_Block"
+      - "amount:16"
+    Reward_shift_left: 43.2
+    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
+    RewardType_shift_right: money
+    PriceType_shift_right: itemall
+    Price_shift_right:
+      - "type:Coal_Block"
+    Reward_shift_right: 2.7
+    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
+    InventoryLocation: 30
+  Redstone_Block:
+    MenuItem:
+      - "type:Redstone_Block"
       - "amount:1"
       - "lore1:&6Sell Price: &f㒖&71.8 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
@@ -128,58 +157,29 @@ shop:
     RewardType_left: money
     PriceType_left: item
     Price_left:
-      - "type:Coal_Block"
+      - "type:Redstone_Block"
       - "amount:1"
     Reward_left: 1.8
     Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
     RewardType_shift_left: money
     PriceType_shift_left: item
     Price_shift_left:
-      - "type:Coal_Block"
+      - "type:Redstone_Block"
       - "amount:16"
     Reward_shift_left: 28.8
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
     RewardType_shift_right: money
     PriceType_shift_right: itemall
     Price_shift_right:
-      - "type:Coal_Block"
+      - "type:Redstone_Block"
     Reward_shift_right: 1.8
-    Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
-    InventoryLocation: 30
-  Redstone_Block:
-    MenuItem:
-      - "type:Redstone_Block"
-      - "amount:1"
-      - "lore1:&6Sell Price: &f㒖&71.35 Trade Bars"
-      - "lore3:&6Left Click: &7sell 1"
-      - "lore4:&6Shift Left Click: &7sell 16"
-      - "lore5:&6Shift Right Click: &7sell all"
-    RewardType_left: money
-    PriceType_left: item
-    Price_left:
-      - "type:Redstone_Block"
-      - "amount:1"
-    Reward_left: 1.35
-    Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
-    RewardType_shift_left: money
-    PriceType_shift_left: item
-    Price_shift_left:
-      - "type:Redstone_Block"
-      - "amount:16"
-    Reward_shift_left: 21.6
-    Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
-    RewardType_shift_right: money
-    PriceType_shift_right: itemall
-    Price_shift_right:
-      - "type:Redstone_Block"
-    Reward_shift_right: 1.35
     Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 31
   Iron_Block:
     MenuItem:
       - "type:Iron_Block"
       - "amount:1"
-      - "lore1:&6Sell Price: &f㒖&713.5 Trade Bars"
+      - "lore1:&6Sell Price: &f㒖&727 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
       - "lore5:&6Shift Right Click: &7sell all"
@@ -188,27 +188,27 @@ shop:
     Price_left:
       - "type:Iron_Block"
       - "amount:1"
-    Reward_left: 13.5
+    Reward_left: 27
     Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
     RewardType_shift_left: money
     PriceType_shift_left: item
     Price_shift_left:
       - "type:Iron_Block"
       - "amount:16"
-    Reward_shift_left: 216
+    Reward_shift_left: 432
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
     RewardType_shift_right: money
     PriceType_shift_right: itemall
     Price_shift_right:
       - "type:Iron_Block"
-    Reward_shift_right: 13.5
+    Reward_shift_right: 27
     Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 33
   Diamond_Block:
     MenuItem:
       - "type:Diamond_Block"
       - "amount:1"
-      - "lore1:&6Sell Price: &f㒖&7180 Trade Bars"
+      - "lore1:&6Sell Price: &f㒖&7198 Trade Bars"
       - "lore3:&6Left Click: &7sell 1"
       - "lore4:&6Shift Left Click: &7sell 16"
       - "lore5:&6Shift Right Click: &7sell all"
@@ -217,20 +217,20 @@ shop:
     Price_left:
       - "type:Diamond_Block"
       - "amount:1"
-    Reward_left: 180
+    Reward_left: 198
     Message_left: "&6[&7BossShop&6] You've sold &7%price_left% &6for &f㒖&7%reward_left%"
     RewardType_shift_left: money
     PriceType_shift_left: item
     Price_shift_left:
       - "type:Diamond_Block"
       - "amount:16"
-    Reward_shift_left: 2880
+    Reward_shift_left: 3168
     Message_shift_left: "&6[&7BossShop&6] You've sold &7%price_shift_left% &6for &f㒖&7%reward_shift_left%"
     RewardType_shift_right: money
     PriceType_shift_right: itemall
     Price_shift_right:
       - "type:Diamond_Block"
-    Reward_shift_right: 180
+    Reward_shift_right: 198
     Message_shift_right: "&6[&7BossShop&6] You've sold &7%price_shift_right% &6for &f㒖&7%reward_shift_right%"
     InventoryLocation: 34
   UI_Navigation_9:
