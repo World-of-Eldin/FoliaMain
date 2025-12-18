@@ -1,7 +1,7 @@
 //!PlaceholderAPI
 const hours = 72; //The number of hours between each draw
 const announcementRate = 1; //The number of hours between each lottery announcement
-const rollOverChance = 10; //The chance of a rollover (in percent)
+const rollOverChance = 20; //The chance of a rollover (in percent)
 const rollOverChanceDropRate = 1; //The drop rate of this chance on each subsequent iteration (in percent)
 const ticketValue = 1000; //The value of an individual lottery ticket
 const maxTickets = 5; //The maximum tickets a player can purchase
@@ -24,21 +24,19 @@ task.repeat(0, 10, () => { //Run every 10 seconds
 
     else {
         DiskApi.setVar("LottoTimePassage", "time", 0, true)
-        iterations();
+        const iterations = DiskApi.getVar("LottoTimePassage", "iterations", '0', true);
+        DiskApi.setVar("LottoTimePassage", "iterations", iterations + 1, true);
         DiskApi.saveFile("LottoTimePassage", true, true);
-        DiskApi.loadFile("LottoTimePassage", true, true);
-        gambling();
+        gambling(iterations);
     }
 });
-
-function iterations() { //Add an iteration to deplete rollOverChance
-    const iterations = DiskApi.getVar("LottoTimePassage", "iterations", '0', true);
-    DiskApi.setVar("LottoTimePassage", "iterations", iterations + 1, true);
-}   
     
-function gambling() {
-    const iterations = DiskApi.getVar("LottoTimePassage", "iterations", '0', true);
-    if((Math.random() * 100) > (rollOverChance - iterations * rollOverChanceDropRate)) { //Compare a random number between 1 and 100 to the rollOverChance subtracted by the number of iterations * the drop rate
+function gambling(iterations) {
+    const random = Math.random() * 100
+        log.info(random)
+        log.info(rollOverChance - iterations * rollOverChanceDropRate)
+        log.info("RAN")
+    if(random > (rollOverChance - iterations * rollOverChanceDropRate)) { //Compare a random number between 1 and 100 to the rollOverChance subtracted by the number of iterations * the drop rate
         DiskApi.setVar("LottoTimePassage", "iterations", 0, true);
         DiskApi.saveFile("LottoTimePassage", false, true); //Reset iterations
         

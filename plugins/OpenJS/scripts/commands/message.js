@@ -103,7 +103,10 @@ function tabCompleter(args) {
       let playerNames = [];
 
       onlinePlayers.forEach((player) => {
-        playerNames.push(player.getName());
+        let playerName = String(player.getName()).toLowerCase()
+        if(playerName.indexOf(args[0].toLowerCase()) !== -1) {
+            playerNames.push(player.getName());
+        }
       });
 
       return toJavaList(playerNames);
