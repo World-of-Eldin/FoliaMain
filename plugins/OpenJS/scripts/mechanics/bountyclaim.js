@@ -28,7 +28,7 @@ registerEvent("org.bukkit.event.entity.EntityDeathEvent", {
                         });
 
                         if (victimInList) {
-                            const bountyValue = DiskApi.getVar("BountyData", victimName, '0', true);
+                            const bountyValue = Number(DiskApi.getVar("BountyData", victimName, '0', true));
                             Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
                                 const player = entityResponsible;
                                 const balanceStr = PlaceholderAPI.parseString(player, "%foliaeconomy_balance%");
