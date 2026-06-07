@@ -54,7 +54,7 @@ addCommand("lottery", {
                             }
 
                             else {
-                                sender.sendMessage(ChatColor.RED + "Not a number between 1 and " + maxTickets);
+                                sender.sendMessage(ChatColor.RED + "Not a number between 1 and " + maxTickets * (iterations + 1));
                             }
                         }
 
