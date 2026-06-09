@@ -211,7 +211,7 @@ const emojiCodeReplace = (message) => {
   return message;
 };
 
-addCommand("adminchat", {
+addCommand("ac", {
     onCommand(sender, args) {
       if(args.length >= 1) {
         i = 0
@@ -243,7 +243,7 @@ addCommand("adminchat", {
       }
       
       else {
-        sender.sendMessage(ChatColor.RED + "Command Format: /adminchat <message>")
+        sender.sendMessage(ChatColor.RED + "Command Format: /ac <message>")
       }
     }},
     "eldin.staff"
