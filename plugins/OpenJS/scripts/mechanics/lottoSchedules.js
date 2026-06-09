@@ -63,7 +63,7 @@ function gambling(iterations) {
                         Bukkit.dispatchCommand(Console, "discordsrv bcast #1388388677612474469 " + discordMessage);
                     });
                 }
-                totalTicketsCalculated = totalTicketsCalculated + ticketCount;
+                totalTicketsCalculated = totalTicketsCalculated + Number(ticketCount);
             })
             
             playerDataList.forEach(playerInData => { //Remove the individual player keys
