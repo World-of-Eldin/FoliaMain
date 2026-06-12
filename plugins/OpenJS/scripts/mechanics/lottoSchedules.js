@@ -24,7 +24,7 @@ task.repeat(0, 10, () => { //Run every 10 seconds
 
     else {
         DiskApi.setVar("LottoTimePassage", "time", 0, true)
-        const iterations = DiskApi.getVar("LottoTimePassage", "iterations", '0', true);
+        const iterations = Number(DiskApi.getVar("LottoTimePassage", "iterations", '0', true));
         DiskApi.setVar("LottoTimePassage", "iterations", iterations + 1, true);
         DiskApi.saveFile("LottoTimePassage", true, true);
         gambling(iterations);
