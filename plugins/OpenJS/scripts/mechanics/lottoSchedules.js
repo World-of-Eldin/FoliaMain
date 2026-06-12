@@ -82,6 +82,10 @@ function gambling(iterations) {
     }
     else {
         Server.broadcastMessage(ChatColor.GOLD + "Lottery rolled over");
+        discordMessage = ChatColor.GOLD +"Lottery rolled over";
+        Scheduler.run(Bukkit.getPluginManager().getPlugin("OpenJS"), function () {
+            Bukkit.dispatchCommand(Console, "discordsrv bcast #1388388677612474469 " + discordMessage);
+        });
     }
 }
 
