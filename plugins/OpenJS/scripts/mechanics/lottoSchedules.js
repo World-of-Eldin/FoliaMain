@@ -1,7 +1,7 @@
 //!PlaceholderAPI
 const hours = 72; //The number of hours between each draw
 const announcementRate = 1; //The number of hours between each lottery announcement
-const rollOverChance = 40; //The chance of a rollover (in percent)
+const rollOverChance = 20; //The chance of a rollover (in percent)
 const rollOverChanceDropRate = 1; //The drop rate of this chance on each subsequent iteration (in percent)
 const ticketValue = 1000; //The value of an individual lottery ticket
 const maxTickets = 5; //The maximum tickets a player can purchase
