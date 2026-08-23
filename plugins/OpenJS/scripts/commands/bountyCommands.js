@@ -31,10 +31,10 @@ addCommand("bounty", {
 
                                     if(playerOnline && playerWithBounty != sendingPlayer) {
                                         const balancePlaceholder = "%foliaeconomy_balance%"
-                                        const balance = PlaceholderAPI.parseString(sender, balancePlaceholder) //Get the player's balance
+                                        const balance = Number(PlaceholderAPI.parseString(sender, balancePlaceholder)) //Get the player's balance
 
                                         if(balance >= bountyValue) { //Check that the player can afford the ticket
-                                            const currentBounty = DiskApi.getVar("BountyData", playerWithBounty, '0', true);
+                                            const currentBounty = Number(DiskApi.getVar("BountyData", playerWithBounty, '0', true));
                                             const totalBounty = bountyValue + currentBounty;
                                             DiskApi.setVar("BountyData", playerWithBounty, totalBounty, true);
                                             savePLayer(playerWithBounty, "BountyData")
